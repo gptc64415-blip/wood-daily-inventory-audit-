@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Inventory Audit System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#f7f6f3;--surface:#fff;--surface2:#f0ede8;--border:#e4e0d8;--border2:#d4cfc5;--text:#1a1814;--text2:#6b6558;--text3:#9e9789;--accent:#e8600a;--accent-l:#fff0e6;--green:#1a6b2f;--green-l:#eaf4ec;--red:#c0392b;--red-l:#fdecea;--amber:#b45309;--amber-l:#fef3e2;--blue:#1a56a0;--blue-l:#e8f0fc;--radius:8px;--radius-lg:12px;--shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:14px}
+.topbar{background:#1a1814;color:#fff;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topbar-brand{display:flex;align-items:center;gap:10px}
+.topbar-brand i{color:var(--accent);font-size:18px}
+.topbar-brand h1{font-size:16px;font-weight:600}
+.topbar-brand span{font-size:12px;color:#888;margin-left:6px}
+.topbar-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.main{padding:24px 28px;max-width:1400px;margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:var(--radius);font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text);transition:all .15s;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.btn:hover{background:var(--surface2)}.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-accent{background:var(--accent);color:#fff;border-color:var(--accent)}.btn-accent:hover{background:#d4550a}
+.btn-green{background:var(--green);color:#fff;border-color:var(--green)}.btn-green:hover{background:#155a26}
+.btn-red{background:var(--red);color:#fff;border-color:var(--red)}.btn-red:hover{background:#a93226}
+.btn-sm{padding:5px 10px;font-size:12px}.btn-xs{padding:3px 8px;font-size:11px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;box-shadow:var(--shadow)}
+.metric-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--text3);margin-bottom:8px}
+.metric-val{font-size:28px;font-weight:600;line-height:1;margin-bottom:4px}
+.metric-sub{font-size:12px;color:var(--text2)}
+.metric-bar{height:3px;background:var(--border);border-radius:2px;margin-top:10px;overflow:hidden}
+.metric-fill{height:100%;border-radius:2px;transition:width .6s ease}
+.tabs-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.tabs{display:flex;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:3px;gap:2px}
+.tab{padding:7px 18px;font-size:13px;font-weight:500;cursor:pointer;border-radius:6px;color:var(--text2);border:none;background:transparent;font-family:'DM Sans',sans-serif;transition:all .15s;white-space:nowrap}
+.tab:hover:not(.active){color:var(--text);background:rgba(0,0,0,.04)}
+.tab.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.toolbar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.search-wrap{position:relative;flex:1;min-width:200px}
+.search-wrap i{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:13px;pointer-events:none}
+.search-wrap input{width:100%;height:36px;padding:0 12px 0 34px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;background:var(--surface);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;transition:border-color .15s}
+.search-wrap input:focus{border-color:var(--accent)}
+select{height:36px;padding:0 28px 0 11px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;background:var(--surface);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center}
+.table-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:900px}
+thead th{background:var(--surface2);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text2);padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--border);transition:background .1s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:#faf8f5}
+tbody tr.has-issue{background:#fffaf8}
+td{padding:10px 14px;vertical-align:middle}
+.sku-code{font-family:'DM Mono',monospace;font-size:11px;color:var(--text2);background:var(--surface2);padding:2px 6px;border-radius:4px}
+.tbl-count{font-size:12px;color:var(--text3);padding:10px 14px;border-top:1px solid var(--border);background:var(--surface2)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge i{font-size:10px}
+.badge-ok{background:var(--green-l);color:var(--green)}
+.badge-warn{background:var(--amber-l);color:var(--amber)}
+.badge-err{background:var(--red-l);color:var(--red)}
+.badge-neutral{background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
+.issue-card{display:flex;align-items:flex-start;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px 16px;margin-bottom:10px;box-shadow:var(--shadow)}
+.issue-icon{width:36px;height:36px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.issue-body{flex:1}
+.issue-title{font-size:13px;font-weight:600}
+.issue-desc{font-size:12px;color:var(--text2);line-height:1.5;margin-top:3px}
+.issue-fix{font-size:11px;font-weight:600;color:var(--green);background:var(--green-l);padding:2px 8px;border-radius:4px;margin-top:6px;display:inline-block}
+.var-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:14px;box-shadow:var(--shadow);overflow:hidden}
+.var-card-hdr{padding:14px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);background:var(--surface2)}
+.var-card-title{font-weight:600;font-size:15px;margin-bottom:4px}
+.var-card-meta{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--text2)}
+.var-card-meta span{display:flex;align-items:center;gap:4px}
+.var-card-body{padding:14px 18px}
+.child-table{width:100%;border-collapse:collapse;font-size:13px}
+.child-table th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);padding:7px 10px;text-align:left;border-bottom:1px solid var(--border);background:var(--bg)}
+.child-table td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+.child-table tr:last-child td{border-bottom:none}
+.child-table tr:hover td{background:#faf8f5}
+.log-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.log-entry{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px}
+.log-entry:last-child{border-bottom:none}
+.log-time{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);min-width:48px}
+.log-sku{font-family:'DM Mono',monospace;font-size:11px;color:var(--blue);background:var(--blue-l);padding:2px 7px;border-radius:4px;min-width:140px;text-align:center}
+.log-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.log-msg{color:var(--text2);flex:1}
+.save-banner{background:#1a1814;border-radius:var(--radius-lg);padding:13px 18px;display:flex;align-items:center;gap:14px;margin-bottom:20px;color:#fff}
+.save-banner i{color:var(--accent);font-size:18px;flex-shrink:0}
+.save-banner-text{flex:1;font-size:13px}
+.save-banner-text strong{display:block;margin-bottom:1px}
+.save-banner-text span{color:#aaa;font-size:12px}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border-radius:var(--radius-lg);width:100%;max-width:640px;max-height:92vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.3);display:flex;flex-direction:column}
+.modal-lg{max-width:820px}
+.modal-header{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0}
+.modal-header h2{font-size:15px;font-weight:600}
+.modal-close{background:none;border:none;font-size:18px;cursor:pointer;color:var(--text3);padding:4px 8px;border-radius:4px;line-height:1}
+.modal-close:hover{color:var(--text);background:var(--surface2)}
+.modal-body{padding:20px 24px;overflow-y:auto;flex:1}
+.modal-footer{padding:14px 24px;display:flex;gap:10px;justify-content:flex-end;border-top:1px solid var(--border);flex-shrink:0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:12px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.4px}
+.form-input,.form-select{height:36px;padding:0 11px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;background:var(--surface);color:var(--text);font-family:'DM Sans',sans-serif;outline:none;transition:border-color .15s;width:100%}
+.form-select{padding:0 28px 0 11px;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;background-color:var(--surface)}
+.form-input:focus,.form-select:focus{border-color:var(--accent)}
+.form-hint{font-size:11px;color:var(--text3)}
+.fsec{margin-bottom:20px}
+.fsec-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.modal-error{background:var(--red-l);border:1px solid #f5c6c2;border-radius:var(--radius);padding:10px 14px;font-size:13px;color:var(--red);margin-top:12px}
+.child-row-rm{background:none;border:none;color:var(--text3);cursor:pointer;padding:4px 6px;border-radius:4px;font-size:13px;line-height:1}
+.child-row-rm:hover{color:var(--red);background:var(--red-l)}
+.empty-state{text-align:center;padding:48px 24px;color:var(--text3)}
+.empty-state i{font-size:32px;margin-bottom:12px;display:block}
+.toast{position:fixed;bottom:24px;right:24px;background:#1a1814;color:#fff;padding:12px 18px;border-radius:var(--radius);font-size:13px;z-index:2000;display:flex;align-items:center;gap:9px;transform:translateY(80px);opacity:0;transition:all .3s;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.toast.show{transform:translateY(0);opacity:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinning{animation:spin .8s linear infinite}
+@media(max-width:768px){.metrics{grid-template-columns:repeat(2,1fr)}.main{padding:16px}.topbar{padding:12px 16px}.form-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand">
+    <i class="fa-solid fa-boxes-stacked"></i>
+    <h1>Inventory Audit System <span>Amazon Daily Tracker</span></h1>
+  </div>
+  <div class="topbar-right">
+    <span style="font-size:12px;color:#aaa">Last audit: <span id="last-run-time" style="color:#ccc;font-weight:500">—</span></span>
+    <button class="btn" onclick="exportCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+    <button class="btn btn-accent" id="run-btn" onclick="runAudit()"><i class="fa-solid fa-rotate"></i> Run Audit</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="save-banner" id="save-banner">
+    <i class="fa-solid fa-floppy-disk"></i>
+    <div class="save-banner-text">
+      <strong id="banner-title">Push changes live to GitHub</strong>
+      <span id="banner-sub">Click Save to GitHub — your client's link updates instantly. One time setup required.</span>
+    </div>
+    <button class="btn" onclick="openGHSetup()" id="gh-setup-btn" style="background:var(--surface2);border-color:var(--border2);color:var(--text)"><i class="fa-solid fa-key"></i> Setup GitHub</button>
+    <button class="btn btn-accent" onclick="pushToGitHub()" id="gh-save-btn"><i class="fa-solid fa-cloud-arrow-up"></i> Save to GitHub</button>
+  </div>
+
+  <!-- GitHub Setup Modal -->
+  <div class="modal-overlay" id="gh-modal">
+    <div class="modal" style="max-width:500px">
+      <div class="modal-header"><h2>GitHub Setup</h2><button class="modal-close" onclick="document.getElementById('gh-modal').classList.remove('open')">&#x2715;</button></div>
+      <div class="modal-body">
+        <div style="background:var(--amber-l);border:1px solid #fad5a0;border-radius:var(--radius);padding:12px 14px;font-size:13px;color:var(--amber);margin-bottom:16px">
+          <i class="fa-solid fa-lock" style="margin-right:6px"></i><strong>Your token is stored only in your browser.</strong> It is never sent anywhere except directly to GitHub.
+        </div>
+        <div class="form-grid" style="grid-template-columns:1fr">
+          <div class="form-group">
+            <label class="form-label">GitHub Personal Access Token</label>
+            <input class="form-input" id="gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+            <span class="form-hint">Generate at GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → tick <strong>repo</strong></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">GitHub Username</label>
+            <input class="form-input" id="gh-user" placeholder="e.g. dveloper11">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Repository Name</label>
+            <input class="form-input" id="gh-repo" placeholder="e.g. vidhanfinal">
+          </div>
+          <div class="form-group">
+            <label class="form-label">File path in repo</label>
+            <input class="form-input" id="gh-path" placeholder="e.g. indexx.html">
+            <span class="form-hint">Exact filename as it appears in your GitHub repo</span>
+          </div>
+        </div>
+        <div id="gh-modal-error" class="modal-error" style="display:none"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" onclick="document.getElementById('gh-modal').classList.remove('open')">Cancel</button>
+        <button class="btn btn-accent" onclick="saveGHSetup()"><i class="fa-solid fa-floppy-disk"></i> Save Setup</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-label">Total SKUs</div>
+      <div class="metric-val" id="m-total">0</div>
+      <div class="metric-sub" id="m-total-sub">—</div>
+      <div class="metric-bar"><div class="metric-fill" style="width:100%;background:#1a1814"></div></div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">In Stock</div>
+      <div class="metric-val" id="m-instock" style="color:var(--green)">0</div>
+      <div class="metric-sub" id="m-instock-pct" style="color:var(--green)">—</div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-instock" style="width:0%;background:var(--green)"></div></div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Variation Issues</div>
+      <div class="metric-val" id="m-varerr" style="color:var(--amber)">0</div>
+      <div class="metric-sub" style="color:var(--amber)">mis-linked children</div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-varerr" style="width:0%;background:var(--amber)"></div></div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Critical Alerts</div>
+      <div class="metric-val" id="m-crit" style="color:var(--red)">0</div>
+      <div class="metric-sub" style="color:var(--red)">suppressed listings</div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-crit" style="width:0%;background:var(--red)"></div></div>
+    </div>
+  </div>
+
+  <div class="tabs-row">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('all',this)">All SKUs</button>
+      <button class="tab" onclick="switchTab('issues',this)">Issues Only</button>
+      <button class="tab" onclick="switchTab('variations',this)">Variations</button>
+      <button class="tab" onclick="switchTab('log',this)">Audit Log</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span id="tab-info" style="font-size:12px;color:var(--text3)"></span>
+      <button class="btn btn-green btn-sm" id="tab-add-btn" onclick="tabAddAction()"><i class="fa-solid fa-plus"></i> <span id="tab-add-label">Add SKU</span></button>
+    </div>
+  </div>
+
+  <div id="tab-all">
+    <div class="toolbar">
+      <div class="search-wrap"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="search" placeholder="Search SKU, ASIN or title…" oninput="filterTable()"></div>
+      <select id="f-status" onchange="filterTable()"><option value="">All statuses</option><option>In Stock</option><option>Low Stock</option><option>Out of Stock</option><option>Suppressed</option></select>
+      <select id="f-var" onchange="filterTable()"><option value="">All variations</option><option value="ok">Linked OK</option><option value="err">Variation Error</option><option value="none">Standalone</option></select>
+    </div>
+    <div class="table-card">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>SKU</th><th>Product Title</th><th style="text-align:right">Qty</th><th>Status</th><th>Variation</th><th>Image</th><th>Listing</th><th>Notes</th><th style="text-align:center;width:90px">Actions</th></tr></thead>
+          <tbody id="sku-tbody"></tbody>
+        </table>
+      </div>
+      <div class="tbl-count" id="tbl-count"></div>
+    </div>
+  </div>
+
+  <div id="tab-issues" style="display:none"><div id="issues-container"></div></div>
+  <div id="tab-variations" style="display:none"><div id="var-container"></div></div>
+  <div id="tab-log" style="display:none"><div class="log-wrap" id="log-container"></div></div>
+
+</div>
+
+<!-- SKU MODAL -->
+<div class="modal-overlay" id="sku-modal">
+  <div class="modal">
+    <div class="modal-header"><h2 id="sku-modal-title">Add New SKU</h2><button class="modal-close" onclick="closeSKUModal()">&#x2715;</button></div>
+    <div class="modal-body">
+      <div class="fsec">
+        <div class="fsec-title">Basic Details</div>
+        <div class="form-grid">
+          <div class="form-group"><label class="form-label">SKU Code *</label><input class="form-input" id="fs-sku" placeholder="e.g. WHT-POLO-S"></div>
+          <div class="form-group"><label class="form-label">ASIN *</label><input class="form-input" id="fs-asin" placeholder="e.g. B09AB1234"></div>
+          <div class="form-group full"><label class="form-label">Product Title *</label><input class="form-input" id="fs-title" placeholder="e.g. Classic Polo Shirt — White"></div>
+          <div class="form-group"><label class="form-label">Category</label><input class="form-input" id="fs-cat" placeholder="e.g. Apparel"></div>
+          <div class="form-group"><label class="form-label">Quantity</label><input class="form-input" id="fs-qty" type="number" min="0" placeholder="0"></div>
+        </div>
+      </div>
+      <div class="fsec">
+        <div class="fsec-title">Status &amp; Listing</div>
+        <div class="form-grid">
+          <div class="form-group"><label class="form-label">Stock Status</label><select class="form-select" id="fs-status"><option>In Stock</option><option>Low Stock</option><option>Out of Stock</option><option>Suppressed</option></select></div>
+          <div class="form-group"><label class="form-label">Listing Status</label><select class="form-select" id="fs-listing"><option>Active</option><option>Suppressed</option><option>Inactive</option></select></div>
+          <div class="form-group"><label class="form-label">Main Image</label><select class="form-select" id="fs-img"><option value="yes">&#x2705; Image OK</option><option value="no">&#x274C; Image Missing</option></select></div>
+          <div class="form-group"><label class="form-label">Variation Link</label><select class="form-select" id="fs-var"><option value="ok">&#x2705; Linked to Parent</option><option value="err">&#x274C; Variation Error</option><option value="none">&#x2014; Standalone</option></select></div>
+          <div class="form-group full"><label class="form-label">Parent ASIN</label><input class="form-input" id="fs-parent" placeholder="e.g. B09AB0000 — leave blank if standalone"><span class="form-hint">Must match the Parent ASIN in Seller Central. Leave blank for standalone products.</span></div>
+          <div class="form-group full"><label class="form-label">Notes / Action Required</label><input class="form-input" id="fs-note" placeholder="e.g. Reorder 40 units, fix image…"></div>
+        </div>
+      </div>
+      <div id="sku-modal-error" class="modal-error" style="display:none"></div>
+    </div>
+    <div class="modal-footer"><button class="btn" onclick="closeSKUModal()">Cancel</button><button class="btn btn-accent" onclick="saveSKU()" id="sku-save-btn"><i class="fa-solid fa-floppy-disk"></i> Save SKU</button></div>
+  </div>
+</div>
+
+<!-- VARIATION MODAL -->
+<div class="modal-overlay" id="var-modal">
+  <div class="modal modal-lg">
+    <div class="modal-header"><h2 id="var-modal-title">Add Variation Family</h2><button class="modal-close" onclick="closeVarModal()">&#x2715;</button></div>
+    <div class="modal-body">
+      <div class="fsec">
+        <div class="fsec-title">Parent Product Details</div>
+        <div class="form-grid">
+          <div class="form-group"><label class="form-label">Parent ASIN *</label><input class="form-input" id="fv-id" placeholder="e.g. B09AB0000"><span class="form-hint">The parent/family ASIN from Seller Central</span></div>
+          <div class="form-group"><label class="form-label">Product Name *</label><input class="form-input" id="fv-name" placeholder="e.g. Classic Polo Shirt"></div>
+          <div class="form-group"><label class="form-label">Variation Theme *</label><input class="form-input" id="fv-theme" placeholder="e.g. Size, Color, Size-Color"><span class="form-hint">What attributes differentiate children</span></div>
+          <div class="form-group"><label class="form-label">Category</label><input class="form-input" id="fv-cat" placeholder="e.g. Apparel"></div>
+          <div class="form-group full"><label class="form-label">Notes</label><input class="form-input" id="fv-note" placeholder="Any notes about this variation family"></div>
+        </div>
+      </div>
+      <div class="fsec">
+        <div class="fsec-title">Child SKUs <button class="btn btn-green btn-xs" onclick="addChildRow()"><i class="fa-solid fa-plus"></i> Add Row</button></div>
+        <div style="font-size:12px;color:var(--text3);margin-bottom:10px">Each row is one size / colour variant. All children link back to the Parent ASIN above.</div>
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:12px;min-width:700px">
+            <thead><tr style="background:var(--bg)">
+              <th style="padding:7px 8px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">SKU *</th>
+              <th style="padding:7px 8px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">ASIN *</th>
+              <th style="padding:7px 8px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Variant (Size/Color)</th>
+              <th style="padding:7px 8px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Qty</th>
+              <th style="padding:7px 8px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Status</th>
+              <th style="padding:7px 8px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Image</th>
+              <th style="padding:7px 8px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Notes</th>
+              <th style="padding:7px 8px;border-bottom:1px solid var(--border)"></th>
+            </tr></thead>
+            <tbody id="children-tbody"></tbody>
+          </table>
+        </div>
+        <button class="btn btn-sm" style="margin-top:10px;width:100%;justify-content:center;border-style:dashed" onclick="addChildRow()"><i class="fa-solid fa-plus"></i> Add another child SKU</button>
+      </div>
+      <div id="var-modal-error" class="modal-error" style="display:none"></div>
+    </div>
+    <div class="modal-footer"><button class="btn" onclick="closeVarModal()">Cancel</button><button class="btn btn-accent" onclick="saveVariation()" id="var-save-btn"><i class="fa-solid fa-floppy-disk"></i> Save Variation Family</button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check" id="toast-icon"></i><span id="toast-msg"></span></div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// DATA — edit using UI buttons only
+// ═══════════════════════════════════════════════════
+let SKUS = [
+  {sku:"WHT-POLO-S",asin:"B09AB1234",title:"Classic Polo Shirt",cat:"Apparel",qty:34,status:"In Stock",var:"ok",parent:"B09AB0000",img:true,listing:"Active",note:""},
+  {sku:"WHT-POLO-M",asin:"B09AB1235",title:"Classic Polo Shirt",cat:"Apparel",qty:22,status:"In Stock",var:"ok",parent:"B09AB0000",img:true,listing:"Active",note:""},
+  {sku:"WHT-POLO-L",asin:"B09AB1236",title:"Classic Polo Shirt",cat:"Apparel",qty:0,status:"Out of Stock",var:"ok",parent:"B09AB0000",img:true,listing:"Active",note:"Reorder immediately"},
+  {sku:"WHT-POLO-XL",asin:"B09AB1237",title:"Classic Polo Shirt",cat:"Apparel",qty:3,status:"Low Stock",var:"err",parent:"ORPHAN",img:true,listing:"Active",note:"Link to parent B09AB0000"},
+  {sku:"BLK-JEANS-30",asin:"B07CD2345",title:"Slim Fit Jeans Black",cat:"Apparel",qty:18,status:"In Stock",var:"ok",parent:"B07CD0000",img:true,listing:"Active",note:""},
+  {sku:"BLK-JEANS-32",asin:"B07CD2346",title:"Slim Fit Jeans Black",cat:"Apparel",qty:9,status:"In Stock",var:"ok",parent:"B07CD0000",img:true,listing:"Active",note:""},
+  {sku:"BLK-JEANS-34",asin:"B07CD2347",title:"Slim Fit Jeans Black",cat:"Apparel",qty:0,status:"Suppressed",var:"err",parent:"ORPHAN",img:false,listing:"Suppressed",note:"Upload main image min 1000x1000px"},
+  {sku:"GRN-HOODIE-S",asin:"B08EF3456",title:"Pullover Hoodie Green",cat:"Apparel",qty:45,status:"In Stock",var:"ok",parent:"B08EF0000",img:true,listing:"Active",note:""},
+  {sku:"GRN-HOODIE-M",asin:"B08EF3457",title:"Pullover Hoodie Green",cat:"Apparel",qty:31,status:"In Stock",var:"ok",parent:"B08EF0000",img:true,listing:"Active",note:""},
+  {sku:"GRN-HOODIE-L",asin:"B08EF3458",title:"Pullover Hoodie Green",cat:"Apparel",qty:0,status:"Out of Stock",var:"ok",parent:"B08EF0000",img:true,listing:"Active",note:"Reorder 40 units"},
+  {sku:"RED-CAP-ONE",asin:"B06GH4567",title:"Adjustable Cap Red",cat:"Accessories",qty:67,status:"In Stock",var:"none",parent:"—",img:true,listing:"Active",note:""},
+  {sku:"BLU-SNEAKER-8",asin:"B05IJ5678",title:"Running Sneakers Blue",cat:"Footwear",qty:5,status:"Low Stock",var:"ok",parent:"B05IJ0000",img:true,listing:"Active",note:"Reorder 40 units 3 days cover"},
+  {sku:"BLU-SNEAKER-9",asin:"B05IJ5679",title:"Running Sneakers Blue",cat:"Footwear",qty:11,status:"In Stock",var:"ok",parent:"B05IJ0000",img:true,listing:"Active",note:""},
+  {sku:"BLU-SNEAKER-10",asin:"B05IJ5680",title:"Running Sneakers Blue",cat:"Footwear",qty:0,status:"Suppressed",var:"err",parent:"B05IJ0000",img:false,listing:"Suppressed",note:"Duplicate ASIN close via Seller Support"},
+  {sku:"YEL-DRESS-XS",asin:"B04KL6789",title:"Summer Midi Dress Yellow",cat:"Apparel",qty:12,status:"In Stock",var:"ok",parent:"B04KL0000",img:true,listing:"Active",note:""},
+  {sku:"YEL-DRESS-S",asin:"B04KL6790",title:"Summer Midi Dress Yellow",cat:"Apparel",qty:8,status:"In Stock",var:"ok",parent:"B04KL0000",img:true,listing:"Active",note:""},
+  {sku:"YEL-DRESS-M",asin:"B04KL6791",title:"Summer Midi Dress Yellow",cat:"Apparel",qty:1,status:"Low Stock",var:"err",parent:"ORPHAN",img:true,listing:"Active",note:"Theme mismatch re-upload flat file"},
+  {sku:"GRY-BELT-STD",asin:"B03MN7890",title:"Leather Belt Grey",cat:"Accessories",qty:29,status:"In Stock",var:"none",parent:"—",img:true,listing:"Active",note:""},
+  {sku:"BRN-WALLET-BI",asin:"B02OP8901",title:"Bifold Wallet Brown",cat:"Accessories",qty:14,status:"In Stock",var:"none",parent:"—",img:true,listing:"Active",note:""},
+  {sku:"BLK-SCARF-1SZ",asin:"B01QR9012",title:"Wool Scarf Black",cat:"Accessories",qty:0,status:"Out of Stock",var:"none",parent:"—",img:true,listing:"Active",note:"Seasonal restock Oct"}
+];
+
+let PARENTS = [
+  {id:"B09AB0000",name:"Classic Polo Shirt",theme:"Size",cat:"Apparel",note:"Core bestseller keep all sizes stocked"},
+  {id:"B07CD0000",name:"Slim Fit Jeans Black",theme:"Size",cat:"Apparel",note:""},
+  {id:"B08EF0000",name:"Pullover Hoodie Green",theme:"Size",cat:"Apparel",note:""},
+  {id:"B05IJ0000",name:"Running Sneakers Blue",theme:"Shoe Size",cat:"Footwear",note:"Monitor size 10 duplicate"},
+  {id:"B04KL0000",name:"Summer Midi Dress Yellow",theme:"Size",cat:"Apparel",note:""}
+];
+// ═══════════════════════════════════════════════════
+
+let currentTab='all';
+let skuEditIdx=-1;
+let varEditIdx=-1;
+let childRowCtr=0;
+
+function tabAddAction(){
+  if(currentTab==='variations') openAddVarModal();
+  else openAddSKUModal();
+}
+
+// badges
+function sBadge(s){
+  const m={"In Stock":["badge-ok","fa-circle-check"],"Low Stock":["badge-warn","fa-triangle-exclamation"],"Out of Stock":["badge-err","fa-circle-xmark"],"Suppressed":["badge-err","fa-eye-slash"],"Inactive":["badge-neutral","fa-minus"]};
+  const[c,i]=m[s]||["badge-neutral","fa-circle"];
+  return`<span class="badge ${c}"><i class="fa-solid ${i}"></i>${s}</span>`;
+}
+function vBadge(v){
+  if(v==="ok") return`<span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span>`;
+  if(v==="err") return`<span class="badge badge-err"><i class="fa-solid fa-link-slash"></i>Error</span>`;
+  return`<span class="badge badge-neutral"><i class="fa-solid fa-minus"></i>Standalone</span>`;
+}
+function iBadge(ok){return ok?`<span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span>`:`<span class="badge badge-err"><i class="fa-solid fa-image"></i>Missing</span>`;}
+function lBadge(s){return s==="Active"?`<span class="badge badge-ok">Active</span>`:`<span class="badge badge-err">${s}</span>`;}
+
+// render table
+function renderTable(data,idxMap){
+  document.getElementById("sku-tbody").innerHTML=data.map((r,i)=>{
+    const ri=idxMap?idxMap[i]:SKUS.indexOf(r);
+    return`<tr class="${r.status==="Suppressed"||r.var==="err"?"has-issue":""}">
+      <td><span class="sku-code">${r.sku}</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.title}">${r.title}</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">${r.qty}</td>
+      <td>${sBadge(r.status)}</td><td>${vBadge(r.var)}</td><td>${iBadge(r.img)}</td><td>${lBadge(r.listing)}</td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.note}">${r.note||"—"}</td>
+      <td style="text-align:center"><div style="display:flex;gap:5px;justify-content:center">
+        <button class="btn btn-sm" onclick="openEditSKUModal(${ri})" title="Edit"><i class="fa-solid fa-pen"></i></button>
+        <button class="btn btn-sm btn-red" onclick="deleteSKU(${ri})" title="Delete"><i class="fa-solid fa-trash"></i></button>
+      </div></td></tr>`;
+  }).join("");
+  document.getElementById("tbl-count").textContent=`Showing ${data.length} of ${SKUS.length} SKUs`;
+}
+
+function filterTable(){
+  const q=document.getElementById("search").value.toLowerCase();
+  const fs=document.getElementById("f-status").value;
+  const fv=document.getElementById("f-var").value;
+  const filtered=[],idxMap=[];
+  SKUS.forEach((r,i)=>{
+    const m=!q||(r.sku.toLowerCase().includes(q)||r.title.toLowerCase().includes(q)||r.asin.toLowerCase().includes(q));
+    if(m&&(!fs||r.status===fs)&&(!fv||r.var===fv)){filtered.push(r);idxMap.push(i);}
+  });
+  renderTable(filtered,idxMap);
+}
+
+// issues
+function computeIssues(){
+  const issues=[];
+  SKUS.forEach(r=>{
+    if(r.var==="err"&&(!r.parent||r.parent==="ORPHAN"||r.parent==="—"))
+      issues.push({level:"critical",title:`Orphaned Child — ${r.sku}`,desc:`${r.asin} not linked to any parent ASIN. Appears as separate listing, losing variation traffic.`,fix:"Add to parent via Manage Inventory > Edit variation"});
+    if(r.status==="Suppressed"&&!r.img)
+      issues.push({level:"critical",title:`Suppressed — ${r.sku}`,desc:`${r.asin} suppressed: main image missing. Listing invisible in search.`,fix:"Upload compliant 1000x1000px image via Seller Central > Manage Images"});
+    if(r.status==="Suppressed"&&r.img)
+      issues.push({level:"critical",title:`Suppressed — ${r.sku}`,desc:`${r.asin} suppressed. Check Seller Central for reason.`,fix:"Check Manage Inventory suppression reason and resolve"});
+    if(r.var==="err"&&r.parent&&r.parent!=="ORPHAN"&&r.parent!=="—")
+      issues.push({level:"high",title:`Variation Mismatch — ${r.sku}`,desc:`${r.asin} attribute not synced with parent ${r.parent}. Child appears standalone.`,fix:"Re-upload flat file with correct variation_theme values"});
+    if(r.status==="Low Stock"&&r.qty<=5)
+      issues.push({level:"high",title:`Critical Low Stock — ${r.sku} (${r.qty} units)`,desc:`Only ${r.qty} units left. Stockout imminent.`,fix:"Raise PO urgently. Consider price increase to slow velocity."});
+    else if(r.status==="Low Stock")
+      issues.push({level:"medium",title:`Low Stock — ${r.sku} (${r.qty} units)`,desc:`${r.qty} units left. Monitor and reorder.`,fix:"Raise PO to replenish."});
+    if(r.status==="Out of Stock")
+      issues.push({level:"medium",title:`Out of Stock — ${r.sku}`,desc:`${r.asin} at zero. BSR rank drops every day while OOS.`,fix:"Restock urgently to recover rank."});
+  });
+  return issues;
+}
+
+function renderIssues(){
+  const IS=computeIssues();
+  const lv={critical:["fa-circle-exclamation","var(--red-l)","var(--red)"],high:["fa-triangle-exclamation","var(--amber-l)","var(--amber)"],medium:["fa-circle-info","#fef9e7","#b7950b"]};
+  const lb={critical:"🔴 Critical",high:"🟠 High",medium:"🟡 Medium"};
+  document.getElementById("issues-container").innerHTML=IS.length
+    ?IS.map(x=>{const[i,bg,cl]=lv[x.level];return`<div class="issue-card">
+      <div class="issue-icon" style="background:${bg}"><i class="fa-solid ${i}" style="color:${cl}"></i></div>
+      <div class="issue-body">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+          <span class="issue-title">${x.title}</span>
+          <span class="badge ${x.level==="critical"?"badge-err":x.level==="high"?"badge-warn":"badge-neutral"}" style="font-size:10px">${lb[x.level]}</span>
+        </div>
+        <div class="issue-desc">${x.desc}</div>
+        <span class="issue-fix"><i class="fa-solid fa-wrench" style="font-size:9px"></i> ${x.fix}</span>
+      </div></div>`;}).join("")
+    :`<div class="empty-state"><i class="fa-solid fa-circle-check" style="color:var(--green)"></i>No issues detected — all SKUs look healthy!</div>`;
+  return IS.length;
+}
+
+// variations
+function renderVariations(){
+  const childMap={};
+  SKUS.forEach(r=>{if(r.parent&&r.parent!=="—"){if(!childMap[r.parent])childMap[r.parent]=[];childMap[r.parent].push(r);}});
+  const hb={ok:`<span class="badge badge-ok">Healthy</span>`,warn:`<span class="badge badge-warn">Warning</span>`,err:`<span class="badge badge-err">Error</span>`};
+  document.getElementById("var-container").innerHTML=PARENTS.length
+    ?PARENTS.map((p,pi)=>{
+        const ch=childMap[p.id]||[];
+        const hasErr=ch.some(c=>c.var==="err");
+        const hasOOS=ch.some(c=>c.status==="Out of Stock"||c.status==="Suppressed");
+        const health=hasErr?"err":hasOOS?"warn":"ok";
+        const totalQty=ch.reduce((s,c)=>s+c.qty,0);
+        const childRows=ch.length
+          ?ch.map(c=>{const si=SKUS.indexOf(c);return`<tr>
+            <td><span class="sku-code">${c.sku}</span></td>
+            <td style="font-family:'DM Mono',monospace;font-size:11px;color:var(--text2)">${c.asin}</td>
+            <td style="font-size:12px;color:var(--text2)">${c.note||"—"}</td>
+            <td style="text-align:right;font-weight:600">${c.qty}</td>
+            <td>${sBadge(c.status)}</td><td>${vBadge(c.var)}</td><td>${iBadge(c.img)}</td>
+            <td><div style="display:flex;gap:4px">
+              <button class="btn btn-xs" onclick="openEditSKUModal(${si})"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-xs btn-red" onclick="deleteSKU(${si})"><i class="fa-solid fa-trash"></i></button>
+            </div></td></tr>`;}).join("")
+          :`<tr><td colspan="8" style="text-align:center;padding:20px;color:var(--text3);font-size:13px">No child SKUs linked yet — click "Add Child SKU" to add one.</td></tr>`;
+        return`<div class="var-card">
+          <div class="var-card-hdr">
+            <div>
+              <div class="var-card-title">${p.name} <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);font-weight:400;margin-left:6px">${p.id}</span></div>
+              <div class="var-card-meta" style="margin-top:6px">
+                <span><i class="fa-solid fa-tag"></i> Theme: <strong>${p.theme}</strong></span>
+                <span><i class="fa-solid fa-layer-group"></i> ${p.cat||"—"}</span>
+                <span><i class="fa-solid fa-list"></i> ${ch.length} child${ch.length!==1?"ren":""}</span>
+                <span><i class="fa-solid fa-cubes"></i> ${totalQty} total units</span>
+                ${p.note?`<span style="color:var(--amber)"><i class="fa-solid fa-note-sticky"></i> ${p.note}</span>`:""}
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+              ${hb[health]}
+              <div style="display:flex;gap:6px">
+                <button class="btn btn-sm" onclick="openEditVarModal(${pi})"><i class="fa-solid fa-pen"></i> Edit</button>
+                <button class="btn btn-sm btn-red" onclick="deleteParent(${pi})"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="var-card-body">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+              <span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--text2)">Child SKUs</span>
+              <button class="btn btn-green btn-xs" onclick="openAddSKUForParent('${p.id}','${p.name}')"><i class="fa-solid fa-plus"></i> Add Child SKU</button>
+            </div>
+            <div style="overflow-x:auto"><table class="child-table"><thead><tr><th>SKU</th><th>ASIN</th><th>Variant / Notes</th><th style="text-align:right">Qty</th><th>Status</th><th>Variation</th><th>Image</th><th style="width:80px"></th></tr></thead><tbody>${childRows}</tbody></table></div>
+          </div>
+        </div>`;}).join("")
+    :`<div class="empty-state"><i class="fa-solid fa-sitemap"></i>No variation families yet.<br><button class="btn btn-green btn-sm" style="margin-top:14px" onclick="openAddVarModal()"><i class="fa-solid fa-plus"></i> Add First Variation Family</button></div>`;
+}
+
+// log
+function renderLog(){
+  const t=new Date().toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"});
+  const logs=[];
+  SKUS.forEach(r=>{
+    if(r.status==="Suppressed") logs.push({time:t,sku:r.sku,msg:"Suppressed listing",type:"err"});
+    if(r.var==="err") logs.push({time:t,sku:r.sku,msg:"Variation error"+(r.note?" — "+r.note:""),type:"err"});
+    if(r.status==="Low Stock") logs.push({time:t,sku:r.sku,msg:"Low stock — "+r.qty+" units remaining",type:"warn"});
+    if(r.status==="Out of Stock") logs.push({time:t,sku:r.sku,msg:"Out of stock — rank loss starting",type:"info"});
+  });
+  const ic=computeIssues().length;
+  logs.push({time:t,sku:"ALL "+SKUS.length+" SKUs",msg:"✅ Audit complete — "+ic+" issue"+(ic!==1?"s":"")+" found across "+SKUS.length+" SKUs",type:"ok"});
+  const dot={err:"var(--red)",warn:"var(--amber)",info:"var(--blue)",ok:"var(--green)"};
+  document.getElementById("log-container").innerHTML=logs.map(l=>`<div class="log-entry"><span class="log-time">${l.time}</span><span class="log-sku">${l.sku}</span><span class="log-dot" style="background:${dot[l.type]}"></span><span class="log-msg">${l.msg}</span></div>`).join("");
+}
+
+// metrics
+function updateMetrics(){
+  const total=SKUS.length,inStock=SKUS.filter(r=>r.status==="In Stock").length;
+  const varErr=SKUS.filter(r=>r.var==="err").length,supp=SKUS.filter(r=>r.status==="Suppressed").length;
+  const pct=total?Math.round(inStock/total*100):0;
+  document.getElementById("m-total").textContent=total;
+  document.getElementById("m-total-sub").textContent="across "+PARENTS.length+" parent ASINs";
+  document.getElementById("m-instock").textContent=inStock;
+  document.getElementById("m-instock-pct").textContent=pct+"% availability";
+  document.getElementById("pb-instock").style.width=pct+"%";
+  document.getElementById("m-varerr").textContent=varErr;
+  document.getElementById("pb-varerr").style.width=(total?Math.min(varErr/total*300,100):0)+"%";
+  document.getElementById("m-crit").textContent=supp;
+  document.getElementById("pb-crit").style.width=(total?Math.min(supp/total*400,100):0)+"%";
+}
+
+function refreshAll(){filterTable();renderIssues();renderVariations();renderLog();updateMetrics();updateTabInfo();}
+
+// tabs
+function switchTab(name,el){
+  ["all","issues","variations","log"].forEach(t=>document.getElementById("tab-"+t).style.display="none");
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("tab-"+name).style.display="block";
+  el.classList.add("active");
+  currentTab=name;
+  const lbl=document.getElementById("tab-add-label"),btn=document.getElementById("tab-add-btn");
+  if(name==="variations"){lbl.textContent="Add Variation Family";btn.style.display="";}
+  else if(name==="log"||name==="issues"){btn.style.display="none";}
+  else{lbl.textContent="Add SKU";btn.style.display="";}
+  updateTabInfo();
+}
+function updateTabInfo(){
+  const counts={all:SKUS.length+" SKUs",issues:computeIssues().length+" issues",variations:PARENTS.length+" families",log:(SKUS.filter(r=>r.status==="Suppressed"||r.var==="err"||r.status==="Low Stock"||r.status==="Out of Stock").length+1)+" events"};
+  document.getElementById("tab-info").textContent=counts[currentTab]||"";
+}
+
+// ── SKU modal ──
+function openAddSKUModal(){
+  skuEditIdx=-1;
+  document.getElementById("sku-modal-title").textContent="Add New SKU";
+  document.getElementById("sku-save-btn").innerHTML='<i class="fa-solid fa-plus"></i> Add SKU';
+  clearSKUForm();
+  document.getElementById("sku-modal-error").style.display="none";
+  document.getElementById("sku-modal").classList.add("open");
+  document.getElementById("fs-sku").focus();
+}
+function openAddSKUForParent(pid,pname){
+  openAddSKUModal();
+  document.getElementById("fs-parent").value=pid;
+  document.getElementById("fs-var").value="ok";
+  document.getElementById("fs-title").value=pname;
+  document.getElementById("sku-modal-title").textContent="Add Child SKU — "+pid;
+}
+function openEditSKUModal(idx){
+  skuEditIdx=idx;const r=SKUS[idx];
+  document.getElementById("sku-modal-title").textContent="Edit SKU — "+r.sku;
+  document.getElementById("sku-save-btn").innerHTML='<i class="fa-solid fa-floppy-disk"></i> Save Changes';
+  document.getElementById("fs-sku").value=r.sku;
+  document.getElementById("fs-asin").value=r.asin;
+  document.getElementById("fs-title").value=r.title;
+  document.getElementById("fs-cat").value=r.cat;
+  document.getElementById("fs-qty").value=r.qty;
+  document.getElementById("fs-status").value=r.status;
+  document.getElementById("fs-listing").value=r.listing;
+  document.getElementById("fs-img").value=r.img?"yes":"no";
+  document.getElementById("fs-var").value=r.var;
+  document.getElementById("fs-parent").value=r.parent==="—"?"":r.parent;
+  document.getElementById("fs-note").value=r.note;
+  document.getElementById("sku-modal-error").style.display="none";
+  document.getElementById("sku-modal").classList.add("open");
+}
+function closeSKUModal(){document.getElementById("sku-modal").classList.remove("open");}
+document.getElementById("sku-modal").addEventListener("click",e=>{if(e.target===document.getElementById("sku-modal"))closeSKUModal();});
+function clearSKUForm(){
+  ["fs-sku","fs-asin","fs-title","fs-cat","fs-qty","fs-parent","fs-note"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("fs-status").value="In Stock";
+  document.getElementById("fs-listing").value="Active";
+  document.getElementById("fs-img").value="yes";
+  document.getElementById("fs-var").value="ok";
+}
+function saveSKU(){
+  const sku=document.getElementById("fs-sku").value.trim();
+  const asin=document.getElementById("fs-asin").value.trim();
+  const title=document.getElementById("fs-title").value.trim();
+  const cat=document.getElementById("fs-cat").value.trim()||"Uncategorised";
+  const qty=Math.max(0,parseInt(document.getElementById("fs-qty").value)||0);
+  const status=document.getElementById("fs-status").value;
+  const listing=document.getElementById("fs-listing").value;
+  const img=document.getElementById("fs-img").value==="yes";
+  const varv=document.getElementById("fs-var").value;
+  const parent=document.getElementById("fs-parent").value.trim()||"—";
+  const note=document.getElementById("fs-note").value.trim();
+  const e=document.getElementById("sku-modal-error");
+  if(!sku){e.textContent="SKU code is required.";e.style.display="block";return;}
+  if(!asin){e.textContent="ASIN is required.";e.style.display="block";return;}
+  if(!title){e.textContent="Product title is required.";e.style.display="block";return;}
+  if(skuEditIdx===-1&&SKUS.some(r=>r.sku.toLowerCase()===sku.toLowerCase())){e.textContent="This SKU code already exists.";e.style.display="block";return;}
+  const rec={sku,asin,title,cat,qty,status,var:varv,parent,img,listing,note};
+  if(skuEditIdx===-1){SKUS.push(rec);showToast("SKU added: "+sku,"ok");}
+  else{SKUS[skuEditIdx]=rec;showToast("SKU updated: "+sku,"ok");}
+  closeSKUModal();refreshAll();
+}
+function deleteSKU(idx){
+  if(!confirm("Delete SKU \""+SKUS[idx].sku+"\"?\n\nThis cannot be undone."))return;
+  const n=SKUS[idx].sku;SKUS.splice(idx,1);showToast("Deleted: "+n,"err");refreshAll();
+}
+
+// ── Variation modal ──
+function openAddVarModal(){
+  varEditIdx=-1;
+  document.getElementById("var-modal-title").textContent="Add Variation Family";
+  document.getElementById("var-save-btn").innerHTML='<i class="fa-solid fa-floppy-disk"></i> Save Variation Family';
+  ["fv-id","fv-name","fv-theme","fv-cat","fv-note"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("fv-id").disabled=false;
+  document.getElementById("children-tbody").innerHTML="";
+  addChildRow();addChildRow();
+  document.getElementById("var-modal-error").style.display="none";
+  document.getElementById("var-modal").classList.add("open");
+  document.getElementById("fv-id").focus();
+}
+function openEditVarModal(idx){
+  varEditIdx=idx;const p=PARENTS[idx];
+  document.getElementById("var-modal-title").textContent="Edit — "+p.name;
+  document.getElementById("var-save-btn").innerHTML='<i class="fa-solid fa-floppy-disk"></i> Save Changes';
+  document.getElementById("fv-id").value=p.id;
+  document.getElementById("fv-id").disabled=true;
+  document.getElementById("fv-name").value=p.name;
+  document.getElementById("fv-theme").value=p.theme;
+  document.getElementById("fv-cat").value=p.cat||"";
+  document.getElementById("fv-note").value=p.note||"";
+  document.getElementById("children-tbody").innerHTML="";
+  const ch=SKUS.filter(r=>r.parent===p.id);
+  ch.forEach(c=>addChildRow(c));
+  if(!ch.length) addChildRow();
+  document.getElementById("var-modal-error").style.display="none";
+  document.getElementById("var-modal").classList.add("open");
+}
+function closeVarModal(){document.getElementById("var-modal").classList.remove("open");document.getElementById("fv-id").disabled=false;}
+document.getElementById("var-modal").addEventListener("click",e=>{if(e.target===document.getElementById("var-modal"))closeVarModal();});
+
+function addChildRow(data){
+  childRowCtr++;
+  const id="cr"+childRowCtr;
+  const tr=document.createElement("tr");tr.id=id;
+  const s=data?data.status:"In Stock";
+  const statOpts=["In Stock","Low Stock","Out of Stock","Suppressed"].map(x=>`<option${x===s?" selected":""}>${x}</option>`).join("");
+  const imgVal=data?(data.img?"yes":"no"):"yes";
+  tr.innerHTML=`
+    <td style="padding:4px 6px"><input class="form-input" style="min-width:110px" placeholder="SKU code *" value="${data?data.sku:""}"></td>
+    <td style="padding:4px 6px"><input class="form-input" style="min-width:100px" placeholder="ASIN *" value="${data?data.asin:""}"></td>
+    <td style="padding:4px 6px"><input class="form-input" style="min-width:100px" placeholder="e.g. Size M / Blue" value="${data?data.note:""}"></td>
+    <td style="padding:4px 6px"><input class="form-input" style="min-width:60px;text-align:right" type="number" min="0" placeholder="0" value="${data?data.qty:0}"></td>
+    <td style="padding:4px 6px"><select class="form-select" style="min-width:110px">${statOpts}</select></td>
+    <td style="padding:4px 6px"><select class="form-select" style="min-width:90px"><option value="yes"${imgVal==="yes"?" selected":""}>&#x2705; OK</option><option value="no"${imgVal==="no"?" selected":""}>&#x274C; Missing</option></select></td>
+    <td style="padding:4px 6px"><input class="form-input" style="min-width:110px" placeholder="Action notes" value=""></td>
+    <td style="padding:4px 6px;text-align:center"><button class="child-row-rm" onclick="document.getElementById('${id}').remove()" title="Remove row"><i class="fa-solid fa-xmark"></i></button></td>`;
+  document.getElementById("children-tbody").appendChild(tr);
+}
+
+function saveVariation(){
+  const id=document.getElementById("fv-id").value.trim().toUpperCase();
+  const name=document.getElementById("fv-name").value.trim();
+  const theme=document.getElementById("fv-theme").value.trim();
+  const cat=document.getElementById("fv-cat").value.trim()||"Uncategorised";
+  const note=document.getElementById("fv-note").value.trim();
+  const e=document.getElementById("var-modal-error");
+  if(!id){e.textContent="Parent ASIN is required.";e.style.display="block";return;}
+  if(!name){e.textContent="Product name is required.";e.style.display="block";return;}
+  if(!theme){e.textContent="Variation theme is required (e.g. Size, Color).";e.style.display="block";return;}
+  if(varEditIdx===-1&&PARENTS.some(p=>p.id.toLowerCase()===id.toLowerCase())){e.textContent="This Parent ASIN already exists.";e.style.display="block";return;}
+
+  const rows=[...document.getElementById("children-tbody").querySelectorAll("tr")];
+  const newCh=[];
+  for(const tr of rows){
+    const inp=tr.querySelectorAll("input"),sel=tr.querySelectorAll("select");
+    const sku=inp[0].value.trim(),asin=inp[1].value.trim(),variant=inp[2].value.trim();
+    const qty=Math.max(0,parseInt(inp[3].value)||0);
+    const status=sel[0].value,img=sel[1].value==="yes";
+    const actNote=inp[4].value.trim();
+    if(!sku&&!asin) continue;
+    if(!sku){e.textContent="Each child row needs a SKU code.";e.style.display="block";return;}
+    if(!asin){e.textContent="Each child row needs an ASIN (row: "+sku+").";e.style.display="block";return;}
+    newCh.push({sku,asin,title:name,cat,qty,status,var:"ok",parent:id,img,listing:status==="Suppressed"?"Suppressed":"Active",note:actNote||variant});
+  }
+
+  const prec={id,name,theme,cat,note};
+  if(varEditIdx===-1){
+    PARENTS.push(prec);
+    newCh.forEach(c=>{const ex=SKUS.findIndex(r=>r.sku.toLowerCase()===c.sku.toLowerCase());if(ex>=0)SKUS[ex]=c;else SKUS.push(c);});
+    showToast("Variation family added: "+name,"ok");
+  } else {
+    PARENTS[varEditIdx]=prec;
+    SKUS=SKUS.filter(r=>r.parent!==id);
+    newCh.forEach(c=>SKUS.push(c));
+    showToast("Variation updated: "+name,"ok");
+  }
+  closeVarModal();refreshAll();
+}
+
+function deleteParent(idx){
+  const p=PARENTS[idx],cc=SKUS.filter(r=>r.parent===p.id).length;
+  if(!confirm("Delete variation family \""+p.name+"\" ("+p.id+")?\n\nThis will also delete "+cc+" linked child SKU"+(cc!==1?"s":"")+".\n\nThis cannot be undone."))return;
+  SKUS=SKUS.filter(r=>r.parent!==p.id);PARENTS.splice(idx,1);
+  showToast("Deleted family: "+p.name,"err");refreshAll();
+}
+
+// run audit
+let running=false;
+function runAudit(){
+  if(running)return;running=true;
+  const btn=document.getElementById("run-btn");btn.disabled=true;
+  btn.innerHTML='<i class="fa-solid fa-rotate spinning"></i> Running…';
+  setTimeout(()=>{
+    running=false;btn.disabled=false;
+    btn.innerHTML='<i class="fa-solid fa-rotate"></i> Run Audit';
+    const n=new Date();
+    document.getElementById("last-run-time").textContent=n.toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"})+" "+n.toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"});
+    refreshAll();showToast("Audit complete — "+computeIssues().length+" issues found","ok");
+  },1800);
+}
+
+// export CSV
+function exportCSV(){
+  const hdr=["SKU","ASIN","Title","Category","Qty","Status","Variation","Parent ASIN","Image OK","Listing","Notes"];
+  const rows=SKUS.map(r=>[r.sku,r.asin,r.title,r.cat,r.qty,r.status,r.var,r.parent,r.img?"Yes":"No",r.listing,r.note]);
+  const csv=[hdr,...rows].map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(",")).join("\r\n");
+  const a=document.createElement("a");
+  a.href="data:text/csv;charset=utf-8,\uFEFF"+encodeURIComponent(csv);
+  a.download="inventory_audit_"+new Date().toISOString().slice(0,10)+".csv";
+  a.click();showToast("CSV exported!","ok");
+}
+
+// ── GitHub Setup ──
+function openGHSetup(){
+  const cfg=getGHConfig();
+  if(cfg.token) document.getElementById("gh-token").value=cfg.token;
+  if(cfg.user)  document.getElementById("gh-user").value=cfg.user;
+  if(cfg.repo)  document.getElementById("gh-repo").value=cfg.repo;
+  if(cfg.path)  document.getElementById("gh-path").value=cfg.path;
+  document.getElementById("gh-modal-error").style.display="none";
+  document.getElementById("gh-modal").classList.add("open");
+}
+function saveGHSetup(){
+  const token=document.getElementById("gh-token").value.trim();
+  const user=document.getElementById("gh-user").value.trim();
+  const repo=document.getElementById("gh-repo").value.trim();
+  const path=document.getElementById("gh-path").value.trim();
+  const e=document.getElementById("gh-modal-error");
+  if(!token){e.textContent="Token is required.";e.style.display="block";return;}
+  if(!user){e.textContent="GitHub username is required.";e.style.display="block";return;}
+  if(!repo){e.textContent="Repository name is required.";e.style.display="block";return;}
+  if(!path){e.textContent="File path is required.";e.style.display="block";return;}
+  localStorage.setItem("gh_cfg",JSON.stringify({token,user,repo,path}));
+  document.getElementById("gh-modal").classList.remove("open");
+  document.getElementById("banner-title").textContent="Push changes live to GitHub";
+  document.getElementById("banner-sub").textContent="Repo: "+user+"/"+repo+" → "+path;
+  showToast("GitHub setup saved!","ok");
+}
+function getGHConfig(){
+  try{return JSON.parse(localStorage.getItem("gh_cfg"))||{};}catch(e){return {};}
+}
+
+// ── Push to GitHub ──
+async function pushToGitHub(){
+  const cfg=getGHConfig();
+  if(!cfg.token||!cfg.user||!cfg.repo||!cfg.path){
+    showToast("Please set up GitHub first","err");
+    openGHSetup();return;
+  }
+  const btn=document.getElementById("gh-save-btn");
+  btn.disabled=true;
+  btn.innerHTML='<i class="fa-solid fa-rotate spinning"></i> Pushing…';
+
+  try{
+    // Build updated HTML with current data baked in
+    let html=document.documentElement.outerHTML;
+    const skusStr=JSON.stringify(SKUS,null,2);
+    const parStr=JSON.stringify(PARENTS,null,2);
+    html=html.replace(/let SKUS = \[[\s\S]*?\];\n\nlet PARENTS/,"let SKUS = "+skusStr+";\n\nlet PARENTS");
+    html=html.replace(/let PARENTS = \[[\s\S]*?\];\n\/\/ ═/,"let PARENTS = "+parStr+";\n// ═");
+
+    const apiBase="https://api.github.com/repos/"+cfg.user+"/"+cfg.repo+"/contents/"+cfg.path;
+
+    // Get current file SHA (needed for update)
+    const getRes=await fetch(apiBase,{headers:{"Authorization":"token "+cfg.token,"Accept":"application/vnd.github.v3+json"}});
+    if(!getRes.ok&&getRes.status!==404){throw new Error("Could not reach GitHub. Check your token and repo details.");}
+    let sha=null;
+    if(getRes.ok){const d=await getRes.json();sha=d.sha;}
+
+    // Push updated file
+    const body={message:"Inventory audit update — "+new Date().toLocaleString("en-IN"),content:btoa(unescape(encodeURIComponent(html)))};
+    if(sha) body.sha=sha;
+
+    const putRes=await fetch(apiBase,{method:"PUT",headers:{"Authorization":"token "+cfg.token,"Accept":"application/vnd.github.v3+json","Content-Type":"application/json"},body:JSON.stringify(body)});
+    if(!putRes.ok){const err=await putRes.json();throw new Error(err.message||"Push failed");}
+
+    showToast("Saved! Client link updated live ✓","ok");
+    const n=new Date();
+    document.getElementById("last-run-time").textContent=n.toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"})+" "+n.toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"});
+  }catch(err){
+    showToast("Error: "+err.message,"err");
+    console.error(err);
+  }finally{
+    btn.disabled=false;
+    btn.innerHTML='<i class="fa-solid fa-cloud-arrow-up"></i> Save to GitHub';
+  }
+}
+
+// init GitHub config display
+(function(){
+  const cfg=getGHConfig();
+  if(cfg.user&&cfg.repo){
+    document.getElementById("banner-sub").textContent="Repo: "+cfg.user+"/"+cfg.repo+" → "+cfg.path;
+  }
+})();
+
+// toast
+let toastTimer;
+function showToast(msg,type){
+  const el=document.getElementById("toast");
+  document.getElementById("toast-icon").className=type==="ok"?"fa-solid fa-circle-check":"fa-solid fa-circle-xmark";
+  el.style.background=type==="err"?"var(--red)":"#1a1814";
+  document.getElementById("toast-msg").textContent=msg;
+  el.classList.add("show");clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>el.classList.remove("show"),3000);
+}
+
+// init
+refreshAll();
+document.getElementById("last-run-time").textContent=new Date().toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"})+" · 09:14 AM";
+</script>
+</body>
+</html>
