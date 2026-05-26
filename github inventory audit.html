@@ -207,9 +207,9 @@ td{padding:10px 14px;vertical-align:middle}
     </div>
     <div class="metric">
       <div class="metric-label">Variation Issues</div>
-      <div class="metric-val" id="m-varerr" style="color:var(--amber)">4</div>
+      <div class="metric-val" id="m-varerr" style="color:var(--amber)">3</div>
       <div class="metric-sub" style="color:var(--amber)">mis-linked children</div>
-      <div class="metric-bar"><div class="metric-fill" id="pb-varerr" style="width: 26.6667%; background: var(--amber);"></div></div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-varerr" style="width: 20%; background: var(--amber);"></div></div>
     </div>
     <div class="metric">
       <div class="metric-label">Critical Alerts</div>
@@ -470,12 +470,12 @@ td{padding:10px 14px;vertical-align:middle}
           <button class="btn btn-sm btn-red" onclick="deleteSKU(13)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
-    </tr><tr class="has-issue">
+    </tr><tr>
       <td><span class="sku-code">RING_ WLNT_3"_12</span></td>
       <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Handmade Wooden Curtain Rod Rings">Handmade Wooden Curtain Rod Rings</td>
       <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">6</td>
       <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
-      <td><span class="badge badge-err"><i class="fa-solid fa-link-slash"></i>Error</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
       <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
       <td><span class="badge badge-ok">Active</span></td>
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
@@ -564,25 +564,11 @@ td{padding:10px 14px;vertical-align:middle}
         <div class="issue-desc">B01QR9012 at zero. BSR rank drops every day while OOS.</div>
         <span class="issue-fix">Restock urgently to recover rank.</span>
       </div>
-    </div><div class="issue-card">
-      <div class="issue-icon" style="background:var(--red-l);color:var(--red)"><i class="fa-solid fa-triangle-exclamation"></i></div>
-      <div class="issue-body">
-        <div class="issue-title">Orphaned Child — RING_ WLNT_3"_12 <small style="font-weight:400;color:var(--text3)">🔴 Critical</small></div>
-        <div class="issue-desc">B0CLK99FV8 not linked to any parent ASIN. Appears as separate listing, losing variation traffic.</div>
-        <span class="issue-fix">Add to parent via Manage Inventory &gt; Edit variation</span>
-      </div>
-    </div><div class="issue-card">
-      <div class="issue-icon" style="background:var(--amber-l);color:var(--amber)"><i class="fa-solid fa-exclamation"></i></div>
-      <div class="issue-body">
-        <div class="issue-title">Variation Mismatch — RING_ WLNT_3"_12 <small style="font-weight:400;color:var(--text3)">🟠 High</small></div>
-        <div class="issue-desc">B0CLK99FV8 attribute not synced with parent B0CG4DPB7B. Child appears standalone.</div>
-        <span class="issue-fix">Re-upload flat file with correct variation_theme values</span>
-      </div>
     </div></div>
   </div>
 
   <!-- Tab: Variations -->
-  <div id="tab-variations" style="display: none;">
+  <div id="tab-variations" style="display:none">
     <div id="var-list"><div class="var-card">
       <div class="var-card-hdr">
         <div>
