@@ -126,7 +126,7 @@ td{padding:10px 14px;vertical-align:middle}
     <h1>Inventory Audit System <span>Amazon Daily Tracker</span></h1>
   </div>
   <div class="topbar-right">
-    <span style="font-size:12px;color:#aaa">Last audit: <span id="last-run-time" style="color:#ccc;font-weight:500">—</span></span>
+    <span style="font-size:12px;color:#aaa">Last audit: <span id="last-run-time" style="color:#ccc;font-weight:500">5/26/2026, 11:04:01 PM</span></span>
     <button class="btn" onclick="exportCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
     <button class="btn btn-accent" id="run-btn" onclick="runAudit()"><i class="fa-solid fa-rotate"></i> Run Audit</button>
   </div>
@@ -138,7 +138,7 @@ td{padding:10px 14px;vertical-align:middle}
   <div class="save-banner" id="save-banner">
     <i class="fa-solid fa-floppy-disk banner-icon"></i>
     <div class="save-banner-text">
-      <strong id="banner-title">Push to GitHub — syncs data to ALL devices</strong>
+      <strong id="banner-title">Changes pushed to GitHub</strong>
       <span id="banner-sub">Repo: gptc64415-blip/wood-daily-inventory-audit- → github inventory audit.html</span>
     </div>
     <button class="btn" onclick="openGHSetup()" id="gh-setup-btn" style="background:var(--surface2);border-color:var(--border2);color:var(--text)">
@@ -195,15 +195,15 @@ td{padding:10px 14px;vertical-align:middle}
   <div class="metrics">
     <div class="metric">
       <div class="metric-label">Total SKUs</div>
-      <div class="metric-val" id="m-total">0</div>
-      <div class="metric-sub" id="m-total-sub">across 0 parent ASINs</div>
+      <div class="metric-val" id="m-total">16</div>
+      <div class="metric-sub" id="m-total-sub">across 1 parent ASINs</div>
       <div class="metric-bar"><div class="metric-fill" style="width:100%;background:#1a1814"></div></div>
     </div>
     <div class="metric">
       <div class="metric-label">In Stock</div>
-      <div class="metric-val" id="m-instock" style="color:var(--green)">0</div>
-      <div class="metric-sub" id="m-instock-pct" style="color:var(--green)">0% availability</div>
-      <div class="metric-bar"><div class="metric-fill" id="pb-instock" style="width: 0%; background: var(--green);"></div></div>
+      <div class="metric-val" id="m-instock" style="color:var(--green)">13</div>
+      <div class="metric-sub" id="m-instock-pct" style="color:var(--green)">81% availability</div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-instock" style="width: 81%; background: var(--green);"></div></div>
     </div>
     <div class="metric">
       <div class="metric-label">Variation Issues</div>
@@ -227,7 +227,7 @@ td{padding:10px 14px;vertical-align:middle}
       <button class="tab" onclick="switchTab('log',this)">Audit Log</button>
     </div>
     <div style="display:flex;align-items:center;gap:8px">
-      <span id="tab-info" style="font-size:12px;color:var(--text3)">0 SKUs</span>
+      <span id="tab-info" style="font-size:12px;color:var(--text3)">16 SKUs</span>
       <button class="btn btn-green btn-sm" id="tab-add-btn" onclick="tabAddAction()">
         <i class="fa-solid fa-plus"></i> <span id="tab-add-label">Add SKU</span>
       </button>
@@ -235,7 +235,7 @@ td{padding:10px 14px;vertical-align:middle}
   </div>
 
   <!-- Tab: All SKUs -->
-  <div id="tab-all">
+  <div id="tab-all" style="">
     <div class="toolbar">
       <div class="search-wrap">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -260,43 +260,454 @@ td{padding:10px 14px;vertical-align:middle}
               <th>Notes</th><th style="text-align:center;width:90px">Actions</th>
             </tr>
           </thead>
-          <tbody id="sku-tbody"><tr><td colspan="9"><div class="empty-state"><i class="fa-solid fa-box-open"></i>No SKUs found</div></td></tr></tbody>
+          <tbody id="sku-tbody"><tr class="has-issue">
+      <td><span class="sku-code">RING_3.5INCH_CLEAR_24</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-err"><i class="fa-solid fa-xmark"></i>Out of Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(24, 2.7 INCH)">(24, 2.7 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(0)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(0)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr class="has-issue">
+      <td><span class="sku-code">RING_2.5_INCH (CLEAR) 24 PCS</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-err"><i class="fa-solid fa-xmark"></i>Out of Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(24, 1.75 INCH)">(24, 1.75 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(1)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(1)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr class="has-issue">
+      <td><span class="sku-code">RING_3INCH_CLEAR_24</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-err"><i class="fa-solid fa-xmark"></i>Out of Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(24, 2.2 INCH)">(24, 2.2 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(2)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(2)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_2.5_INCH (CLEAR) 50 PCS</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(50, 1.75 INCH)">(50, 1.75 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(3)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(3)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_(2INCH)_CLEAR_12PIECES</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(12, 1.25 INCH)">(12, 1.25 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(4)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(4)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_2.5_INCH (CLEAR) 12 PCS</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(12, 1.75 INCH)">(12, 1.75 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(5)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(5)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_2.5_INCH (CLEAR) 100 PCS</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(100, 1.75 INCH)">(100, 1.75 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(6)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(6)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_3.5INCH_CLEAR_12</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(12, 2.7 INCH)">(12, 2.7 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(7)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(7)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_(2INCH)_CLEAR_24PCS</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(24, 1.25 INCH)">(24, 1.25 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(8)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(8)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_3.5INCH_CLEAR_50 (SF)</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(50, 2.7 INCH)">(50, 2.7 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(9)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(9)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_3INCH_CLEAR_100</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(100, 2.2 INCH)">(100, 2.2 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(10)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(10)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_3.5INCH_CLEAR_100</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(100, 2.7 INCH)">(100, 2.7 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(11)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(11)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_3INCH_CLEAR_50</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(50, 2.2 INCH)">(50, 2.2 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(12)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(12)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_3INCH_CLEAR_12</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(12, 2.2 INCH)">(12, 2.2 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(13)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(13)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_(2INCH)_CLEAR_50PCS</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(50, 1.25 INCH)">(50, 1.25 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(14)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(14)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr><tr>
+      <td><span class="sku-code">RING_(2INCH)_CLEAR_100PCS</span></td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="M0-C71V-8KTC">M0-C71V-8KTC</td>
+      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">0</td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+      <td><span class="badge badge-ok">Active</span></td>
+      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="(100, 1.25 INCH)">(100, 1.25 INCH)</td>
+      <td style="text-align:center">
+        <div style="display:flex;gap:5px;justify-content:center">
+          <button class="btn btn-sm" onclick="openEditSKUModal(15)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(15)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </td>
+    </tr></tbody>
         </table>
       </div>
-      <div class="tbl-count" id="tbl-count">Showing 0 of 0 SKUs</div>
+      <div class="tbl-count" id="tbl-count">Showing 16 of 16 SKUs</div>
     </div>
   </div>
 
   <!-- Tab: Issues -->
   <div id="tab-issues" style="display:none">
-    <div id="issues-list"><div class="empty-state"><i class="fa-solid fa-circle-check" style="color:var(--green)"></i>No issues found — everything looks good!</div></div>
+    <div id="issues-list"><div class="issue-card">
+      <div class="issue-icon" style="background:var(--blue-l);color:#1a56a0"><i class="fa-solid fa-info"></i></div>
+      <div class="issue-body">
+        <div class="issue-title">Out of Stock — RING_3.5INCH_CLEAR_24 <small style="font-weight:400;color:var(--text3)">🟡 Medium</small></div>
+        <div class="issue-desc">B0CKXV3XKR at zero. BSR rank drops every day while OOS.</div>
+        <span class="issue-fix">Restock urgently to recover rank.</span>
+      </div>
+    </div><div class="issue-card">
+      <div class="issue-icon" style="background:var(--blue-l);color:#1a56a0"><i class="fa-solid fa-info"></i></div>
+      <div class="issue-body">
+        <div class="issue-title">Out of Stock — RING_2.5_INCH (CLEAR) 24 PCS <small style="font-weight:400;color:var(--text3)">🟡 Medium</small></div>
+        <div class="issue-desc">B0CFR2MKFP at zero. BSR rank drops every day while OOS.</div>
+        <span class="issue-fix">Restock urgently to recover rank.</span>
+      </div>
+    </div><div class="issue-card">
+      <div class="issue-icon" style="background:var(--blue-l);color:#1a56a0"><i class="fa-solid fa-info"></i></div>
+      <div class="issue-body">
+        <div class="issue-title">Out of Stock — RING_3INCH_CLEAR_24 <small style="font-weight:400;color:var(--text3)">🟡 Medium</small></div>
+        <div class="issue-desc">B0CKXQWZX2 at zero. BSR rank drops every day while OOS.</div>
+        <span class="issue-fix">Restock urgently to recover rank.</span>
+      </div>
+    </div></div>
   </div>
 
   <!-- Tab: Variations -->
-  <div id="tab-variations" style="display:none">
+  <div id="tab-variations" style="display: none;">
     <div id="var-list"><div class="var-card">
       <div class="var-card-hdr">
         <div>
-          <div class="var-card-title">Classic Polo Shirt <span class="sku-code">B09AB0000</span></div>
+          <div class="var-card-title">M0-C71V-8KTC <span class="sku-code">B0CG8RHSVV</span></div>
           <div class="var-card-meta">
             <span><i class="fa-solid fa-palette"></i> Theme: <strong>Size</strong></span>
-            <span><i class="fa-solid fa-tag"></i> Apparel</span>
-            <span><i class="fa-solid fa-link"></i> 0 children</span>
+            <span><i class="fa-solid fa-tag"></i> Home</span>
+            <span><i class="fa-solid fa-link"></i> 16 children</span>
             <span><i class="fa-solid fa-boxes-stacked"></i> 0 total units</span>
-            <span>Core bestseller keep all sizes stocked</span>
+            
           </div>
         </div>
         <div style="display:flex;gap:8px;align-items:center">
-          <span class="badge" style="background:var(--green)1a;color:var(--green)">Healthy</span>
+          <span class="badge" style="background:var(--amber)1a;color:var(--amber)">Warning</span>
           <button class="btn btn-sm" onclick="editVarFamily(0)"><i class="fa-solid fa-pen"></i> Edit</button>
         </div>
       </div>
       <div class="var-card-body">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
           <span style="font-size:12px;font-weight:600;color:var(--text3)">Child SKUs</span>
-          <button class="btn btn-xs btn-green" onclick="openAddChildSKU('B09AB0000')"><i class="fa-solid fa-plus"></i> Add Child SKU</button>
+          <button class="btn btn-xs btn-green" onclick="openAddChildSKU('B0CG8RHSVV')"><i class="fa-solid fa-plus"></i> Add Child SKU</button>
         </div>
-        <p style="font-size:12px;color:var(--text3);padding:8px 0">No child SKUs linked yet — click "Add Child SKU" to add one.</p>
+        
+        <table class="child-table">
+          <thead><tr><th>SKU</th><th>ASIN</th><th>Variant / Notes</th><th>Qty</th><th>Status</th><th>Variation</th><th>Image</th><th></th></tr></thead>
+          <tbody>
+            <tr>
+                <td><span class="sku-code">RING_3.5INCH_CLEAR_24</span></td>
+                <td><span class="sku-code">B0CKXV3XKR</span></td>
+                <td style="font-size:12px;color:var(--text2)">(24, 2.7 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-err"><i class="fa-solid fa-xmark"></i>Out of Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(0)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_2.5_INCH (CLEAR) 24 PCS</span></td>
+                <td><span class="sku-code">B0CFR2MKFP</span></td>
+                <td style="font-size:12px;color:var(--text2)">(24, 1.75 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-err"><i class="fa-solid fa-xmark"></i>Out of Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(1)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_3INCH_CLEAR_24</span></td>
+                <td><span class="sku-code">B0CKXQWZX2</span></td>
+                <td style="font-size:12px;color:var(--text2)">(24, 2.2 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-err"><i class="fa-solid fa-xmark"></i>Out of Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(2)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_2.5_INCH (CLEAR) 50 PCS</span></td>
+                <td><span class="sku-code">B0CFR1ZJV9</span></td>
+                <td style="font-size:12px;color:var(--text2)">(50, 1.75 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(3)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_(2INCH)_CLEAR_12PIECES</span></td>
+                <td><span class="sku-code">B0CG8SF6T1</span></td>
+                <td style="font-size:12px;color:var(--text2)">(12, 1.25 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(4)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_2.5_INCH (CLEAR) 12 PCS</span></td>
+                <td><span class="sku-code">B0CC2LMYD4</span></td>
+                <td style="font-size:12px;color:var(--text2)">(12, 1.75 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(5)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_2.5_INCH (CLEAR) 100 PCS</span></td>
+                <td><span class="sku-code">B0CFR1988L</span></td>
+                <td style="font-size:12px;color:var(--text2)">(100, 1.75 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(6)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_3.5INCH_CLEAR_12</span></td>
+                <td><span class="sku-code">B0CKXSQPVF</span></td>
+                <td style="font-size:12px;color:var(--text2)">(12, 2.7 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(7)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_(2INCH)_CLEAR_24PCS</span></td>
+                <td><span class="sku-code">B0CC2PJCPF</span></td>
+                <td style="font-size:12px;color:var(--text2)">(24, 1.25 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(8)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_3.5INCH_CLEAR_50 (SF)</span></td>
+                <td><span class="sku-code">B0CKXTPLRC</span></td>
+                <td style="font-size:12px;color:var(--text2)">(50, 2.7 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(9)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_3INCH_CLEAR_100</span></td>
+                <td><span class="sku-code">B0CKXQPBWR</span></td>
+                <td style="font-size:12px;color:var(--text2)">(100, 2.2 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(10)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_3.5INCH_CLEAR_100</span></td>
+                <td><span class="sku-code">B0CKXTJGKV</span></td>
+                <td style="font-size:12px;color:var(--text2)">(100, 2.7 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(11)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_3INCH_CLEAR_50</span></td>
+                <td><span class="sku-code">B0CKXRTYCD</span></td>
+                <td style="font-size:12px;color:var(--text2)">(50, 2.2 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(12)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_3INCH_CLEAR_12</span></td>
+                <td><span class="sku-code">B0CKXPY57G</span></td>
+                <td style="font-size:12px;color:var(--text2)">(12, 2.2 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(13)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_(2INCH)_CLEAR_50PCS</span></td>
+                <td><span class="sku-code">B0CDBW59NM</span></td>
+                <td style="font-size:12px;color:var(--text2)">(50, 1.25 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(14)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr><tr>
+                <td><span class="sku-code">RING_(2INCH)_CLEAR_100PCS</span></td>
+                <td><span class="sku-code">B0CCNQP151</span></td>
+                <td style="font-size:12px;color:var(--text2)">(100, 1.25 INCH)</td>
+                <td style="font-weight:600">0</td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
+                <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(15)"><i class="fa-solid fa-pen"></i></button></td>
+              </tr>
+          </tbody>
+        </table>
       </div>
     </div><div class="var-card">
       <div class="var-card-hdr">
@@ -513,7 +924,279 @@ td{padding:10px 14px;vertical-align:middle}
                   <th>Qty</th><th>Status</th><th>Image</th><th>Notes</th><th></th>
                 </tr>
               </thead>
-              <tbody id="vf-child-tbody"></tbody>
+              <tbody id="vf-child-tbody"><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr><tr>
+    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
+    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
+    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
+    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
+    <td><select class="form-select" style="min-width:110px">
+      <option>In Stock</option>
+      <option>Low Stock</option>
+      <option>Out of Stock</option>
+      <option>Suppressed</option>
+    </select></td>
+    <td><select class="form-select" style="min-width:90px">
+      <option value="OK">✅ OK</option>
+      <option value="Missing">❌ Missing</option>
+    </select></td>
+    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
+    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
+  </tr></tbody>
             </table>
           </div>
           <button class="btn btn-sm" style="margin-top:10px" onclick="addVFChildRow()"><i class="fa-solid fa-plus"></i> Add another child SKU</button>
@@ -529,7 +1212,7 @@ td{padding:10px 14px;vertical-align:middle}
 
 </div><!-- /main -->
 
-<div class="toast" id="toast" style="background: rgb(26, 24, 20);"><i class="fa-solid fa-check" id="toast-icon"></i><span id="toast-msg">SKU deleted</span></div>
+<div class="toast" id="toast" style="background: rgb(26, 24, 20);"><i class="fa-solid fa-check" id="toast-icon"></i><span id="toast-msg">Variation family updated</span></div>
 
 <script>
 // ─────────────────────────────────────────
@@ -718,9 +1401,9 @@ function buildExportHTML() {
 (function(){
   try {
     // Data baked in at push time — this is what every device loads
-    var _d = [];
-    var _f = [{"parentAsin":"B09AB0000","name":"Classic Polo Shirt","theme":"Size","cat":"Apparel","notes":"Core bestseller keep all sizes stocked","children":[]},{"parentAsin":"B07CD0000","name":"Slim Fit Jeans Black","theme":"Size","cat":"Apparel","notes":"","children":[]},{"parentAsin":"B08EF0000","name":"Pullover Hoodie Green","theme":"Size","cat":"Apparel","notes":"","children":[]},{"parentAsin":"B05IJ0000","name":"Running Sneakers Blue","theme":"Shoe Size","cat":"Footwear","notes":"Monitor size 10 duplicate","children":[]},{"parentAsin":"B04KL0000","name":"Summer Midi Dress Yellow","theme":"Size","cat":"Apparel","notes":"","children":[]}];
-    var _t = "—";
+    var _d = [{"sku":"RING_3.5INCH_CLEAR_24","asin":"B0CKXV3XKR","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"Out of Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(24, 2.7 INCH)"},{"sku":"RING_2.5_INCH (CLEAR) 24 PCS","asin":"B0CFR2MKFP","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"Out of Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(24, 1.75 INCH)"},{"sku":"RING_3INCH_CLEAR_24","asin":"B0CKXQWZX2","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"Out of Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(24, 2.2 INCH)"},{"sku":"RING_2.5_INCH (CLEAR) 50 PCS","asin":"B0CFR1ZJV9","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(50, 1.75 INCH)"},{"sku":"RING_(2INCH)_CLEAR_12PIECES","asin":"B0CG8SF6T1","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(12, 1.25 INCH)"},{"sku":"RING_2.5_INCH (CLEAR) 12 PCS","asin":"B0CC2LMYD4","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(12, 1.75 INCH)"},{"sku":"RING_2.5_INCH (CLEAR) 100 PCS","asin":"B0CFR1988L","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(100, 1.75 INCH)"},{"sku":"RING_3.5INCH_CLEAR_12","asin":"B0CKXSQPVF","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(12, 2.7 INCH)"},{"sku":"RING_(2INCH)_CLEAR_24PCS","asin":"B0CC2PJCPF","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(24, 1.25 INCH)"},{"sku":"RING_3.5INCH_CLEAR_50 (SF)","asin":"B0CKXTPLRC","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(50, 2.7 INCH)"},{"sku":"RING_3INCH_CLEAR_100","asin":"B0CKXQPBWR","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(100, 2.2 INCH)"},{"sku":"RING_3.5INCH_CLEAR_100","asin":"B0CKXTJGKV","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(100, 2.7 INCH)"},{"sku":"RING_3INCH_CLEAR_50","asin":"B0CKXRTYCD","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(50, 2.2 INCH)"},{"sku":"RING_3INCH_CLEAR_12","asin":"B0CKXPY57G","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(12, 2.2 INCH)"},{"sku":"RING_(2INCH)_CLEAR_50PCS","asin":"B0CDBW59NM","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(50, 1.25 INCH)"},{"sku":"RING_(2INCH)_CLEAR_100PCS","asin":"B0CCNQP151","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(100, 1.25 INCH)"}];
+    var _f = [{"parentAsin":"B0CG8RHSVV","name":"M0-C71V-8KTC","theme":"Size","cat":"Home","notes":"","children":["RING_3.5INCH_CLEAR_24","RING_2.5_INCH (CLEAR) 24 PCS","RING_3INCH_CLEAR_24","RING_2.5_INCH (CLEAR) 50 PCS","RING_(2INCH)_CLEAR_12PIECES","RING_2.5_INCH (CLEAR) 12 PCS","RING_2.5_INCH (CLEAR) 100 PCS","RING_3.5INCH_CLEAR_12","RING_(2INCH)_CLEAR_24PCS","RING_3.5INCH_CLEAR_50 (SF)","RING_3INCH_CLEAR_100","RING_3.5INCH_CLEAR_100","RING_3INCH_CLEAR_50","RING_3INCH_CLEAR_12","RING_(2INCH)_CLEAR_50PCS","RING_(2INCH)_CLEAR_100PCS"]},{"parentAsin":"B07CD0000","name":"Slim Fit Jeans Black","theme":"Size","cat":"Apparel","notes":"","children":[]},{"parentAsin":"B08EF0000","name":"Pullover Hoodie Green","theme":"Size","cat":"Apparel","notes":"","children":[]},{"parentAsin":"B05IJ0000","name":"Running Sneakers Blue","theme":"Shoe Size","cat":"Footwear","notes":"Monitor size 10 duplicate","children":[]},{"parentAsin":"B04KL0000","name":"Summer Midi Dress Yellow","theme":"Size","cat":"Apparel","notes":"","children":[]}];
+    var _t = "5/26/2026, 11:04:01 PM";
     // Write into localStorage so init() picks it up normally
     localStorage.setItem('ias_skus',     JSON.stringify(_d));
     localStorage.setItem('ias_families', JSON.stringify(_f));
