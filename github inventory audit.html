@@ -126,7 +126,7 @@ td{padding:10px 14px;vertical-align:middle}
     <h1>Inventory Audit System <span>Amazon Daily Tracker</span></h1>
   </div>
   <div class="topbar-right">
-    <span style="font-size:12px;color:#aaa">Last audit: <span id="last-run-time" style="color:#ccc;font-weight:500">26 May 2026 · 18:44</span></span>
+    <span style="font-size:12px;color:#aaa">Last audit: <span id="last-run-time" style="color:#ccc;font-weight:500">26 May 2026 · 19:03</span></span>
     <button class="btn" onclick="exportCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
     <button class="btn btn-accent" id="run-btn" onclick="runAudit()"><i class="fa-solid fa-rotate"></i> Run Audit</button>
   </div>
@@ -228,14 +228,14 @@ td{padding:10px 14px;vertical-align:middle}
     </div>
     <div style="display:flex;align-items:center;gap:8px">
       <span id="tab-info" style="font-size:12px;color:var(--text3)">17 SKUs</span>
-      <button class="btn btn-green btn-sm" id="tab-add-btn" onclick="tabAddAction()" style="">
+      <button class="btn btn-green btn-sm" id="tab-add-btn" onclick="tabAddAction()">
         <i class="fa-solid fa-plus"></i> <span id="tab-add-label">Add SKU</span>
       </button>
     </div>
   </div>
 
   <!-- Tab: All SKUs -->
-  <div id="tab-all" style="">
+  <div id="tab-all">
     <div class="toolbar">
       <div class="search-wrap">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -523,7 +523,7 @@ td{padding:10px 14px;vertical-align:middle}
   </div>
 
   <!-- Tab: Issues -->
-  <div id="tab-issues" style="display: none;">
+  <div id="tab-issues" style="display:none">
     <div id="issues-list"><div class="issue-card">
       <div class="issue-icon" style="background:var(--red-l);color:var(--red)"><i class="fa-solid fa-triangle-exclamation"></i></div>
       <div class="issue-body">
@@ -860,8 +860,78 @@ td{padding:10px 14px;vertical-align:middle}
   <!-- Tab: Log -->
   <div id="tab-log" style="display:none">
     <div class="log-wrap" id="log-list">
-      <div class="empty-state"><i class="fa-solid fa-clipboard-list"></i>No audit run yet. Click Run Audit.</div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">WHT-POLO-XL</span>
+      <span class="log-dot" style="background:var(--red)"></span>
+      <span class="log-msg">Variation error — Link to parent B09AB0000</span>
     </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">WHT-POLO-XL</span>
+      <span class="log-dot" style="background:var(--amber)"></span>
+      <span class="log-msg">Low stock — 3 units remaining</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">BLK-JEANS-34</span>
+      <span class="log-dot" style="background:var(--red)"></span>
+      <span class="log-msg">Variation error — Upload main image min 1000x1000px</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">BLK-JEANS-34</span>
+      <span class="log-dot" style="background:var(--red)"></span>
+      <span class="log-msg">Suppressed listing</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">GRN-HOODIE-L</span>
+      <span class="log-dot" style="background:var(--blue)"></span>
+      <span class="log-msg">Out of stock — rank loss starting</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">BLU-SNEAKER-8</span>
+      <span class="log-dot" style="background:var(--amber)"></span>
+      <span class="log-msg">Low stock — 5 units remaining</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">BLU-SNEAKER-10</span>
+      <span class="log-dot" style="background:var(--red)"></span>
+      <span class="log-msg">Variation error — Duplicate ASIN close via Seller Support</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">BLU-SNEAKER-10</span>
+      <span class="log-dot" style="background:var(--red)"></span>
+      <span class="log-msg">Suppressed listing</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">YEL-DRESS-M</span>
+      <span class="log-dot" style="background:var(--red)"></span>
+      <span class="log-msg">Variation error — Theme mismatch re-upload flat file</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">YEL-DRESS-M</span>
+      <span class="log-dot" style="background:var(--amber)"></span>
+      <span class="log-msg">Low stock — 1 units remaining</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">BLK-SCARF-1SZ</span>
+      <span class="log-dot" style="background:var(--blue)"></span>
+      <span class="log-msg">Out of stock — rank loss starting</span>
+    </div>
+    <div class="log-entry">
+      <span class="log-time">19:03</span>
+      <span class="log-sku">ALL 17 SKUs</span>
+      <span class="log-dot" style="background:var(--green)"></span>
+      <span class="log-msg">✅ Audit complete — 11 issues found across 17 SKUs</span>
+    </div></div>
   </div>
 
   <!-- Add / Edit SKU Modal -->
@@ -989,7 +1059,7 @@ td{padding:10px 14px;vertical-align:middle}
 
 </div><!-- /main -->
 
-<div class="toast" id="toast" style="background: rgb(26, 24, 20);"><i class="fa-solid fa-check" id="toast-icon"></i><span id="toast-msg">GitHub setup saved</span></div>
+<div class="toast" id="toast" style="background: rgb(26, 24, 20);"><i class="fa-solid fa-check" id="toast-icon"></i><span id="toast-msg">Audit complete — 11 issues found</span></div>
 
 <script>
 // ─────────────────────────────────────────
