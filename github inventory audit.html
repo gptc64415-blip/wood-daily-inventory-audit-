@@ -195,27 +195,27 @@ td{padding:10px 14px;vertical-align:middle}
   <div class="metrics">
     <div class="metric">
       <div class="metric-label">Total SKUs</div>
-      <div class="metric-val" id="m-total">17</div>
-      <div class="metric-sub" id="m-total-sub">across 5 parent ASINs</div>
+      <div class="metric-val" id="m-total">16</div>
+      <div class="metric-sub" id="m-total-sub">across 4 parent ASINs</div>
       <div class="metric-bar"><div class="metric-fill" style="width:100%;background:#1a1814"></div></div>
     </div>
     <div class="metric">
       <div class="metric-label">In Stock</div>
       <div class="metric-val" id="m-instock" style="color:var(--green)">10</div>
-      <div class="metric-sub" id="m-instock-pct" style="color:var(--green)">59% availability</div>
-      <div class="metric-bar"><div class="metric-fill" id="pb-instock" style="width: 59%; background: var(--green);"></div></div>
+      <div class="metric-sub" id="m-instock-pct" style="color:var(--green)">63% availability</div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-instock" style="width: 63%; background: var(--green);"></div></div>
     </div>
     <div class="metric">
       <div class="metric-label">Variation Issues</div>
-      <div class="metric-val" id="m-varerr" style="color:var(--amber)">4</div>
+      <div class="metric-val" id="m-varerr" style="color:var(--amber)">3</div>
       <div class="metric-sub" style="color:var(--amber)">mis-linked children</div>
-      <div class="metric-bar"><div class="metric-fill" id="pb-varerr" style="width: 23.5294%; background: var(--amber);"></div></div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-varerr" style="width: 18.75%; background: var(--amber);"></div></div>
     </div>
     <div class="metric">
       <div class="metric-label">Critical Alerts</div>
       <div class="metric-val" id="m-crit" style="color:var(--red)">2</div>
       <div class="metric-sub" style="color:var(--red)">suppressed listings</div>
-      <div class="metric-bar"><div class="metric-fill" id="pb-crit" style="width: 11.7647%; background: var(--red);"></div></div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-crit" style="width: 12.5%; background: var(--red);"></div></div>
     </div>
   </div>
 
@@ -227,7 +227,7 @@ td{padding:10px 14px;vertical-align:middle}
       <button class="tab" onclick="switchTab('log',this)">Audit Log</button>
     </div>
     <div style="display:flex;align-items:center;gap:8px">
-      <span id="tab-info" style="font-size:12px;color:var(--text3)">17 SKUs</span>
+      <span id="tab-info" style="font-size:12px;color:var(--text3)">16 SKUs</span>
       <button class="btn btn-green btn-sm" id="tab-add-btn" onclick="tabAddAction()">
         <i class="fa-solid fa-plus"></i> <span id="tab-add-label">Add SKU</span>
       </button>
@@ -260,22 +260,7 @@ td{padding:10px 14px;vertical-align:middle}
               <th>Notes</th><th style="text-align:center;width:90px">Actions</th>
             </tr>
           </thead>
-          <tbody id="sku-tbody"><tr class="has-issue">
-      <td><span class="sku-code">WHT-POLO-XL</span></td>
-      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Classic Polo Shirt">Classic Polo Shirt</td>
-      <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">3</td>
-      <td><span class="badge badge-warn"><i class="fa-solid fa-triangle-exclamation"></i>Low Stock</span></td>
-      <td><span class="badge badge-err"><i class="fa-solid fa-link-slash"></i>Error</span></td>
-      <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-      <td><span class="badge badge-ok">Active</span></td>
-      <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Link to parent B09AB0000">Link to parent B09AB0000</td>
-      <td style="text-align:center">
-        <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(0)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(0)" title="Delete"><i class="fa-solid fa-trash"></i></button>
-        </div>
-      </td>
-    </tr><tr>
+          <tbody id="sku-tbody"><tr>
       <td><span class="sku-code">BLK-JEANS-30</span></td>
       <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Slim Fit Jeans Black">Slim Fit Jeans Black</td>
       <td style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums">18</td>
@@ -286,8 +271,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(1)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(1)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(0)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(0)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -301,8 +286,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(2)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(2)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(1)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(1)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr class="has-issue">
@@ -316,8 +301,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Upload main image min 1000x1000px">Upload main image min 1000x1000px</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(3)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(3)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(2)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(2)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -331,8 +316,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(4)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(4)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(3)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(3)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -346,8 +331,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(5)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(5)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(4)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(4)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr class="has-issue">
@@ -361,8 +346,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Reorder 40 units">Reorder 40 units</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(6)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(6)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(5)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(5)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -376,8 +361,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(7)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(7)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(6)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(6)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr class="has-issue">
@@ -391,8 +376,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Reorder 40 units 3 days cover">Reorder 40 units 3 days cover</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(8)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(8)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(7)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(7)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -406,8 +391,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(9)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(9)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(8)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(8)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr class="has-issue">
@@ -421,8 +406,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Duplicate ASIN close via Seller Support">Duplicate ASIN close via Seller Support</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(10)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(10)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(9)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(9)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -436,8 +421,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(11)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(11)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(10)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(10)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -451,8 +436,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(12)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(12)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(11)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(11)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr class="has-issue">
@@ -466,8 +451,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Theme mismatch re-upload flat file">Theme mismatch re-upload flat file</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(13)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(13)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(12)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(12)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -481,8 +466,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(14)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(14)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(13)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(13)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr>
@@ -496,8 +481,8 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="">—</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(15)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(15)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(14)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(14)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr><tr class="has-issue">
@@ -511,41 +496,20 @@ td{padding:10px 14px;vertical-align:middle}
       <td style="font-size:12px;color:var(--text2);max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Seasonal restock Oct">Seasonal restock Oct</td>
       <td style="text-align:center">
         <div style="display:flex;gap:5px;justify-content:center">
-          <button class="btn btn-sm" onclick="openEditSKUModal(16)" title="Edit"><i class="fa-solid fa-pen"></i></button>
-          <button class="btn btn-sm btn-red" onclick="deleteSKU(16)" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn btn-sm" onclick="openEditSKUModal(15)" title="Edit"><i class="fa-solid fa-pen"></i></button>
+          <button class="btn btn-sm btn-red" onclick="deleteSKU(15)" title="Delete"><i class="fa-solid fa-trash"></i></button>
         </div>
       </td>
     </tr></tbody>
         </table>
       </div>
-      <div class="tbl-count" id="tbl-count">Showing 17 of 17 SKUs</div>
+      <div class="tbl-count" id="tbl-count">Showing 16 of 16 SKUs</div>
     </div>
   </div>
 
   <!-- Tab: Issues -->
   <div id="tab-issues" style="display:none">
     <div id="issues-list"><div class="issue-card">
-      <div class="issue-icon" style="background:var(--red-l);color:var(--red)"><i class="fa-solid fa-triangle-exclamation"></i></div>
-      <div class="issue-body">
-        <div class="issue-title">Orphaned Child — WHT-POLO-XL <small style="font-weight:400;color:var(--text3)">🔴 Critical</small></div>
-        <div class="issue-desc">B09AB1237 not linked to any parent ASIN. Appears as separate listing, losing variation traffic.</div>
-        <span class="issue-fix">Add to parent via Manage Inventory &gt; Edit variation</span>
-      </div>
-    </div><div class="issue-card">
-      <div class="issue-icon" style="background:var(--amber-l);color:var(--amber)"><i class="fa-solid fa-exclamation"></i></div>
-      <div class="issue-body">
-        <div class="issue-title">Critical Low Stock — WHT-POLO-XL (3 units) <small style="font-weight:400;color:var(--text3)">🟠 High</small></div>
-        <div class="issue-desc">Only 3 units left. Stockout imminent.</div>
-        <span class="issue-fix">Raise PO urgently. Consider price increase to slow velocity.</span>
-      </div>
-    </div><div class="issue-card">
-      <div class="issue-icon" style="background:var(--amber-l);color:var(--amber)"><i class="fa-solid fa-exclamation"></i></div>
-      <div class="issue-body">
-        <div class="issue-title">Variation Mismatch — WHT-POLO-XL <small style="font-weight:400;color:var(--text3)">🟠 High</small></div>
-        <div class="issue-desc">B09AB1237 attribute not synced with parent B09AB0000. Child appears standalone.</div>
-        <span class="issue-fix">Re-upload flat file with correct variation_theme values</span>
-      </div>
-    </div><div class="issue-card">
       <div class="issue-icon" style="background:var(--red-l);color:var(--red)"><i class="fa-solid fa-triangle-exclamation"></i></div>
       <div class="issue-body">
         <div class="issue-title">Orphaned Child — BLK-JEANS-34 <small style="font-weight:400;color:var(--text3)">🔴 Critical</small></div>
@@ -678,7 +642,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(1)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(0)"><i class="fa-solid fa-pen"></i></button></td>
               </tr><tr>
                 <td><span class="sku-code">BLK-JEANS-32</span></td>
                 <td><span class="sku-code">B07CD2346</span></td>
@@ -687,7 +651,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(2)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(1)"><i class="fa-solid fa-pen"></i></button></td>
               </tr>
           </tbody>
         </table>
@@ -726,7 +690,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(4)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(3)"><i class="fa-solid fa-pen"></i></button></td>
               </tr><tr>
                 <td><span class="sku-code">GRN-HOODIE-M</span></td>
                 <td><span class="sku-code">B08EF3457</span></td>
@@ -735,7 +699,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(5)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(4)"><i class="fa-solid fa-pen"></i></button></td>
               </tr><tr>
                 <td><span class="sku-code">GRN-HOODIE-L</span></td>
                 <td><span class="sku-code">B08EF3458</span></td>
@@ -744,7 +708,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-err"><i class="fa-solid fa-xmark"></i>Out of Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(6)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(5)"><i class="fa-solid fa-pen"></i></button></td>
               </tr>
           </tbody>
         </table>
@@ -783,7 +747,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-warn"><i class="fa-solid fa-triangle-exclamation"></i>Low Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(8)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(7)"><i class="fa-solid fa-pen"></i></button></td>
               </tr><tr>
                 <td><span class="sku-code">BLU-SNEAKER-9</span></td>
                 <td><span class="sku-code">B05IJ5679</span></td>
@@ -792,7 +756,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(9)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(8)"><i class="fa-solid fa-pen"></i></button></td>
               </tr><tr>
                 <td><span class="sku-code">BLU-SNEAKER-10</span></td>
                 <td><span class="sku-code">B05IJ5680</span></td>
@@ -801,7 +765,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-err"><i class="fa-solid fa-ban"></i>Suppressed</span></td>
                 <td><span class="badge badge-err"><i class="fa-solid fa-link-slash"></i>Error</span></td>
                 <td><span class="badge badge-err"><i class="fa-solid fa-image"></i>Missing</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(10)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(9)"><i class="fa-solid fa-pen"></i></button></td>
               </tr>
           </tbody>
         </table>
@@ -840,7 +804,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(11)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(10)"><i class="fa-solid fa-pen"></i></button></td>
               </tr><tr>
                 <td><span class="sku-code">YEL-DRESS-S</span></td>
                 <td><span class="sku-code">B04KL6790</span></td>
@@ -849,7 +813,7 @@ td{padding:10px 14px;vertical-align:middle}
                 <td><span class="badge badge-ok"><i class="fa-solid fa-check"></i>In Stock</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-link"></i>Linked</span></td>
                 <td><span class="badge badge-ok"><i class="fa-solid fa-image"></i>OK</span></td>
-                <td><button class="btn btn-xs" onclick="openEditSKUModal(12)"><i class="fa-solid fa-pen"></i></button></td>
+                <td><button class="btn btn-xs" onclick="openEditSKUModal(11)"><i class="fa-solid fa-pen"></i></button></td>
               </tr>
           </tbody>
         </table>
@@ -860,78 +824,8 @@ td{padding:10px 14px;vertical-align:middle}
   <!-- Tab: Log -->
   <div id="tab-log" style="display:none">
     <div class="log-wrap" id="log-list">
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">WHT-POLO-XL</span>
-      <span class="log-dot" style="background:var(--red)"></span>
-      <span class="log-msg">Variation error — Link to parent B09AB0000</span>
+      <div class="empty-state"><i class="fa-solid fa-clipboard-list"></i>No audit run yet. Click Run Audit.</div>
     </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">WHT-POLO-XL</span>
-      <span class="log-dot" style="background:var(--amber)"></span>
-      <span class="log-msg">Low stock — 3 units remaining</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">BLK-JEANS-34</span>
-      <span class="log-dot" style="background:var(--red)"></span>
-      <span class="log-msg">Variation error — Upload main image min 1000x1000px</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">BLK-JEANS-34</span>
-      <span class="log-dot" style="background:var(--red)"></span>
-      <span class="log-msg">Suppressed listing</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">GRN-HOODIE-L</span>
-      <span class="log-dot" style="background:var(--blue)"></span>
-      <span class="log-msg">Out of stock — rank loss starting</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">BLU-SNEAKER-8</span>
-      <span class="log-dot" style="background:var(--amber)"></span>
-      <span class="log-msg">Low stock — 5 units remaining</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">BLU-SNEAKER-10</span>
-      <span class="log-dot" style="background:var(--red)"></span>
-      <span class="log-msg">Variation error — Duplicate ASIN close via Seller Support</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">BLU-SNEAKER-10</span>
-      <span class="log-dot" style="background:var(--red)"></span>
-      <span class="log-msg">Suppressed listing</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">YEL-DRESS-M</span>
-      <span class="log-dot" style="background:var(--red)"></span>
-      <span class="log-msg">Variation error — Theme mismatch re-upload flat file</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">YEL-DRESS-M</span>
-      <span class="log-dot" style="background:var(--amber)"></span>
-      <span class="log-msg">Low stock — 1 units remaining</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">BLK-SCARF-1SZ</span>
-      <span class="log-dot" style="background:var(--blue)"></span>
-      <span class="log-msg">Out of stock — rank loss starting</span>
-    </div>
-    <div class="log-entry">
-      <span class="log-time">19:03</span>
-      <span class="log-sku">ALL 17 SKUs</span>
-      <span class="log-dot" style="background:var(--green)"></span>
-      <span class="log-msg">✅ Audit complete — 11 issues found across 17 SKUs</span>
-    </div></div>
   </div>
 
   <!-- Add / Edit SKU Modal -->
@@ -1059,7 +953,7 @@ td{padding:10px 14px;vertical-align:middle}
 
 </div><!-- /main -->
 
-<div class="toast" id="toast" style="background: rgb(26, 24, 20);"><i class="fa-solid fa-check" id="toast-icon"></i><span id="toast-msg">Audit complete — 11 issues found</span></div>
+<div class="toast" id="toast" style="background: rgb(26, 24, 20);"><i class="fa-solid fa-check" id="toast-icon"></i><span id="toast-msg">SKU deleted</span></div>
 
 <script>
 // ─────────────────────────────────────────
