@@ -126,7 +126,7 @@ td{padding:10px 14px;vertical-align:middle}
     <h1>Inventory Audit System <span>Amazon Daily Tracker</span></h1>
   </div>
   <div class="topbar-right">
-    <span style="font-size:12px;color:#aaa">Last audit: <span id="last-run-time" style="color:#ccc;font-weight:500">5/26/2026, 11:04:01 PM</span></span>
+    <span style="font-size:12px;color:#aaa">Last audit: <span id="last-run-time" style="color:#ccc;font-weight:500">26 May 2026 · 11:16 PM</span></span>
     <button class="btn" onclick="exportCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
     <button class="btn btn-accent" id="run-btn" onclick="runAudit()"><i class="fa-solid fa-rotate"></i> Run Audit</button>
   </div>
@@ -138,7 +138,7 @@ td{padding:10px 14px;vertical-align:middle}
   <div class="save-banner" id="save-banner">
     <i class="fa-solid fa-floppy-disk banner-icon"></i>
     <div class="save-banner-text">
-      <strong id="banner-title">Changes pushed to GitHub</strong>
+      <strong id="banner-title">Push to GitHub — syncs data to ALL devices</strong>
       <span id="banner-sub">Repo: gptc64415-blip/wood-daily-inventory-audit- → github inventory audit.html</span>
     </div>
     <button class="btn" onclick="openGHSetup()" id="gh-setup-btn" style="background:var(--surface2);border-color:var(--border2);color:var(--text)">
@@ -209,13 +209,13 @@ td{padding:10px 14px;vertical-align:middle}
       <div class="metric-label">Variation Issues</div>
       <div class="metric-val" id="m-varerr" style="color:var(--amber)">0</div>
       <div class="metric-sub" style="color:var(--amber)">mis-linked children</div>
-      <div class="metric-bar"><div class="metric-fill" id="pb-varerr" style="width: 0%; background: var(--amber);"></div></div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-varerr" style="width:0%;background:var(--amber)"></div></div>
     </div>
     <div class="metric">
       <div class="metric-label">Critical Alerts</div>
       <div class="metric-val" id="m-crit" style="color:var(--red)">0</div>
       <div class="metric-sub" style="color:var(--red)">suppressed listings</div>
-      <div class="metric-bar"><div class="metric-fill" id="pb-crit" style="width: 0%; background: var(--red);"></div></div>
+      <div class="metric-bar"><div class="metric-fill" id="pb-crit" style="width:0%;background:var(--red)"></div></div>
     </div>
   </div>
 
@@ -235,7 +235,7 @@ td{padding:10px 14px;vertical-align:middle}
   </div>
 
   <!-- Tab: All SKUs -->
-  <div id="tab-all" style="">
+  <div id="tab-all">
     <div class="toolbar">
       <div class="search-wrap">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -534,7 +534,7 @@ td{padding:10px 14px;vertical-align:middle}
   </div>
 
   <!-- Tab: Variations -->
-  <div id="tab-variations" style="display: none;">
+  <div id="tab-variations" style="display:none">
     <div id="var-list"><div class="var-card">
       <div class="var-card-hdr">
         <div>
@@ -924,279 +924,7 @@ td{padding:10px 14px;vertical-align:middle}
                   <th>Qty</th><th>Status</th><th>Image</th><th>Notes</th><th></th>
                 </tr>
               </thead>
-              <tbody id="vf-child-tbody"><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr><tr>
-    <td><input class="form-input" style="min-width:110px" placeholder="SKU" value=""></td>
-    <td><input class="form-input" style="min-width:110px" placeholder="ASIN" value=""></td>
-    <td><input class="form-input" style="min-width:100px" placeholder="e.g. S / Red" value=""></td>
-    <td><input class="form-input" style="width:60px" type="number" min="0" value="0"></td>
-    <td><select class="form-select" style="min-width:110px">
-      <option>In Stock</option>
-      <option>Low Stock</option>
-      <option>Out of Stock</option>
-      <option>Suppressed</option>
-    </select></td>
-    <td><select class="form-select" style="min-width:90px">
-      <option value="OK">✅ OK</option>
-      <option value="Missing">❌ Missing</option>
-    </select></td>
-    <td><input class="form-input" style="min-width:120px" placeholder="Notes" value=""></td>
-    <td><button class="child-row-rm" onclick="this.closest('tr').remove()"><i class="fa-solid fa-xmark"></i></button></td>
-  </tr></tbody>
+              <tbody id="vf-child-tbody"></tbody>
             </table>
           </div>
           <button class="btn btn-sm" style="margin-top:10px" onclick="addVFChildRow()"><i class="fa-solid fa-plus"></i> Add another child SKU</button>
@@ -1212,7 +940,7 @@ td{padding:10px 14px;vertical-align:middle}
 
 </div><!-- /main -->
 
-<div class="toast" id="toast" style="background: rgb(26, 24, 20);"><i class="fa-solid fa-check" id="toast-icon"></i><span id="toast-msg">Variation family updated</span></div>
+<div class="toast" id="toast"><i class="fa-solid fa-check" id="toast-icon"></i><span id="toast-msg">Saved</span></div>
 
 <script>
 // ─────────────────────────────────────────
@@ -1403,7 +1131,7 @@ function buildExportHTML() {
     // Data baked in at push time — this is what every device loads
     var _d = [{"sku":"RING_3.5INCH_CLEAR_24","asin":"B0CKXV3XKR","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"Out of Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(24, 2.7 INCH)"},{"sku":"RING_2.5_INCH (CLEAR) 24 PCS","asin":"B0CFR2MKFP","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"Out of Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(24, 1.75 INCH)"},{"sku":"RING_3INCH_CLEAR_24","asin":"B0CKXQWZX2","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"Out of Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(24, 2.2 INCH)"},{"sku":"RING_2.5_INCH (CLEAR) 50 PCS","asin":"B0CFR1ZJV9","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(50, 1.75 INCH)"},{"sku":"RING_(2INCH)_CLEAR_12PIECES","asin":"B0CG8SF6T1","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(12, 1.25 INCH)"},{"sku":"RING_2.5_INCH (CLEAR) 12 PCS","asin":"B0CC2LMYD4","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(12, 1.75 INCH)"},{"sku":"RING_2.5_INCH (CLEAR) 100 PCS","asin":"B0CFR1988L","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(100, 1.75 INCH)"},{"sku":"RING_3.5INCH_CLEAR_12","asin":"B0CKXSQPVF","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(12, 2.7 INCH)"},{"sku":"RING_(2INCH)_CLEAR_24PCS","asin":"B0CC2PJCPF","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(24, 1.25 INCH)"},{"sku":"RING_3.5INCH_CLEAR_50 (SF)","asin":"B0CKXTPLRC","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(50, 2.7 INCH)"},{"sku":"RING_3INCH_CLEAR_100","asin":"B0CKXQPBWR","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(100, 2.2 INCH)"},{"sku":"RING_3.5INCH_CLEAR_100","asin":"B0CKXTJGKV","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(100, 2.7 INCH)"},{"sku":"RING_3INCH_CLEAR_50","asin":"B0CKXRTYCD","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(50, 2.2 INCH)"},{"sku":"RING_3INCH_CLEAR_12","asin":"B0CKXPY57G","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(12, 2.2 INCH)"},{"sku":"RING_(2INCH)_CLEAR_50PCS","asin":"B0CDBW59NM","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(50, 1.25 INCH)"},{"sku":"RING_(2INCH)_CLEAR_100PCS","asin":"B0CCNQP151","title":"M0-C71V-8KTC","cat":"Home","qty":0,"stockStatus":"In Stock","listStatus":"Active","image":"OK","varLink":"Linked","parentAsin":"B0CG8RHSVV","notes":"(100, 1.25 INCH)"}];
     var _f = [{"parentAsin":"B0CG8RHSVV","name":"M0-C71V-8KTC","theme":"Size","cat":"Home","notes":"","children":["RING_3.5INCH_CLEAR_24","RING_2.5_INCH (CLEAR) 24 PCS","RING_3INCH_CLEAR_24","RING_2.5_INCH (CLEAR) 50 PCS","RING_(2INCH)_CLEAR_12PIECES","RING_2.5_INCH (CLEAR) 12 PCS","RING_2.5_INCH (CLEAR) 100 PCS","RING_3.5INCH_CLEAR_12","RING_(2INCH)_CLEAR_24PCS","RING_3.5INCH_CLEAR_50 (SF)","RING_3INCH_CLEAR_100","RING_3.5INCH_CLEAR_100","RING_3INCH_CLEAR_50","RING_3INCH_CLEAR_12","RING_(2INCH)_CLEAR_50PCS","RING_(2INCH)_CLEAR_100PCS"]},{"parentAsin":"B07CD0000","name":"Slim Fit Jeans Black","theme":"Size","cat":"Apparel","notes":"","children":[]},{"parentAsin":"B08EF0000","name":"Pullover Hoodie Green","theme":"Size","cat":"Apparel","notes":"","children":[]},{"parentAsin":"B05IJ0000","name":"Running Sneakers Blue","theme":"Shoe Size","cat":"Footwear","notes":"Monitor size 10 duplicate","children":[]},{"parentAsin":"B04KL0000","name":"Summer Midi Dress Yellow","theme":"Size","cat":"Apparel","notes":"","children":[]}];
-    var _t = "5/26/2026, 11:04:01 PM";
+    var _t = "26 May 2026 · 11:16 PM";
     // Write into localStorage so init() picks it up normally
     localStorage.setItem('ias_skus',     JSON.stringify(_d));
     localStorage.setItem('ias_families', JSON.stringify(_f));
