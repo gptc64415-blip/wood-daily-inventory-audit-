@@ -228,14 +228,14 @@ td{padding:10px 14px;vertical-align:middle}
     </div>
     <div style="display:flex;align-items:center;gap:8px">
       <span id="tab-info" style="font-size:12px;color:var(--text3)">17 SKUs</span>
-      <button class="btn btn-green btn-sm" id="tab-add-btn" onclick="tabAddAction()">
+      <button class="btn btn-green btn-sm" id="tab-add-btn" onclick="tabAddAction()" style="">
         <i class="fa-solid fa-plus"></i> <span id="tab-add-label">Add SKU</span>
       </button>
     </div>
   </div>
 
   <!-- Tab: All SKUs -->
-  <div id="tab-all">
+  <div id="tab-all" style="">
     <div class="toolbar">
       <div class="search-wrap">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -523,7 +523,7 @@ td{padding:10px 14px;vertical-align:middle}
   </div>
 
   <!-- Tab: Issues -->
-  <div id="tab-issues" style="display:none">
+  <div id="tab-issues" style="display: none;">
     <div id="issues-list"><div class="issue-card">
       <div class="issue-icon" style="background:var(--red-l);color:var(--red)"><i class="fa-solid fa-triangle-exclamation"></i></div>
       <div class="issue-body">
