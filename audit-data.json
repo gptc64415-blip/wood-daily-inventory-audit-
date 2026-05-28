@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "WHT-POLO-S",
-      "asin": "B09AB1234",
-      "title": "Classic Polo Shirt S",
-      "cat": "Apparel",
-      "qty": 34,
-      "reorder": 10,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B09AB0000",
-      "theme": "Size",
-      "attrval": "S",
-      "notes": "",
-      "owner": "Team A",
-      "action": ""
-    },
-    {
       "sku": "WHT-POLO-M",
       "asin": "B09AB1235",
       "title": "Classic Polo Shirt M",
