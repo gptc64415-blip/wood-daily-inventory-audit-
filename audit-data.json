@@ -37,6 +37,14 @@
       "action": ""
     }
   ],
-  "parents": [],
+  "parents": [
+    {
+      "asin": "B0CG8RHSVV",
+      "name": "Beech Wood curtain ring",
+      "theme": "item package quantity",
+      "cat": "",
+      "notes": ""
+    }
+  ],
   "logs": []
 }
