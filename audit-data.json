@@ -49,6 +49,13 @@
       "who": "System",
       "type": "audit",
       "note": "Dashboard initialised with sample data."
+    },
+    {
+      "date": "28 May 2026",
+      "time": "04:52 pm",
+      "who": "Auto Audit",
+      "type": "audit",
+      "note": "1 SKUs — In Stock:1 Low:0 OOS:0 Suppressed:0 Var Errors:0 — 0 issues found"
     }
   ]
 }
