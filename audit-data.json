@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "BLK-JEANS-34",
-      "asin": "B07CD2347",
-      "title": "Slim Fit Jeans 34",
-      "cat": "Apparel",
-      "qty": 0,
-      "reorder": 8,
-      "listing": "Suppressed",
-      "img": "No",
-      "bb": "No",
-      "vartype": "Error",
-      "parent": "",
-      "theme": "Size",
-      "attrval": "34",
-      "notes": "Missing main image",
-      "owner": "Team B",
-      "action": "Open"
-    },
-    {
       "sku": "BLU-SNEAKER-8",
       "asin": "B05IJ5678",
       "title": "Running Sneakers UK8",
