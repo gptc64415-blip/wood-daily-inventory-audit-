@@ -1,5 +1,24 @@
 {
-  "skus": [],
+  "skus": [
+    {
+      "sku": "RING_3.5INCH_CLEAR_50",
+      "asin": "B0CKXTPLRC",
+      "title": "(50, 2.7 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0CG8RHSVV",
+      "theme": "item package quantity",
+      "attrval": "",
+      "notes": "",
+      "owner": "",
+      "action": ""
+    }
+  ],
   "parents": [],
   "logs": []
 }
