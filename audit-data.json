@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "BLU-SNEAKER-9",
-      "asin": "B05IJ5679",
-      "title": "Running Sneakers UK9",
-      "cat": "Footwear",
-      "qty": 11,
-      "reorder": 12,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B05IJ0000",
-      "theme": "Shoe Size",
-      "attrval": "UK9",
-      "notes": "",
-      "owner": "Team C",
-      "action": ""
-    },
-    {
       "sku": "RED-CAP-ONE",
       "asin": "B06GH4567",
       "title": "Adjustable Cap Red",
