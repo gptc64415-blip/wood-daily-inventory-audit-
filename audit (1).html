@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Amazon Inventory Audit</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f5f0;--white:#fff;--ink:#111;--ink2:#333;--muted:#777;--muted2:#aaa;
+  --line:#e5e2dc;--line2:#ccc;--cream:#faf9f6;
+  --red:#d63031;--redl:#fff0ef;--redb:#ffd7d5;
+  --amber:#e67e22;--amberl:#fff8f0;--amberb:#ffd9a8;
+  --green:#27ae60;--greenl:#f0fff5;--greenb:#b2dfca;
+  --blue:#2980b9;--bluel:#f0f7ff;--blueb:#b3d4f0;
+  --r:6px;--r2:10px;--r3:14px;
+  --sh:0 1px 3px rgba(0,0,0,.08);--sh2:0 4px 16px rgba(0,0,0,.12);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:14px;min-height:100vh}
+/* TOP */
+.top{background:var(--ink);color:#fff;padding:0 24px;height:54px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--red)}
+.logo{display:flex;align-items:center;gap:9px}
+.logo-box{width:28px;height:28px;background:var(--red);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px}
+.logo h1{font-size:14px;font-weight:600;letter-spacing:-.2px}
+.logo p{font-size:10px;color:#888;font-family:'JetBrains Mono',monospace}
+.top-right{display:flex;align-items:center;gap:8px}
+.last-lbl{font-size:11px;color:#888;font-family:'JetBrains Mono',monospace}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:var(--r);font-size:13px;font-weight:500;cursor:pointer;border:1px solid var(--line2);background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;transition:all .12s;white-space:nowrap}
+.btn:hover{background:var(--cream)}
+.btn-red{background:var(--red);color:#fff;border-color:var(--red)}
+.btn-red:hover{background:#b02020}
+.btn-green{background:var(--green);color:#fff;border-color:var(--green)}
+.btn-green:hover{background:#1e8a4a}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.2);color:#ccc}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-sm{padding:5px 10px;font-size:12px}
+.btn-xs{padding:3px 8px;font-size:11px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.icon-btn{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--r);border:1px solid var(--line);background:var(--white);cursor:pointer;font-size:12px;color:var(--muted);transition:all .12s}
+.icon-btn:hover{background:var(--cream);color:var(--ink)}
+.icon-btn.del:hover{background:var(--redl);color:var(--red);border-color:var(--redb)}
+/* MAIN */
+.main{max-width:1400px;margin:0 auto;padding:20px 24px}
+/* SETUP BANNER */
+.setup-banner{background:var(--bluel);border:1px solid var(--blueb);border-radius:var(--r2);padding:14px 18px;margin-bottom:18px;display:flex;align-items:flex-start;gap:12px}
+.setup-banner.hidden{display:none}
+.setup-icon{font-size:22px;flex-shrink:0;margin-top:1px}
+.setup-body{flex:1}
+.setup-body h3{font-size:13px;font-weight:600;color:var(--blue);margin-bottom:4px}
+.setup-body p{font-size:12px;color:var(--blue);line-height:1.5;margin-bottom:10px}
+.setup-form{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;align-items:end}
+.sf-field label{font-size:11px;font-weight:500;color:var(--blue);display:block;margin-bottom:3px}
+.sf-field input{width:100%;height:34px;padding:0 10px;border:1px solid var(--blueb);border-radius:var(--r);font-size:12px;font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);outline:none}
+.sf-field input:focus{border-color:var(--blue)}
+/* KPI */
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
+.kpi{background:var(--white);border:1px solid var(--line);border-radius:var(--r2);padding:14px 16px;box-shadow:var(--sh);border-left:3px solid var(--line2)}
+.kpi.k-red{border-left-color:var(--red)}
+.kpi.k-green{border-left-color:var(--green)}
+.kpi.k-amber{border-left-color:var(--amber)}
+.kpi.k-blue{border-left-color:var(--blue)}
+.kpi-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--muted2);margin-bottom:6px;font-family:'JetBrains Mono',monospace}
+.kpi-val{font-size:26px;font-weight:700;line-height:1;margin-bottom:3px;font-family:'JetBrains Mono',monospace}
+.kpi-sub{font-size:11px;color:var(--muted)}
+.kpi-bar{height:2px;background:var(--line);border-radius:1px;margin-top:9px;overflow:hidden}
+.kpi-fill{height:100%;border-radius:1px;transition:width .5s}
+/* TABS */
+.tabs-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:10px;flex-wrap:wrap}
+.tabs{display:flex;background:var(--white);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.tab{padding:8px 18px;font-size:13px;font-weight:400;cursor:pointer;color:var(--muted);border:none;background:transparent;border-right:1px solid var(--line);white-space:nowrap;transition:all .12s;font-family:'Inter',sans-serif}
+.tab:last-child{border-right:none}
+.tab:hover:not(.active){color:var(--ink);background:var(--cream)}
+.tab.active{background:var(--ink);color:#fff;font-weight:600}
+.tab-badge{font-size:10px;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:600;background:rgba(255,255,255,.15)}
+.tab.active .tab-badge{background:rgba(255,255,255,.2)}
+.tab-badge.alert{background:var(--red);color:#fff}
+/* TOOLBAR */
+.toolbar{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.srch{position:relative;flex:1;min-width:160px}
+.srch svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--muted2);pointer-events:none}
+.srch input{width:100%;height:35px;padding:0 10px 0 30px;border:1px solid var(--line);border-radius:var(--r);font-size:13px;background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;outline:none;transition:border-color .12s}
+.srch input:focus{border-color:var(--red)}
+.filt{height:35px;padding:0 26px 0 10px;border:1px solid var(--line);border-radius:var(--r);font-size:13px;background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%23999' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+/* TABLE */
+.tcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;box-shadow:var(--sh)}
+.twrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:860px}
+thead th{background:var(--cream);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap;font-family:'JetBrains Mono',monospace}
+tbody tr{border-bottom:1px solid var(--line);transition:background .08s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:#fafaf8}
+tbody tr.r-err{background:#fff8f7;border-left:2px solid var(--red)}
+tbody tr.r-warn{background:#fffcf7;border-left:2px solid var(--amber)}
+td{padding:9px 12px;vertical-align:middle;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tfoot{font-size:11px;color:var(--muted2);padding:8px 12px;border-top:1px solid var(--line);background:var(--cream);font-family:'JetBrains Mono',monospace;display:flex;justify-content:space-between}
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.b-green{background:var(--greenl);color:#1a7a42;border:1px solid var(--greenb)}
+.b-red{background:var(--redl);color:#a32020;border:1px solid var(--redb)}
+.b-amber{background:var(--amberl);color:#a05500;border:1px solid var(--amberb)}
+.b-blue{background:var(--bluel);color:#1a5f8a;border:1px solid var(--blueb)}
+.b-mid{background:var(--cream);color:var(--muted);border:1px solid var(--line)}
+.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;background:var(--cream);color:var(--muted);padding:2px 6px;border-radius:4px;border:1px solid var(--line)}
+/* ISSUE CARDS */
+.icard{background:var(--white);border:1px solid var(--line);border-radius:var(--r2);padding:12px 14px;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;box-shadow:var(--sh);border-left:3px solid transparent;transition:box-shadow .12s}
+.icard:hover{box-shadow:var(--sh2)}
+.icard.i-crit{border-left-color:var(--red)}
+.icard.i-high{border-left-color:var(--amber)}
+.icard.i-med{border-left-color:var(--blue)}
+.iicon{width:32px;height:32px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.ibody{flex:1;min-width:0}
+.itop{display:flex;align-items:center;gap:7px;margin-bottom:3px;flex-wrap:wrap}
+.ititle{font-size:13px;font-weight:600}
+.idesc{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:5px}
+.ifix{font-size:11px;font-weight:600;color:#1a7a42;background:var(--greenl);padding:2px 8px;border-radius:4px;border:1px solid var(--greenb)}
+/* VAR FAMILY */
+.vfam{background:var(--white);border:1px solid var(--line);border-radius:var(--r3);margin-bottom:12px;box-shadow:var(--sh);overflow:hidden}
+.vfhdr{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:var(--cream);flex-wrap:wrap;gap:8px}
+.vfname-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vfname{font-size:13px;font-weight:600}
+.vfmeta{display:flex;gap:14px;padding:8px 16px;font-size:11.5px;color:var(--muted);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.vfmeta span{display:flex;align-items:center;gap:4px}
+.vffooter{padding:9px 16px;border-top:1px solid var(--line);background:var(--cream)}
+.orphan-box{background:var(--redl);border:1px solid var(--redb);border-radius:var(--r2);padding:12px 14px;margin-bottom:12px}
+.orphan-title{font-size:12px;font-weight:700;color:var(--red);margin-bottom:6px}
+.ochip{display:inline-flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--white);border:1px solid var(--redb);border-radius:20px;padding:3px 9px;color:var(--red);margin:2px}
+/* LOG */
+.log-add{background:var(--white);border:1px solid var(--line);border-radius:var(--r2);padding:14px 16px;margin-bottom:12px;box-shadow:var(--sh)}
+.log-form{display:grid;grid-template-columns:140px 150px 1fr auto;gap:8px;align-items:end;margin-top:10px}
+.logcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;box-shadow:var(--sh)}
+.logrow{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--line);font-size:12px}
+.logrow:last-child{border-bottom:none}
+.logrow:hover{background:var(--cream)}
+.ldate{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted2);min-width:80px}
+.lwho{font-size:11px;font-weight:600;min-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ldot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ltype{font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;flex-shrink:0}
+.lmsg{color:var(--muted);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* MODAL */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(3px)}
+.overlay.open{display:flex}
+.modal{background:var(--white);border-radius:var(--r3);width:100%;max-width:660px;max-height:92vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2);animation:mup .18s ease}
+@keyframes mup{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.mhdr{padding:16px 20px 12px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;position:sticky;top:0;background:var(--white);z-index:5}
+.mhdr h2{font-size:15px;font-weight:700}
+.mhdr p{font-size:12px;color:var(--muted);margin-top:2px}
+.mbody{padding:18px 20px}
+.mfooter{padding:12px 20px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:8px;position:sticky;bottom:0;background:var(--white)}
+.msec{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted2);font-family:'JetBrains Mono',monospace;margin:16px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.msec:first-child{margin-top:0}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.fg3{grid-template-columns:1fr 1fr 1fr}
+.ff{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:11px;font-weight:600;color:var(--ink2)}
+.field label .req{color:var(--red)}
+.field input,.field select,.field textarea{padding:8px 10px;border:1px solid var(--line);border-radius:var(--r);font-size:13px;font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);outline:none;transition:border-color .12s;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--red)}
+.field textarea{resize:vertical;min-height:58px}
+.field .hint{font-size:11px;color:var(--muted2)}
+.field select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%23999' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;padding-right:26px}
+.merr{background:var(--redl);border:1px solid var(--redb);border-radius:var(--r);padding:8px 12px;font-size:12px;color:var(--red);margin-top:10px;display:none}
+/* DELETE CONFIRM */
+.del-body{text-align:center;padding:26px 20px}
+.del-body .del-icon{font-size:38px;display:block;margin-bottom:10px}
+.del-body h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.del-body p{font-size:13px;color:var(--muted)}
+/* EMPTY */
+.empty{text-align:center;padding:48px 20px;color:var(--muted2)}
+.empty .eico{font-size:32px;display:block;margin-bottom:10px}
+.empty h3{font-size:15px;font-weight:600;color:var(--muted);margin-bottom:5px}
+/* TOAST */
+.toast{position:fixed;bottom:20px;right:20px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:var(--r2);font-size:13px;font-weight:500;box-shadow:var(--sh2);z-index:999;display:flex;align-items:center;gap:8px;opacity:0;transition:opacity .22s;pointer-events:none;border-left:3px solid var(--red)}
+.toast.show{opacity:1}
+.toast.t-ok{border-left-color:var(--green)}
+.toast.t-err{border-left-color:var(--red)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin .7s linear infinite;display:inline-block}
+@media(max-width:900px){.kpi-row{grid-template-columns:repeat(3,1fr)}.fg{grid-template-columns:1fr}.log-form{grid-template-columns:1fr 1fr}.main{padding:14px}}
+@media(max-width:600px){.kpi-row{grid-template-columns:1fr 1fr}.tabs{overflow-x:auto}}
+/* SYNC STATUS BAR */
+.sync-bar{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:5px 10px;font-family:'JetBrains Mono',monospace}
+.sync-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+.sync-dot.syncing{background:var(--amber);animation:pulse 1s infinite}
+.sync-dot.err{background:var(--red)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top">
+  <div class="logo">
+    <div class="logo-box">📦</div>
+    <div><h1>Amazon Audit Pro</h1><p>daily inventory tracker</p></div>
+  </div>
+  <div class="top-right">
+    <span class="last-lbl">Last audit: <span id="last-run">—</span></span>
+    <div class="sync-bar" id="sync-bar">
+      <span class="sync-dot" id="sync-dot"></span>
+      <span id="sync-lbl">not connected</span>
+    </div>
+    <button class="btn btn-ghost btn-sm" onclick="exportCSV()">⬇ CSV</button>
+    <button class="btn btn-ghost btn-sm" onclick="openModal('cfg-modal')">⚙ Setup</button>
+    <button class="btn btn-red" id="run-btn" onclick="runAudit()">▶ Run Audit</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- SETUP BANNER -->
+  <div class="setup-banner" id="setup-banner">
+    <div class="setup-icon">🔗</div>
+    <div class="setup-body">
+      <h3>Connect to GitHub to save & share your data</h3>
+      <p>All your SKUs and audit data will be saved in a JSON file in your GitHub repo. Anyone with your GitHub Pages link can view the dashboard live. Takes 30 seconds to set up.</p>
+      <div class="setup-form">
+        <div class="sf-field"><label>GitHub Token (classic)</label><input type="password" id="sb-token" placeholder="ghp_xxxxxxxxxxxx"></div>
+        <div class="sf-field"><label>GitHub Username</label><input type="text" id="sb-user" placeholder="e.g. gptc64415-blip"></div>
+        <div class="sf-field"><label>Repo Name</label><input type="text" id="sb-repo" placeholder="e.g. wood-daily-inventory-audit-"></div>
+      </div>
+      <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+        <button class="btn btn-green btn-sm" onclick="saveConfig()">✓ Connect & Save</button>
+        <span style="font-size:11px;color:var(--blue)">Your token is stored only in your browser — never shared.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-row">
+    <div class="kpi k-blue"><div class="kpi-lbl">Total SKUs</div><div class="kpi-val" id="k-total">0</div><div class="kpi-sub" id="k-total-s">no SKUs yet</div><div class="kpi-bar"><div class="kpi-fill" id="kf-t" style="width:100%;background:var(--ink)"></div></div></div>
+    <div class="kpi k-green"><div class="kpi-lbl">In Stock</div><div class="kpi-val" id="k-in" style="color:var(--green)">0</div><div class="kpi-sub" id="k-in-s">—</div><div class="kpi-bar"><div class="kpi-fill" id="kf-in" style="width:0;background:var(--green)"></div></div></div>
+    <div class="kpi k-amber"><div class="kpi-lbl">Low / OOS</div><div class="kpi-val" id="k-oos" style="color:var(--amber)">0</div><div class="kpi-sub" style="color:var(--amber)">needs restock</div><div class="kpi-bar"><div class="kpi-fill" id="kf-oos" style="width:0;background:var(--amber)"></div></div></div>
+    <div class="kpi k-red"><div class="kpi-lbl">Suppressed</div><div class="kpi-val" id="k-supp" style="color:var(--red)">0</div><div class="kpi-sub" style="color:var(--red)">listing issues</div><div class="kpi-bar"><div class="kpi-fill" id="kf-supp" style="width:0;background:var(--red)"></div></div></div>
+    <div class="kpi k-red"><div class="kpi-lbl">Var. Errors</div><div class="kpi-val" id="k-verr" style="color:var(--red)">0</div><div class="kpi-sub" style="color:var(--red)">orphaned/broken</div><div class="kpi-bar"><div class="kpi-fill" id="kf-verr" style="width:0;background:var(--red)"></div></div></div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs-row">
+    <div class="tabs">
+      <button class="tab active" data-tab="skus" onclick="switchTab('skus',this)">📦 SKU Inventory <span class="tab-badge" id="tb-skus">0</span></button>
+      <button class="tab" data-tab="issues" onclick="switchTab('issues',this)">⚠️ Issues <span class="tab-badge alert" id="tb-issues">0</span></button>
+      <button class="tab" data-tab="vars" onclick="switchTab('vars',this)">🔗 Variations <span class="tab-badge" id="tb-vars">0</span></button>
+      <button class="tab" data-tab="log" onclick="switchTab('log',this)">📋 Audit Log <span class="tab-badge" id="tb-log">0</span></button>
+    </div>
+    <span id="tab-meta" style="font-size:11px;color:var(--muted2);font-family:'JetBrains Mono',monospace"></span>
+  </div>
+
+  <!-- PANES -->
+  <div id="pane-skus"></div>
+  <div id="pane-issues" style="display:none"></div>
+  <div id="pane-vars" style="display:none"></div>
+  <div id="pane-log" style="display:none"></div>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="toast-ico">ℹ</span><span id="toast-msg"></span></div>
+
+<!-- ===== MODAL: SETUP ===== -->
+<div class="overlay" id="cfg-modal">
+  <div class="modal" style="max-width:500px">
+    <div class="mhdr"><div><h2>⚙ GitHub Setup</h2><p>Connect to save data and share live dashboard</p></div><button class="icon-btn" onclick="closeModal('cfg-modal')">✕</button></div>
+    <div class="mbody">
+      <div class="msec">GitHub credentials</div>
+      <div class="fg">
+        <div class="field ff"><label>Personal Access Token <span class="req">*</span></label><input type="password" id="cfg-token" placeholder="ghp_xxxxxxxxxxxx"><span class="hint">GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → tick "repo"</span></div>
+        <div class="field"><label>GitHub Username <span class="req">*</span></label><input type="text" id="cfg-user" placeholder="e.g. gptc64415-blip"></div>
+        <div class="field"><label>Repository Name <span class="req">*</span></label><input type="text" id="cfg-repo" placeholder="e.g. wood-daily-inventory-audit-"></div>
+      </div>
+      <div class="msec">How it works</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.7">
+        ✅ Your SKU data saves to a file called <code style="background:var(--cream);padding:1px 5px;border-radius:3px">audit-data.json</code> in your repo.<br>
+        ✅ Every edit you make instantly saves to GitHub.<br>
+        ✅ Your client opens your GitHub Pages link — they always see your latest data.<br>
+        ✅ No app, no login needed for the client.
+      </div>
+      <div class="merr" id="cfg-err"></div>
+    </div>
+    <div class="mfooter"><button class="btn" onclick="closeModal('cfg-modal')">Cancel</button><button class="btn btn-green" onclick="saveConfigFromModal()">✓ Save & Connect</button></div>
+  </div>
+</div>
+
+<!-- ===== MODAL: ADD/EDIT SKU ===== -->
+<div class="overlay" id="sku-modal">
+  <div class="modal">
+    <div class="mhdr"><div><h2 id="sm-title">Add New SKU</h2><p id="sm-sub">Fields marked * are required</p></div><button class="icon-btn" onclick="closeModal('sku-modal')">✕</button></div>
+    <div class="mbody">
+      <div class="msec">Basic Info</div>
+      <div class="fg">
+        <div class="field"><label>SKU Code <span class="req">*</span></label><input id="f-sku" placeholder="e.g. WHT-POLO-M"></div>
+        <div class="field"><label>ASIN <span class="req">*</span></label><input id="f-asin" placeholder="e.g. B09AB1235"></div>
+        <div class="field ff"><label>Product Title <span class="req">*</span></label><input id="f-title" placeholder="e.g. Classic Polo Shirt White Size M"></div>
+        <div class="field"><label>Category</label><input id="f-cat" placeholder="e.g. Apparel"></div>
+        <div class="field"><label>Action Owner</label><input id="f-owner" placeholder="e.g. Team A / Rahul"></div>
+      </div>
+      <div class="msec">Stock & Listing</div>
+      <div class="fg fg3">
+        <div class="field"><label>Qty on Hand <span class="req">*</span></label><input id="f-qty" type="number" min="0" placeholder="0"></div>
+        <div class="field"><label>Reorder Point</label><input id="f-reorder" type="number" min="0" placeholder="e.g. 10"><span class="hint">Show Low Stock below this</span></div>
+        <div class="field"><label>Listing Status</label>
+          <select id="f-listing"><option>Active</option><option>Suppressed</option><option>Inactive</option><option>Incomplete</option></select>
+        </div>
+        <div class="field"><label>Main Image?</label>
+          <select id="f-img"><option value="Yes">✅ Yes — compliant</option><option value="No">❌ No — missing</option></select>
+        </div>
+        <div class="field"><label>Buy Box?</label>
+          <select id="f-bb"><option value="Yes">✅ Yes — winning</option><option value="No">❌ No — lost</option></select>
+        </div>
+        <div class="field"><label>Action Status</label>
+          <select id="f-action"><option value="">None</option><option>Open</option><option>In Progress</option><option>Resolved</option><option>Snoozed</option></select>
+        </div>
+      </div>
+      <div class="msec">Variation Details</div>
+      <div class="fg">
+        <div class="field"><label>Variation Role</label>
+          <select id="f-vartype"><option value="Standalone">Standalone — no parent</option><option value="Linked">Child — linked to parent</option><option value="Error">Child — error / orphaned</option></select>
+        </div>
+        <div class="field"><label>Parent ASIN</label><input id="f-parent" placeholder="e.g. B09AB0000"><span class="hint">Leave blank if standalone</span></div>
+        <div class="field"><label>Variation Theme</label><input id="f-theme" placeholder="e.g. Size / Shoe Size / Color"></div>
+        <div class="field"><label>Attribute Value</label><input id="f-attrval" placeholder="e.g. M / UK9 / Red"><span class="hint">What this child represents</span></div>
+      </div>
+      <div class="msec">Notes</div>
+      <div class="field"><label>Issues / Notes</label><textarea id="f-notes"></textarea></div>
+      <div class="merr" id="sku-err"></div>
+    </div>
+    <div class="mfooter"><button class="btn" onclick="closeModal('sku-modal')">Cancel</button><button class="btn btn-green" onclick="saveSKU()"><span id="sku-save-lbl">✓ Save SKU</span></button></div>
+  </div>
+</div>
+
+<!-- ===== MODAL: ADD/EDIT PARENT ===== -->
+<div class="overlay" id="par-modal">
+  <div class="modal" style="max-width:520px">
+    <div class="mhdr"><div><h2 id="pm-title">Add Parent Variation</h2><p>Define the parent ASIN. Children are linked via their SKU entries.</p></div><button class="icon-btn" onclick="closeModal('par-modal')">✕</button></div>
+    <div class="mbody">
+      <div class="msec">Parent ASIN Details</div>
+      <div class="fg">
+        <div class="field"><label>Parent ASIN <span class="req">*</span></label><input id="vp-asin" placeholder="e.g. B09AB0000"><span class="hint">Non-buyable parent ASIN from Seller Central</span></div>
+        <div class="field"><label>Family Name <span class="req">*</span></label><input id="vp-name" placeholder="e.g. Classic Polo Shirt"></div>
+        <div class="field"><label>Variation Theme <span class="req">*</span></label><input id="vp-theme" placeholder="e.g. Size / Color / Shoe Size"><span class="hint">Must match Amazon's exact variation theme</span></div>
+        <div class="field"><label>Category</label><input id="vp-cat" placeholder="e.g. Apparel"></div>
+      </div>
+      <div class="field ff" style="margin-top:12px"><label>Notes</label><textarea id="vp-notes" style="min-height:52px"></textarea></div>
+      <div class="merr" id="par-err"></div>
+    </div>
+    <div class="mfooter"><button class="btn" onclick="closeModal('par-modal')">Cancel</button><button class="btn btn-green" onclick="saveParent()"><span id="par-save-lbl">✓ Save Parent</span></button></div>
+  </div>
+</div>
+
+<!-- ===== MODAL: DELETE ===== -->
+<div class="overlay" id="del-modal">
+  <div class="modal" style="max-width:360px">
+    <div class="del-body"><span class="del-icon">⚠️</span><h3 id="del-title">Delete?</h3><p id="del-desc"></p></div>
+    <div class="mfooter" style="justify-content:center"><button class="btn" onclick="closeModal('del-modal')">Cancel</button><button class="btn" style="background:var(--red);color:#fff;border-color:var(--red)" id="del-confirm">🗑 Delete</button></div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════
+//  CONFIG & STATE
+// ══════════════════════════════════════════════════
+let CFG = JSON.parse(localStorage.getItem('amz_cfg')||'{}');
+let DATA = { skus:[], parents:[], logs:[] };
+let activeTab = 'skus';
+let editSKU = -1, editPar = -1;
+let fsrch='', fstat='', fvar='';
+let saving = false;
+
+const DATA_FILE = 'audit-data.json';
+
+// ══════════════════════════════════════════════════
+//  GITHUB API
+// ══════════════════════════════════════════════════
+function apiBase(){ return `https://api.github.com/repos/${CFG.user}/${CFG.repo}/contents/${DATA_FILE}`; }
+function apiHeaders(){ return { 'Authorization':'token '+CFG.token, 'Content-Type':'application/json', 'Accept':'application/vnd.github.v3+json' }; }
+
+async function loadFromGitHub(){
+  if(!CFG.token||!CFG.user||!CFG.repo){ loadLocal(); updateSync('not connected',''); return; }
+  updateSync('loading…','syncing');
+  try{
+    const r = await fetch(apiBase(), { headers: apiHeaders() });
+    if(r.status===404){
+      // File doesn't exist yet — use sample data and save it
+      DATA = sampleData();
+      await saveToGitHub(false);
+      updateSync('connected · new file created','ok');
+    } else if(r.ok){
+      const j = await r.json();
+      const content = atob(j.content.replace(/\n/g,''));
+      DATA = JSON.parse(content);
+      DATA.sha = j.sha; // save sha for updates
+      updateSync('connected · data loaded','ok');
+    } else {
+      throw new Error('HTTP '+r.status);
+    }
+  } catch(e){
+    console.error(e);
+    loadLocal();
+    updateSync('github error — using local data','err');
+    toast('GitHub error: '+e.message,'t-err');
+  }
+  renderAll();
+}
+
+async function saveToGitHub(showToast=true){
+  if(!CFG.token||!CFG.user||!CFG.repo) return saveLocal();
+  if(saving) return;
+  saving=true;
+  updateSync('saving…','syncing');
+  try{
+    const payload = { skus: DATA.skus, parents: DATA.parents, logs: DATA.logs };
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null,2))));
+    const body = { message:'audit update '+ new Date().toISOString().slice(0,16), content };
+    if(DATA.sha) body.sha = DATA.sha;
+    const r = await fetch(apiBase(), { method:'PUT', headers: apiHeaders(), body: JSON.stringify(body) });
+    if(!r.ok) throw new Error('HTTP '+r.status+' — check your token has repo write access');
+    const j = await r.json();
+    DATA.sha = j.content.sha;
+    updateSync('saved to github · '+new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}),'ok');
+    saveLocal(); // keep local backup
+    if(showToast) toast('Saved to GitHub ✓','t-ok');
+  } catch(e){
+    updateSync('save failed — check token','err');
+    toast('Save failed: '+e.message,'t-err');
+  }
+  saving=false;
+}
+
+function saveLocal(){ localStorage.setItem('amz_data', JSON.stringify({skus:DATA.skus,parents:DATA.parents,logs:DATA.logs})); }
+function loadLocal(){ const d=JSON.parse(localStorage.getItem('amz_data')||'null'); if(d){ DATA.skus=d.skus||[]; DATA.parents=d.parents||[]; DATA.logs=d.logs||[]; } else { DATA=sampleData(); } }
+
+function updateSync(msg, state){
+  document.getElementById('sync-lbl').textContent=msg;
+  const dot=document.getElementById('sync-dot');
+  dot.className='sync-dot'+(state==='syncing'?' syncing':state==='err'?' err':'');
+}
+
+// ══════════════════════════════════════════════════
+//  SAMPLE DATA
+// ══════════════════════════════════════════════════
+function sampleData(){
+  return {
+    sha: null,
+    parents:[
+      {asin:'B09AB0000',name:'Classic Polo Shirt',theme:'Size',cat:'Apparel',notes:''},
+      {asin:'B07CD0000',name:'Slim Fit Jeans',theme:'Size',cat:'Apparel',notes:''},
+      {asin:'B05IJ0000',name:'Running Sneakers Blue',theme:'Shoe Size',cat:'Footwear',notes:''},
+    ],
+    skus:[
+      {sku:'WHT-POLO-S',asin:'B09AB1234',title:'Classic Polo Shirt S',cat:'Apparel',qty:34,reorder:10,listing:'Active',img:'Yes',bb:'Yes',vartype:'Linked',parent:'B09AB0000',theme:'Size',attrval:'S',notes:'',owner:'Team A',action:''},
+      {sku:'WHT-POLO-M',asin:'B09AB1235',title:'Classic Polo Shirt M',cat:'Apparel',qty:22,reorder:10,listing:'Active',img:'Yes',bb:'Yes',vartype:'Linked',parent:'B09AB0000',theme:'Size',attrval:'M',notes:'',owner:'Team A',action:''},
+      {sku:'WHT-POLO-L',asin:'B09AB1236',title:'Classic Polo Shirt L',cat:'Apparel',qty:0,reorder:10,listing:'Active',img:'Yes',bb:'No',vartype:'Linked',parent:'B09AB0000',theme:'Size',attrval:'L',notes:'Reorder 50 units',owner:'Team A',action:'Open'},
+      {sku:'WHT-POLO-XL',asin:'B09AB1237',title:'Classic Polo Shirt XL',cat:'Apparel',qty:3,reorder:10,listing:'Active',img:'Yes',bb:'No',vartype:'Error',parent:'',theme:'Size',attrval:'XL',notes:'Orphaned — link to B09AB0000',owner:'Team A',action:'Open'},
+      {sku:'BLK-JEANS-30',asin:'B07CD2345',title:'Slim Fit Jeans 30',cat:'Apparel',qty:18,reorder:8,listing:'Active',img:'Yes',bb:'Yes',vartype:'Linked',parent:'B07CD0000',theme:'Size',attrval:'30',notes:'',owner:'Team B',action:''},
+      {sku:'BLK-JEANS-34',asin:'B07CD2347',title:'Slim Fit Jeans 34',cat:'Apparel',qty:0,reorder:8,listing:'Suppressed',img:'No',bb:'No',vartype:'Error',parent:'',theme:'Size',attrval:'34',notes:'Missing main image',owner:'Team B',action:'Open'},
+      {sku:'BLU-SNEAKER-8',asin:'B05IJ5678',title:'Running Sneakers UK8',cat:'Footwear',qty:5,reorder:12,listing:'Active',img:'Yes',bb:'Yes',vartype:'Linked',parent:'B05IJ0000',theme:'Shoe Size',attrval:'UK8',notes:'Reorder now',owner:'Team C',action:'Open'},
+      {sku:'BLU-SNEAKER-9',asin:'B05IJ5679',title:'Running Sneakers UK9',cat:'Footwear',qty:11,reorder:12,listing:'Active',img:'Yes',bb:'Yes',vartype:'Linked',parent:'B05IJ0000',theme:'Shoe Size',attrval:'UK9',notes:'',owner:'Team C',action:''},
+      {sku:'RED-CAP-ONE',asin:'B06GH4567',title:'Adjustable Cap Red',cat:'Accessories',qty:67,reorder:20,listing:'Active',img:'Yes',bb:'Yes',vartype:'Standalone',parent:'',theme:'',attrval:'',notes:'',owner:'Team C',action:''},
+    ],
+    logs:[{date:'2025-05-28',time:'09:00',who:'System',type:'audit',note:'Dashboard initialised with sample data.'}]
+  };
+}
+
+// ══════════════════════════════════════════════════
+//  STATUS HELPERS
+// ══════════════════════════════════════════════════
+function getStatus(r){
+  if(r.listing==='Suppressed') return 'Suppressed';
+  if(r.qty===0) return 'Out of Stock';
+  if(r.reorder>0 && Number(r.qty)<=Number(r.reorder)) return 'Low Stock';
+  return 'In Stock';
+}
+function rowCls(r){ const s=getStatus(r); if(s==='Suppressed'||r.vartype==='Error') return 'r-err'; if(s==='Low Stock'||s==='Out of Stock') return 'r-warn'; return ''; }
+function sBadge(r){
+  const s=getStatus(r);
+  const m={'In Stock':['b-green','✓'],'Low Stock':['b-amber','⚠'],'Out of Stock':['b-red','✕'],'Suppressed':['b-red','🚫']};
+  const[c,i]=m[s]||['b-mid','?'];
+  return `<span class="badge ${c}">${i} ${s}</span>`;
+}
+function vBadge(v){
+  if(v==='Linked') return `<span class="badge b-green">🔗 Linked</span>`;
+  if(v==='Error')  return `<span class="badge b-red">✕ Error</span>`;
+  return `<span class="badge b-mid">— Standalone</span>`;
+}
+function yBadge(v,y='OK',n='No'){ return v==='Yes' ? `<span class="badge b-green">✓ ${y}</span>` : `<span class="badge b-red">✕ ${n}</span>`; }
+function lBadge(v){ return v==='Active' ? `<span class="badge b-green">Active</span>` : `<span class="badge b-red">${esc(v)}</span>`; }
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function gv(id){ return (document.getElementById(id)?.value||'').trim(); }
+function sv(id,v){ const e=document.getElementById(id); if(e) e.value=v||''; }
+function set(id,v){ const e=document.getElementById(id); if(e) e.textContent=v; }
+function sty(id,p,v){ const e=document.getElementById(id); if(e) e.style[p]=v; }
+
+// ══════════════════════════════════════════════════
+//  METRICS
+// ══════════════════════════════════════════════════
+function updateMetrics(){
+  const total=DATA.skus.length;
+  const inS=DATA.skus.filter(r=>getStatus(r)==='In Stock').length;
+  const oos=DATA.skus.filter(r=>['Out of Stock','Low Stock'].includes(getStatus(r))).length;
+  const supp=DATA.skus.filter(r=>getStatus(r)==='Suppressed').length;
+  const verr=DATA.skus.filter(r=>r.vartype==='Error').length;
+  const issues=computeIssues().length;
+  const pct=total?Math.round(inS/total*100):0;
+  set('k-total',total); set('k-total-s',total?total+' SKUs tracked':'add first SKU');
+  set('k-in',inS); set('k-in-s',total?pct+'% availability':'—');
+  sty('kf-in','width',pct+'%');
+  set('k-oos',oos); sty('kf-oos','width',total?Math.min(100,Math.round(oos/total*100*2))+'%':'0%');
+  set('k-supp',supp); sty('kf-supp','width',total?Math.min(100,Math.round(supp/total*100*3))+'%':'0%');
+  set('k-verr',verr); sty('kf-verr','width',total?Math.min(100,Math.round(verr/total*100*3))+'%':'0%');
+  set('tb-skus',total); set('tb-issues',issues); set('tb-vars',DATA.parents.length); set('tb-log',DATA.logs.length);
+  const lastLog=DATA.logs[DATA.logs.length-1];
+  if(lastLog) set('last-run',lastLog.date+' · '+lastLog.time);
+}
+
+// ══════════════════════════════════════════════════
+//  RENDER SKUs
+// ══════════════════════════════════════════════════
+function renderSKUs(){
+  const q=fsrch.toLowerCase();
+  const data=DATA.skus.map((r,i)=>({...r,_i:i})).filter(r=>{
+    const m=!q||(r.sku.toLowerCase().includes(q)||r.asin.toLowerCase().includes(q)||(r.title||'').toLowerCase().includes(q));
+    return m&&(!fstat||getStatus(r)===fstat)&&(!fvar||r.vartype===fvar);
+  });
+  const rows=data.length?data.map(r=>`
+    <tr class="${rowCls(r)}" title="Double-click to edit" ondblclick="openSKUEdit(${r._i})">
+      <td><span class="pill">${esc(r.sku)}</span></td>
+      <td><span class="pill">${esc(r.asin)}</span></td>
+      <td style="max-width:170px" title="${esc(r.title)}">${esc(r.title)}</td>
+      <td style="text-align:right;font-family:'JetBrains Mono',monospace;font-weight:600">${r.qty}</td>
+      <td>${sBadge(r)}</td>
+      <td>${vBadge(r.vartype)}</td>
+      <td>${yBadge(r.img)}</td>
+      <td>${lBadge(r.listing)}</td>
+      <td style="max-width:140px;color:var(--muted)" title="${esc(r.notes)}">${esc(r.notes)||'—'}</td>
+      <td style="text-align:center;white-space:nowrap">
+        <span class="icon-btn" onclick="openSKUEdit(${r._i})" title="Edit">✏️</span>
+        <span class="icon-btn del" onclick="confirmDel('sku',${r._i})" title="Delete" style="margin-left:3px">🗑</span>
+      </td>
+    </tr>`).join('')
+  :`<tr><td colspan="10" style="text-align:center;padding:40px;color:var(--muted2)">
+    <div style="font-size:28px;margin-bottom:8px">📦</div>
+    ${DATA.skus.length?'No SKUs match your filter.':'No SKUs yet — click Add SKU to start.'}
+  </td></tr>`;
+
+  document.getElementById('pane-skus').innerHTML=`
+  <div class="toolbar">
+    <div class="srch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input value="${esc(fsrch)}" placeholder="Search SKU, ASIN, title…" oninput="fsrch=this.value;renderSKUs()"></div>
+    <select class="filt" onchange="fstat=this.value;renderSKUs()">
+      <option value="">All statuses</option>
+      <option ${fstat==='In Stock'?'selected':''}>In Stock</option>
+      <option ${fstat==='Low Stock'?'selected':''}>Low Stock</option>
+      <option ${fstat==='Out of Stock'?'selected':''}>Out of Stock</option>
+      <option ${fstat==='Suppressed'?'selected':''}>Suppressed</option>
+    </select>
+    <select class="filt" onchange="fvar=this.value;renderSKUs()">
+      <option value="">All variations</option>
+      <option value="Linked" ${fvar==='Linked'?'selected':''}>Linked</option>
+      <option value="Error" ${fvar==='Error'?'selected':''}>Variation Error</option>
+      <option value="Standalone" ${fvar==='Standalone'?'selected':''}>Standalone</option>
+    </select>
+    <button class="btn btn-green" onclick="openSKUAdd()">+ Add SKU</button>
+  </div>
+  <div class="tcard"><div class="twrap"><table>
+    <thead><tr>
+      <th style="width:110px">SKU</th><th style="width:100px">ASIN</th><th style="width:170px">Title</th>
+      <th style="width:52px;text-align:right">Qty</th><th style="width:110px">Status</th>
+      <th style="width:90px">Variation</th><th style="width:68px">Image</th>
+      <th style="width:82px">Listing</th><th style="width:140px">Notes</th>
+      <th style="width:70px;text-align:center">Actions</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div>
+  <div class="tfoot"><span>${data.length} of ${DATA.skus.length} SKUs</span><span>Double-click row to edit</span></div></div>`;
+  updateMetrics();
+}
+
+// ══════════════════════════════════════════════════
+//  ISSUES
+// ══════════════════════════════════════════════════
+function computeIssues(){
+  const out=[];
+  DATA.skus.forEach((r,i)=>{
+    const s=getStatus(r);
+    if(r.vartype==='Error') out.push({lv:'i-crit',bg:['#fff0ef','#d63031'],lbl:'🔴 Critical',title:`Orphaned child — ${r.sku}`,desc:`ASIN ${r.asin} is not linked to any parent variation. Appears standalone — losing variation traffic and rank.`,fix:r.parent?`Re-link to parent ${r.parent} via Manage Inventory → Edit variation or flat file re-upload.`:'Add the correct Parent ASIN in this SKU\'s edit form then re-upload via flat file.',idx:i});
+    if(s==='Suppressed') out.push({lv:'i-crit',bg:['#fff0ef','#d63031'],lbl:'🔴 Critical',title:`Suppressed — ${r.sku}`,desc:`${r.asin} is suppressed and invisible in search.${r.img==='No'?' Likely cause: missing or non-compliant main image (min 1000×1000px, white background).':''}`,fix:r.img==='No'?'Upload a compliant main image via Seller Central → Manage Images → Upload image.':'Go to Seller Central → Fix Your Products → resolve each listed suppression reason.',idx:i});
+    if(s==='Low Stock') out.push({lv:'i-high',bg:['#fff8f0','#e67e22'],lbl:'🟠 High',title:`Low stock — ${r.sku} (${r.qty} units)`,desc:`Only ${r.qty} unit${r.qty!=1?'s':''} left.${r.reorder?' Reorder point: '+r.reorder+' units.':''} Risk of stockout within days.`,fix:'Raise a PO immediately. Consider a small price increase to slow velocity while restocking.',idx:i});
+    if(s==='Out of Stock') out.push({lv:'i-med',bg:['#f0f7ff','#2980b9'],lbl:'🟡 Medium',title:`Out of stock — ${r.sku}`,desc:`0 units on hand. BSR rank drops every day it stays OOS. Competitors gain ground.`,fix:r.notes||'Reorder stock. For FBA: create inbound shipment. For FBM: update handling time.',idx:i});
+    if(r.img==='No'&&s!=='Suppressed') out.push({lv:'i-high',bg:['#fff8f0','#e67e22'],lbl:'🟠 High',title:`Missing image — ${r.sku}`,desc:`Image flagged missing for ${r.asin}. Amazon may suppress this listing automatically.`,fix:'Upload 1000×1000px minimum image: white background, no watermarks, no text overlays.',idx:i});
+  });
+  return out.sort((a,b)=>{const o={'i-crit':0,'i-high':1,'i-med':2};return(o[a.lv]||9)-(o[b.lv]||9);});
+}
+
+function renderIssues(){
+  const issues=computeIssues();
+  const el=document.getElementById('pane-issues');
+  if(!issues.length){ el.innerHTML=`<div class="empty"><span class="eico">✅</span><h3>All clear!</h3><p>No issues found. Keep auditing daily.</p></div>`; return; }
+  el.innerHTML=issues.map(iss=>`
+    <div class="icard ${iss.lv}">
+      <div class="iicon" style="background:${iss.bg[0]};font-size:16px">${iss.lv==='i-crit'?'🚫':iss.lv==='i-high'?'⚠️':'ℹ️'}</div>
+      <div class="ibody">
+        <div class="itop">
+          <span class="ititle">${esc(iss.title)}</span>
+          <span class="badge ${iss.lv==='i-crit'?'b-red':iss.lv==='i-high'?'b-amber':'b-blue'}" style="font-size:10px">${iss.lbl}</span>
+        </div>
+        <div class="idesc">${esc(iss.desc)}</div>
+        <span class="ifix">🔧 ${esc(iss.fix)}</span>
+      </div>
+      <button class="btn btn-sm" onclick="openSKUEdit(${iss.idx})">✏️ Edit</button>
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════════════════
+//  VARIATIONS
+// ══════════════════════════════════════════════════
+function renderVariations(){
+  const el=document.getElementById('pane-vars');
+  const pASINs=new Set(DATA.parents.map(p=>p.asin));
+  const orphans=DATA.skus.filter(r=>r.vartype==='Error'||(r.vartype==='Linked'&&r.parent&&!pASINs.has(r.parent)));
+  let html=`<div style="display:flex;justify-content:flex-end;margin-bottom:12px"><button class="btn btn-green" onclick="openParentAdd()">+ Add Parent ASIN</button></div>`;
+  if(orphans.length) html+=`<div class="orphan-box"><div class="orphan-title">⚠ ${orphans.length} orphaned / error child${orphans.length>1?'ren':''} — not linked to any registered parent</div><div style="font-size:12px;color:var(--red);margin-bottom:8px">Add the parent ASIN below, then edit each SKU to link it correctly.</div><div>${orphans.map(r=>`<span class="ochip">✕ ${esc(r.sku)} (${esc(r.asin)})<button class="btn btn-xs" onclick="openSKUEdit(${DATA.skus.indexOf(r)})" style="margin-left:5px">Fix</button></span>`).join('')}</div></div>`;
+  if(!DATA.parents.length){ el.innerHTML=html+`<div class="empty"><span class="eico">🔗</span><h3>No parent variations yet</h3><p>Click "Add Parent ASIN" to create your first variation family.</p></div>`; return; }
+
+  DATA.parents.forEach((p,pi)=>{
+    const children=DATA.skus.map((r,i)=>({...r,_i:i})).filter(r=>r.parent===p.asin&&r.vartype==='Linked');
+    const hasErr=DATA.skus.some(r=>r.parent===p.asin&&r.vartype==='Error');
+    const hasStop=children.some(r=>['Suppressed','Out of Stock'].includes(getStatus(r)));
+    const hasWarn=children.some(r=>getStatus(r)==='Low Stock');
+    const health=hasErr||hasStop?['b-red','✕ Issues']:hasWarn?['b-amber','⚠ Warning']:['b-green','✓ Healthy'];
+    const totalQty=children.reduce((a,r)=>a+Number(r.qty||0),0);
+
+    const childRows=children.length?children.map(r=>`
+      <tr class="${rowCls(r)}">
+        <td><span class="pill">${esc(r.sku)}</span></td>
+        <td><span class="pill">${esc(r.asin)}</span></td>
+        <td style="font-weight:600;color:var(--red)">${esc(r.attrval||'—')}</td>
+        <td style="text-align:right;font-family:'JetBrains Mono',monospace;font-weight:600">${r.qty}</td>
+        <td style="text-align:right;font-family:'JetBrains Mono',monospace;color:var(--muted2)">${r.reorder||'—'}</td>
+        <td>${sBadge(r)}</td>
+        <td>${yBadge(r.img)}</td>
+        <td>${lBadge(r.listing)}</td>
+        <td>${yBadge(r.bb,'Yes','No')}</td>
+        <td style="max-width:110px;color:var(--muted)" title="${esc(r.notes)}">${esc(r.notes)||'—'}</td>
+        <td style="text-align:center"><span class="icon-btn" onclick="openSKUEdit(${r._i})">✏️</span></td>
+      </tr>`).join('')
+    :`<tr><td colspan="11" style="text-align:center;padding:16px;color:var(--muted2);font-size:12px">No linked child SKUs yet. <button class="btn btn-xs btn-green" onclick="quickChild('${esc(p.asin)}','${esc(p.theme)}')" style="margin-left:6px">+ Add Child SKU</button></td></tr>`;
+
+    html+=`<div class="vfam">
+      <div class="vfhdr">
+        <div class="vfname-row">
+          <span class="vfname">${esc(p.name)}</span>
+          <span class="pill">${esc(p.asin)}</span>
+          ${p.cat?`<span class="badge b-mid" style="font-size:10px">${esc(p.cat)}</span>`:''}
+        </div>
+        <div style="display:flex;align-items:center;gap:7px">
+          <span class="badge ${health[0]}">${health[1]}</span>
+          <span class="icon-btn" onclick="openParentEdit(${pi})" title="Edit parent">✏️</span>
+          <span class="icon-btn del" onclick="confirmDel('parent',${pi})" title="Delete parent">🗑</span>
+        </div>
+      </div>
+      <div class="vfmeta">
+        <span>🏷 Theme: <strong>${esc(p.theme)}</strong></span>
+        <span>📋 ${children.length} child${children.length!==1?'ren':''}</span>
+        <span>📦 Total stock: <strong>${totalQty} units</strong></span>
+        <span>✓ In stock: <strong>${children.filter(r=>getStatus(r)==='In Stock').length}/${children.length}</strong></span>
+        ${p.notes?`<span style="font-style:italic;color:var(--muted2)">"${esc(p.notes)}"</span>`:''}
+      </div>
+      <div class="twrap"><table style="min-width:640px">
+        <thead><tr>
+          <th style="width:110px">SKU</th><th style="width:100px">ASIN</th><th style="width:68px">Value</th>
+          <th style="width:50px;text-align:right">Qty</th><th style="width:64px;text-align:right">Reorder</th>
+          <th style="width:110px">Status</th><th style="width:68px">Image</th><th style="width:82px">Listing</th>
+          <th style="width:64px">Buy Box</th><th style="width:110px">Notes</th><th style="width:48px">Edit</th>
+        </tr></thead>
+        <tbody>${childRows}</tbody>
+      </table></div>
+      <div class="vffooter"><button class="btn btn-sm btn-green" onclick="quickChild('${esc(p.asin)}','${esc(p.theme)}')">+ Add Child SKU to ${esc(p.asin)}</button></div>
+    </div>`;
+  });
+  el.innerHTML=html;
+}
+
+// ══════════════════════════════════════════════════
+//  AUDIT LOG
+// ══════════════════════════════════════════════════
+function renderLog(){
+  const dotClr={audit:'#d63031',fix:'#27ae60',restock:'#2980b9',variation:'#e67e22',note:'#aaa'};
+  const typeBg={audit:'#fff0ef',fix:'#f0fff5',restock:'#f0f7ff',variation:'#fff8f0',note:'#f5f5f0'};
+  const typeCl={audit:'#a32020',fix:'#1a7a42',restock:'#1a5f8a',variation:'#a05500',note:'#777'};
+  const sorted=[...DATA.logs].reverse();
+  const rows=sorted.length?sorted.map(l=>`
+    <div class="logrow">
+      <span class="ldate">${esc(l.date)} ${esc(l.time)}</span>
+      <span class="ldot" style="background:${dotClr[l.type]||'#aaa'}"></span>
+      <span class="lwho">${esc(l.who||'System')}</span>
+      <span class="ltype" style="background:${typeBg[l.type]||'#f5f5f0'};color:${typeCl[l.type]||'#777'}">${esc(l.type)}</span>
+      <span class="lmsg">${esc(l.note)}</span>
+    </div>`).join('')
+  :`<div style="text-align:center;padding:28px;color:var(--muted2);font-size:13px">No logs yet.</div>`;
+
+  document.getElementById('pane-log').innerHTML=`
+  <div class="log-add">
+    <div style="font-size:13px;font-weight:600">📝 Log today's audit</div>
+    <div class="log-form">
+      <div class="field"><label>Date</label><input type="date" id="log-date" value="${new Date().toISOString().slice(0,10)}"></div>
+      <div class="field"><label>Your name / team</label><input type="text" id="log-who" placeholder="e.g. Rahul / Team A"></div>
+      <div class="field"><label>Note</label><input type="text" id="log-note" placeholder="e.g. Fixed variation on BLK-JEANS-34, restocked polo L"></div>
+      <div class="field"><label>&nbsp;</label><button class="btn btn-red" onclick="addLog()">+ Add</button></div>
+    </div>
+  </div>
+  <div class="logcard">${rows}</div>`;
+}
+
+async function addLog(){
+  const date=gv('log-date'), who=(document.getElementById('log-who')?.value||'').trim(), note=(document.getElementById('log-note')?.value||'').trim();
+  if(!date||!note){ toast('Please fill date and note.','t-err'); return; }
+  DATA.logs.push({date,time:new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}),who:who||'Manual',type:'audit',note});
+  renderLog(); updateMetrics();
+  await saveToGitHub();
+}
+
+// ══════════════════════════════════════════════════
+//  RUN AUDIT
+// ══════════════════════════════════════════════════
+let auditing=false;
+async function runAudit(){
+  if(auditing) return;
+  auditing=true;
+  const btn=document.getElementById('run-btn');
+  btn.disabled=true; btn.innerHTML='<span class="spin">⟳</span> Scanning…';
+  await new Promise(r=>setTimeout(r,1200));
+  const total=DATA.skus.length, inS=DATA.skus.filter(r=>getStatus(r)==='In Stock').length;
+  const oos=DATA.skus.filter(r=>getStatus(r)==='Out of Stock').length;
+  const low=DATA.skus.filter(r=>getStatus(r)==='Low Stock').length;
+  const supp=DATA.skus.filter(r=>getStatus(r)==='Suppressed').length;
+  const verr=DATA.skus.filter(r=>r.vartype==='Error').length;
+  const issues=computeIssues().length;
+  const now=new Date();
+  const d=now.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+  const t=now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+  DATA.logs.push({date:d,time:t,who:'Auto Audit',type:'audit',note:`${total} SKUs — In Stock:${inS} Low:${low} OOS:${oos} Suppressed:${supp} Var Errors:${verr} — ${issues} issues found`});
+  await saveToGitHub();
+  auditing=false;
+  btn.disabled=false; btn.innerHTML='▶ Run Audit';
+  renderAll();
+  toast(`Audit done — ${issues} issue${issues!==1?'s':''} found`, issues>0?'':'t-ok');
+}
+
+// ══════════════════════════════════════════════════
+//  SKU MODAL
+// ══════════════════════════════════════════════════
+function openSKUAdd(){
+  editSKU=-1;
+  set('sm-title','Add New SKU'); set('sm-sub','Fields marked * are required'); set('sku-save-lbl','✓ Save SKU');
+  ['f-sku','f-asin','f-title','f-cat','f-owner','f-notes','f-parent','f-theme','f-attrval'].forEach(id=>sv(id,''));
+  sv('f-qty',''); sv('f-reorder',''); sv('f-listing','Active'); sv('f-img','Yes'); sv('f-bb','Yes'); sv('f-vartype','Standalone'); sv('f-action','');
+  document.getElementById('f-sku').readOnly=false;
+  document.getElementById('sku-err').style.display='none';
+  openModal('sku-modal'); setTimeout(()=>document.getElementById('f-sku').focus(),120);
+}
+function openSKUEdit(i){
+  editSKU=i; const r=DATA.skus[i];
+  set('sm-title','Edit SKU'); set('sm-sub','Editing: '+r.sku); set('sku-save-lbl','✓ Update SKU');
+  sv('f-sku',r.sku); sv('f-asin',r.asin); sv('f-title',r.title); sv('f-cat',r.cat); sv('f-owner',r.owner);
+  sv('f-qty',r.qty); sv('f-reorder',r.reorder); sv('f-listing',r.listing||'Active');
+  sv('f-img',r.img||'Yes'); sv('f-bb',r.bb||'Yes'); sv('f-vartype',r.vartype||'Standalone');
+  sv('f-parent',r.parent); sv('f-theme',r.theme); sv('f-attrval',r.attrval); sv('f-notes',r.notes); sv('f-action',r.action||'');
+  document.getElementById('f-sku').readOnly=true;
+  document.getElementById('sku-err').style.display='none';
+  openModal('sku-modal'); setTimeout(()=>document.getElementById('f-asin').focus(),120);
+}
+function quickChild(asin,theme){
+  openSKUAdd();
+  setTimeout(()=>{ sv('f-parent',asin); sv('f-theme',theme); sv('f-vartype','Linked'); },150);
+}
+async function saveSKU(){
+  const sku=gv('f-sku'), asin=gv('f-asin'), title=gv('f-title');
+  const qty=parseInt(document.getElementById('f-qty')?.value)||0;
+  if(!sku||!asin||!title){ showErr('sku-err','SKU, ASIN and Title are required.'); return; }
+  if(editSKU<0&&DATA.skus.find(r=>r.sku===sku)){ showErr('sku-err',`SKU "${sku}" already exists.`); return; }
+  document.getElementById('sku-err').style.display='none';
+  const obj={sku,asin,title,cat:gv('f-cat'),qty,reorder:parseInt(document.getElementById('f-reorder')?.value)||0,
+    listing:gv('f-listing')||'Active',img:gv('f-img')||'Yes',bb:gv('f-bb')||'Yes',
+    vartype:gv('f-vartype')||'Standalone',parent:gv('f-parent'),theme:gv('f-theme'),attrval:gv('f-attrval'),
+    notes:gv('f-notes'),owner:gv('f-owner'),action:gv('f-action')};
+  if(editSKU<0){ DATA.skus.push(obj); toast('SKU added','t-ok'); }
+  else { DATA.skus[editSKU]=obj; toast('SKU updated','t-ok'); }
+  closeModal('sku-modal');
+  renderAll();
+  await saveToGitHub();
+}
+
+// ══════════════════════════════════════════════════
+//  PARENT MODAL
+// ══════════════════════════════════════════════════
+function openParentAdd(){
+  editPar=-1; set('pm-title','Add Parent Variation'); set('par-save-lbl','✓ Save Parent');
+  ['vp-asin','vp-name','vp-theme','vp-cat','vp-notes'].forEach(id=>sv(id,''));
+  document.getElementById('vp-asin').readOnly=false;
+  document.getElementById('par-err').style.display='none';
+  openModal('par-modal'); setTimeout(()=>document.getElementById('vp-asin').focus(),120);
+}
+function openParentEdit(i){
+  editPar=i; const p=DATA.parents[i];
+  set('pm-title','Edit Parent Variation'); set('par-save-lbl','✓ Update Parent');
+  sv('vp-asin',p.asin); sv('vp-name',p.name); sv('vp-theme',p.theme); sv('vp-cat',p.cat); sv('vp-notes',p.notes);
+  document.getElementById('vp-asin').readOnly=true;
+  document.getElementById('par-err').style.display='none';
+  openModal('par-modal'); setTimeout(()=>document.getElementById('vp-name').focus(),120);
+}
+async function saveParent(){
+  const asin=gv('vp-asin'),name=gv('vp-name'),theme=gv('vp-theme');
+  if(!asin||!name||!theme){ showErr('par-err','Parent ASIN, name and theme are required.'); return; }
+  if(editPar<0&&DATA.parents.find(p=>p.asin===asin)){ showErr('par-err',`Parent "${asin}" already exists.`); return; }
+  document.getElementById('par-err').style.display='none';
+  const obj={asin,name,theme,cat:gv('vp-cat'),notes:gv('vp-notes')};
+  if(editPar<0){ DATA.parents.push(obj); toast('Parent added','t-ok'); }
+  else { DATA.parents[editPar]=obj; toast('Parent updated','t-ok'); }
+  closeModal('par-modal');
+  renderVariations(); updateMetrics();
+  await saveToGitHub();
+}
+
+// ══════════════════════════════════════════════════
+//  DELETE
+// ══════════════════════════════════════════════════
+function confirmDel(type,idx){
+  const name=type==='sku'?DATA.skus[idx].sku:DATA.parents[idx].name;
+  set('del-title','Delete '+(type==='sku'?'SKU':'Parent Variation'));
+  set('del-desc',type==='sku'?`"${name}" will be permanently removed.`:`"${name}" (${DATA.parents[idx].asin}) will be removed. Child SKUs pointing to it will become orphaned.`);
+  document.getElementById('del-confirm').onclick=()=>doDelete(type,idx);
+  openModal('del-modal');
+}
+async function doDelete(type,idx){
+  if(type==='sku'){ const n=DATA.skus[idx].sku; DATA.skus.splice(idx,1); toast(`${n} deleted`,''); }
+  else { const n=DATA.parents[idx].name; DATA.parents.splice(idx,1); toast(`${n} deleted`,''); }
+  closeModal('del-modal'); renderAll();
+  await saveToGitHub();
+}
+
+// ══════════════════════════════════════════════════
+//  CONFIG
+// ══════════════════════════════════════════════════
+function saveConfig(){
+  const token=document.getElementById('sb-token')?.value.trim();
+  const user=document.getElementById('sb-user')?.value.trim();
+  const repo=document.getElementById('sb-repo')?.value.trim();
+  if(!token||!user||!repo){ toast('Please fill all 3 fields.','t-err'); return; }
+  CFG={token,user,repo}; localStorage.setItem('amz_cfg',JSON.stringify(CFG));
+  document.getElementById('setup-banner').classList.add('hidden');
+  toast('Connecting to GitHub…','');
+  loadFromGitHub();
+}
+function saveConfigFromModal(){
+  const token=gv('cfg-token'), user=gv('cfg-user'), repo=gv('cfg-repo');
+  if(!token||!user||!repo){ showErr('cfg-err','All three fields are required.'); return; }
+  CFG={token,user,repo}; localStorage.setItem('amz_cfg',JSON.stringify(CFG));
+  closeModal('cfg-modal');
+  document.getElementById('setup-banner').classList.add('hidden');
+  toast('Connecting to GitHub…','');
+  loadFromGitHub();
+}
+
+// ══════════════════════════════════════════════════
+//  EXPORT
+// ══════════════════════════════════════════════════
+function exportCSV(){
+  const hdr=['SKU','ASIN','Title','Category','Qty','Reorder','Status','Variation','Parent ASIN','Theme','Attr Value','Image','Listing','Buy Box','Notes','Owner','Action'];
+  const rows=DATA.skus.map(r=>[r.sku,r.asin,r.title,r.cat||'',r.qty,r.reorder||'',getStatus(r),r.vartype,r.parent||'',r.theme||'',r.attrval||'',r.img,r.listing,r.bb,r.notes||'',r.owner||'',r.action||'']);
+  const csv=[hdr,...rows].map(r=>r.map(c=>'"'+String(c||'').replace(/"/g,'""')+'"').join(',')).join('\r\n');
+  const a=document.createElement('a'); a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
+  a.download='audit_'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
+  toast('CSV exported','t-ok');
+}
+
+// ══════════════════════════════════════════════════
+//  MODAL / TAB / TOAST HELPERS
+// ══════════════════════════════════════════════════
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') ['sku-modal','par-modal','del-modal','cfg-modal'].forEach(id=>closeModal(id)); });
+['sku-modal','par-modal','del-modal','cfg-modal'].forEach(id=>{ document.getElementById(id)?.addEventListener('click',e=>{ if(e.target.id===id) closeModal(id); }); });
+
+function switchTab(name,el){
+  ['skus','issues','vars','log'].forEach(t=>{ const p=document.getElementById('pane-'+t); if(p) p.style.display='none'; });
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  const pane=document.getElementById('pane-'+name); if(pane) pane.style.display='block';
+  if(el) el.classList.add('active'); activeTab=name;
+  const meta={skus:DATA.skus.length+' SKUs',issues:computeIssues().length+' issues',vars:DATA.parents.length+' families',log:DATA.logs.length+' entries'};
+  set('tab-meta',meta[name]||'');
+  if(name==='skus') renderSKUs();
+  else if(name==='issues') renderIssues();
+  else if(name==='vars') renderVariations();
+  else if(name==='log') renderLog();
+}
+
+let toastTimer;
+function toast(msg,cls=''){
+  const t=document.getElementById('toast');
+  t.className='toast show '+(cls||'');
+  set('toast-ico',cls==='t-ok'?'✓':cls==='t-err'?'✕':'ℹ');
+  set('toast-msg',msg);
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),3200);
+}
+function showErr(id,msg){ const e=document.getElementById(id); if(e){ e.textContent=msg; e.style.display='block'; } }
+
+function renderAll(){
+  if(activeTab==='skus') renderSKUs();
+  else if(activeTab==='issues') renderIssues();
+  else if(activeTab==='vars') renderVariations();
+  else if(activeTab==='log') renderLog();
+  updateMetrics();
+}
+
+// ══════════════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════════════
+if(CFG.token&&CFG.user&&CFG.repo){
+  document.getElementById('setup-banner').classList.add('hidden');
+  loadFromGitHub();
+} else {
+  // pre-fill setup banner if partial config saved
+  if(CFG.user) document.getElementById('sb-user').value=CFG.user;
+  if(CFG.repo) document.getElementById('sb-repo').value=CFG.repo;
+  loadLocal();
+  renderAll();
+}
+</script>
+</body>
+</html>
