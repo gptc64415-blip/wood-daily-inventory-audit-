@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "WHT-POLO-XL",
-      "asin": "B09AB1237",
-      "title": "Classic Polo Shirt XL",
-      "cat": "Apparel",
-      "qty": 3,
-      "reorder": 10,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Error",
-      "parent": "",
-      "theme": "Size",
-      "attrval": "XL",
-      "notes": "Orphaned — link to B09AB0000",
-      "owner": "Team A",
-      "action": "Open"
-    },
-    {
       "sku": "BLK-JEANS-30",
       "asin": "B07CD2345",
       "title": "Slim Fit Jeans 30",
