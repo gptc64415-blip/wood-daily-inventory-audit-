@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "BLK-JEANS-30",
-      "asin": "B07CD2345",
-      "title": "Slim Fit Jeans 30",
-      "cat": "Apparel",
-      "qty": 18,
-      "reorder": 8,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B07CD0000",
-      "theme": "Size",
-      "attrval": "30",
-      "notes": "",
-      "owner": "Team B",
-      "action": ""
-    },
-    {
       "sku": "BLK-JEANS-34",
       "asin": "B07CD2347",
       "title": "Slim Fit Jeans 34",
