@@ -1,5 +1,24 @@
 {
-  "skus": [],
+  "skus": [
+    {
+      "sku": "RING_3.5INCH_CLEAR_100",
+      "asin": "B0CKXTJGKV",
+      "title": "Beech Wood (100, 2.7 INCH Inner Dia)",
+      "cat": "wooden curtain ring",
+      "qty": 1,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0CG8RHSVV",
+      "theme": "Item package quantity",
+      "attrval": "(100, 2.7 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
+    }
+  ],
   "parents": [
     {
       "asin": "B09AB0000",
