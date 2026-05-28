@@ -1,24 +1,5 @@
 {
-  "skus": [
-    {
-      "sku": "RED-CAP-ONE",
-      "asin": "B06GH4567",
-      "title": "Adjustable Cap Red",
-      "cat": "Accessories",
-      "qty": 67,
-      "reorder": 20,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "Team C",
-      "action": ""
-    }
-  ],
+  "skus": [],
   "parents": [
     {
       "asin": "B09AB0000",
