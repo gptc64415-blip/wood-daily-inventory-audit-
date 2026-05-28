@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "WHT-POLO-L",
-      "asin": "B09AB1236",
-      "title": "Classic Polo Shirt L",
-      "cat": "Apparel",
-      "qty": 0,
-      "reorder": 10,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B09AB0000",
-      "theme": "Size",
-      "attrval": "L",
-      "notes": "Reorder 50 units",
-      "owner": "Team A",
-      "action": "Open"
-    },
-    {
       "sku": "WHT-POLO-XL",
       "asin": "B09AB1237",
       "title": "Classic Polo Shirt XL",
