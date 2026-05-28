@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "BLU-SNEAKER-8",
-      "asin": "B05IJ5678",
-      "title": "Running Sneakers UK8",
-      "cat": "Footwear",
-      "qty": 5,
-      "reorder": 12,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B05IJ0000",
-      "theme": "Shoe Size",
-      "attrval": "UK8",
-      "notes": "Reorder now",
-      "owner": "Team C",
-      "action": "Open"
-    },
-    {
       "sku": "BLU-SNEAKER-9",
       "asin": "B05IJ5679",
       "title": "Running Sneakers UK9",
