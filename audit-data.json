@@ -449,6 +449,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "RING_2.5_INCH (CLEAR) 50 PCS",
+      "asin": "B0CFR1ZJV9",
+      "title": "Natural wood curtain rod ring (50, 1.75 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 15,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0CG8RHSVV",
+      "theme": "item package quantity",
+      "attrval": "(50, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
