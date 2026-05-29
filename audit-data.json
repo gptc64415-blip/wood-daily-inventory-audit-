@@ -1655,6 +1655,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "ONLY_WINDER_ROSEWWOD",
+      "asin": "B0DC3V8SW4",
+      "title": "Wooden Yarn Winder (Winder Rosewood)",
+      "cat": "Wooden Yarn Winder",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DC58KK96",
+      "theme": "material",
+      "attrval": "(Winder Rosewood)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
