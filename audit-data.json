@@ -1259,6 +1259,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "URN_JAR_LARGE",
+      "asin": "B0DGDJWFBK",
+      "title": "Decorative Wooden urn Large (200 LBS)",
+      "cat": "URN",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DGDPXJ66",
+      "theme": "size",
+      "attrval": "Large (200 LBS)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
