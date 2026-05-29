@@ -809,6 +809,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "RING_(2Inch)_TEAK_24pcs",
+      "asin": "B0CGR37L72",
+      "title": "Rosewood curtain rod ring (24, 1.25 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 115,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0CGRC1MYM",
+      "theme": "Item package quantity",
+      "attrval": "(24, 1.25 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
