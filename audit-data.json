@@ -1853,6 +1853,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "3 inch 24 sb clips",
+      "asin": "B0DBF19N4J",
+      "title": "Beechwood curtain ring with clip (24, 2.2 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 9,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DBFNGSSF",
+      "theme": "Item package quantity",
+      "attrval": "(24, 2.2 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
