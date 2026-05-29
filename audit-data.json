@@ -1133,6 +1133,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "RING_2.5INCH_WT_24PIECES_CLIPS",
+      "asin": "B0CZPL3JGS",
+      "title": "Black curtain ring with clip (24, 1.75 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 25,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0CZSWT621",
+      "theme": "Item package quantity",
+      "attrval": "(24, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
