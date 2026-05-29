@@ -1763,6 +1763,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "DI-ELWB-7XI5",
+      "asin": "B0GNMPWTL9",
+      "title": "Golden curtain ring with clip (12, 1.75 INCH Inner Dia)",
+      "cat": "",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DBFNGSSF",
+      "theme": "Item package quantity",
+      "attrval": "(12, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
