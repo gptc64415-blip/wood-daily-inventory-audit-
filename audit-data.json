@@ -1925,6 +1925,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "2.5 inch 12 sb clips",
+      "asin": "B0DBDXS3FW",
+      "title": "Beechwood curtain ring with clip (12, 1.75 INCH Inner Dia)",
+      "cat": "",
+      "qty": 15,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DBFNGSSF",
+      "theme": "Item package quantity",
+      "attrval": "(12, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
