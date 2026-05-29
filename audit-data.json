@@ -629,6 +629,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "RING_3.5_SHEESHAM_24",
+      "asin": "B0CLP4F3RT",
+      "title": "Rosewood curtain rod ring (24, 2.7 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 6,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0CGRC1MYM",
+      "theme": "Item package quantity",
+      "attrval": "(24, 2.7 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
