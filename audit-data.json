@@ -1745,6 +1745,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "KS-UZG7-PZ4Z",
+      "asin": "B0GNMYCT53",
+      "title": "Golden curtain ring with clip (12, 1.25 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DBFNGSSF",
+      "theme": "Item package quantity",
+      "attrval": "(12, 1.25 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
