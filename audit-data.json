@@ -287,5 +287,13 @@
       "notes": "Parent SKU: 5J-ZJQH-M9MS"
     }
   ],
-  "logs": []
+  "logs": [
+    {
+      "date": "29 May 2026",
+      "time": "12:25 pm",
+      "who": "Auto Audit",
+      "type": "audit",
+      "note": "15 SKUs — In Stock:7 Low:0 OOS:8 Suppressed:0 Var Errors:0 — 8 issues"
+    }
+  ]
 }
