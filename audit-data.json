@@ -1349,6 +1349,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "NEW SHMCLIPS_03INCH_12PIECES (FBA)",
+      "asin": "B0DFHC35RK",
+      "title": "Rosewood wooden curtain ring (12, 2.2 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 33,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DFHHGVWW",
+      "theme": "Item package quantity",
+      "attrval": "(12, 2.2 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
