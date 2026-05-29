@@ -1799,6 +1799,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "3.5 inch 24sb clips",
+      "asin": "B0DBF2ZLL1",
+      "title": "Golden curtain ring with clip (24, 2.7 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 3,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DBFNGSSF",
+      "theme": "Item package quantity",
+      "attrval": "(24, 2.7 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
