@@ -153,7 +153,7 @@
       "reorder": 0,
       "listing": "Active",
       "img": "Yes",
-      "bb": "No",
+      "bb": "Yes",
       "vartype": "Linked",
       "parent": "B0CG4DPB7B",
       "theme": "Item package quantity",
