@@ -1565,6 +1565,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "CROCHET04_SO7_BLUE",
+      "asin": "B0DD79L2B2",
+      "title": "Wooden Crochet Hooks (Antique Blue)",
+      "cat": "Wooden Crochet Hooks",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DD785XVQ",
+      "theme": "colour",
+      "attrval": "(Antique Blue)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
