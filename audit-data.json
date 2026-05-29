@@ -1637,6 +1637,13 @@
       "theme": "Item package quantity",
       "cat": "wooden curtain rings",
       "notes": "Parent SKU: SHEESHAM_CLIPS_RINGS_NEW"
+    },
+    {
+      "asin": "B0DD785XVQ",
+      "name": "Wooden Crochet Hooks",
+      "theme": "colour",
+      "cat": "Wooden Crochet Hooks",
+      "notes": "Parent SKU: CROCHET04_SO7_ANTIQUE"
     }
   ],
   "logs": [
