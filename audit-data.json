@@ -1601,6 +1601,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "CROCHET04_SO7_GREEN",
+      "asin": "B0DD76W3V6",
+      "title": "Wooden Crochet Hooks  (Antique Green)",
+      "cat": "Wooden Crochet Hooks",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DD785XVQ",
+      "theme": "colour",
+      "attrval": "(Antique Green)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
