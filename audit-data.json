@@ -899,6 +899,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "SILVER_RINGS_2.5inch_12pieces",
+      "asin": "B0D9DMB1VW",
+      "title": "Silver curtain rod ring (12, 1.75 INCH Inner Dia)",
+      "cat": "",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0D9DW7TPP",
+      "theme": "Item package quantity",
+      "attrval": "(12, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
