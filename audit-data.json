@@ -1835,6 +1835,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "3 inch 50 sb clips",
+      "asin": "B0DBF1K746",
+      "title": "Beechwood curtain ring with clip (50, 2.2 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 1,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DBFNGSSF",
+      "theme": "Item package quantity",
+      "attrval": "(50, 2.2 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
