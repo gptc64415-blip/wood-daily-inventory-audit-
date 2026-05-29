@@ -809,42 +809,6 @@
       "notes": "",
       "owner": "",
       "action": ""
-    },
-    {
-      "sku": "RING_(2Inch)_TEAK_24pcs",
-      "asin": "B0CGR37L72",
-      "title": "Rosewood curtain rod ring (24, 1.25 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 115,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CGRC1MYM",
-      "theme": "Item package quantity",
-      "attrval": "(24, 1.25 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "RING_(2Inch)_TEAK_12pcs",
-      "asin": "B0CGR42YZ4",
-      "title": "Rosewood curtain rod ring (12, 1.25 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 11,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CGRC1MYM",
-      "theme": "Item package quantity",
-      "attrval": "(12, 1.25 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
     }
   ],
   "parents": [
@@ -877,13 +841,6 @@
       "who": "Auto Audit",
       "type": "audit",
       "note": "15 SKUs — In Stock:7 Low:0 OOS:8 Suppressed:0 Var Errors:0 — 8 issues"
-    },
-    {
-      "date": "29 May 2026",
-      "time": "12:57 pm",
-      "who": "Auto Audit",
-      "type": "audit",
-      "note": "47 SKUs — In Stock:36 Low:0 OOS:11 Suppressed:0 Var Errors:0 — 11 issues"
     }
   ]
 }
