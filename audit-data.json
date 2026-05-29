@@ -1371,6 +1371,13 @@
       "theme": "size",
       "cat": "URN",
       "notes": "Parent SKU: URN_BOX_JAR"
+    },
+    {
+      "asin": "B0DFTX8CSB",
+      "name": "Wooden yarn bowl",
+      "theme": "colour",
+      "cat": "Wooden yarn bowl",
+      "notes": "Parent SKU: YARN_BOWL_JOINT(6x3)"
     }
   ],
   "logs": [
