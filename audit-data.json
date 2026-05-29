@@ -1795,6 +1795,13 @@
       "theme": "material",
       "cat": "Wooden Yarn Winder",
       "notes": "Parent SKU: HA-6IZZ-CDDY"
+    },
+    {
+      "asin": "B0DBHX67RL",
+      "name": "Wooden Yarn Bowl",
+      "theme": "size",
+      "cat": "Wooden Yarn Bowl",
+      "notes": "Parent SKU: SQUARE_YARN_BOWLS"
     }
   ],
   "logs": [
