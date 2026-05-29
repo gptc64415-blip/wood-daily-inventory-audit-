@@ -233,6 +233,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "RING_(2Inch)_WLNT_100pcs",
+      "asin": "B0CFYBHYQP",
+      "title": "Black wooden curtain rod ring (100, 1.25 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0CG4DPB7B",
+      "theme": "Item package quantity",
+      "attrval": "(100, 1.25 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
