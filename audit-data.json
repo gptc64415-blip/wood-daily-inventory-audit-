@@ -1367,6 +1367,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "SHMCLIPS_3.5INCH_24PIECES (FBA)",
+      "asin": "B0DFHGMX48",
+      "title": "Rosewood wooden curtain ring (24, 2.7 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 48,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DFHHGVWW",
+      "theme": "Item package quantity",
+      "attrval": "(24, 2.7 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
