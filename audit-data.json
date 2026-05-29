@@ -197,6 +197,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "RING_(2.5Inch)_WLNT_24pcs",
+      "asin": "B0CG4D4DZV",
+      "title": "Black wooden curtain rod ring (24, 1.75 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 69,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0CG4DPB7B",
+      "theme": "Item package quantity",
+      "attrval": "(24, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
