@@ -845,6 +845,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "SILVER_RINGS_2.5inch_100pieces",
+      "asin": "B0D9DN4DRD",
+      "title": "Silver curtain rod ring (100, 1.75 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0D9DW7TPP",
+      "theme": "Item package quantity",
+      "attrval": "(100, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
