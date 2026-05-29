@@ -1385,6 +1385,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "SHMCLIPS_3.5INCH_50PIECES (NEW FBA)",
+      "asin": "B0DFHF4FM3",
+      "title": "Rosewood curtain ring with clip (50, 2.7 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 8,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DFHHGVWW",
+      "theme": "Item package quantity",
+      "attrval": "(50, 2.7 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
