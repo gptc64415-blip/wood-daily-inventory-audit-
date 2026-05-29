@@ -413,6 +413,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "RING_(2Inch)_CLEAR_12pieces",
+      "asin": "B0CG8SF6T1",
+      "title": "Natural wood curtain rod ring (12, 1.25 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 15,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0CG8RHSVV",
+      "theme": "item package quantity",
+      "attrval": "(12, 1.25 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
