@@ -1079,6 +1079,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "50_PIECES_RINGS_2.5_(SHEESHAM CLIPS)",
+      "asin": "B0CYTWQ1Q4",
+      "title": "Rosewood curtain ring with clip (50, 1.75 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 2,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0D8KWXTB1",
+      "theme": "Item package quantity",
+      "attrval": "(50, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
