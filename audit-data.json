@@ -1295,6 +1295,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "URN_JAR_SMALL",
+      "asin": "B0DGDDHKYF",
+      "title": "Decorative Wooden urn (Small)",
+      "cat": "URN",
+      "qty": 309,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DGDPXJ66",
+      "theme": "size",
+      "attrval": "(Small)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
