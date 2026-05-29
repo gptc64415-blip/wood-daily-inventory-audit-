@@ -1529,6 +1529,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "SHMCLIPS_2INCH_24PIECES",
+      "asin": "B0DFH48T44",
+      "title": "Rosewood curtain ring with clip (24, 1.25 INCH Inner Dia)",
+      "cat": "wooden curtain rings",
+      "qty": 190,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DFHHGVWW",
+      "theme": "Item package quantity",
+      "attrval": "(24, 1.25 INCH Inner Dia)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
