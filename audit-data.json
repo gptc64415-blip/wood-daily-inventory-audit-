@@ -1313,6 +1313,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "JOINTBOWL02_(6x3)",
+      "asin": "B0DFTVTF76",
+      "title": "Wooden Yarn Bowl (Multicolor 2)",
+      "cat": "Wooden Yarn Bowl",
+      "qty": 7,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DFTX8CSB",
+      "theme": "colour",
+      "attrval": "(Multicolor 2)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
