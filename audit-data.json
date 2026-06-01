@@ -2213,6 +2213,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "Deer 180 lbs (LARGE)",
+      "asin": "B0DRYYF78H",
+      "title": "Wooden Cremation Urns Box",
+      "cat": "URN",
+      "qty": 10,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DRZQJ71W",
+      "theme": "size",
+      "attrval": "Large",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
