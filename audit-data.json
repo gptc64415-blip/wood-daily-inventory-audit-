@@ -2195,6 +2195,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "Deer 250 lbs X-LARGE",
+      "asin": "B0DRYWHQJF",
+      "title": "Wooden Cremation Urns Box",
+      "cat": "URN",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DRZQJ71W",
+      "theme": "size",
+      "attrval": "X_Large",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
