@@ -2051,6 +2051,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "BIRDS_XLARGE_250LBS",
+      "asin": "B0DS2C2CP2",
+      "title": "Wooden Cremation Urns Box",
+      "cat": "URN",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DS2RDDF4",
+      "theme": "size",
+      "attrval": "X-Large",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
