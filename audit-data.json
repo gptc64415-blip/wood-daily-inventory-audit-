@@ -2177,6 +2177,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "DEER_SMALL",
+      "asin": "B0FMYNTRZL",
+      "title": "Wooden Cremation Urns Box",
+      "cat": "URN",
+      "qty": 33,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DRZQJ71W",
+      "theme": "size",
+      "attrval": "small",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
