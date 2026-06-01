@@ -2424,6 +2424,13 @@
       "theme": "size",
       "cat": "URN",
       "notes": "Parent SKU:\nURNBOX_DEER"
+    },
+    {
+      "asin": "B0DKBVSXS6",
+      "name": "Wooden Crochet Hooks",
+      "theme": "colour",
+      "cat": "Wooden Crochet Hooks",
+      "notes": "Parent SKU:\nDOLPHIN_07_ANTIQUE"
     }
   ],
   "logs": [
