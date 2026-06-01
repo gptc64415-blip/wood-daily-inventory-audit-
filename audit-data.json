@@ -2033,6 +2033,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "BIRDS_SMALL",
+      "asin": "B0FMYMHXKN",
+      "title": "Wooden Cremation Urns Box",
+      "cat": "URN",
+      "qty": 45,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DS2RDDF4",
+      "theme": "size",
+      "attrval": "(Small)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
