@@ -2069,6 +2069,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "BIRDS_LARGE_180LBS",
+      "asin": "B0DS28M354",
+      "title": "Wooden Cremation Urns Box",
+      "cat": "URN",
+      "qty": 45,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DS2RDDF4",
+      "theme": "size",
+      "attrval": "Large",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
