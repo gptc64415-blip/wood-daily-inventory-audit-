@@ -2105,6 +2105,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "TREE_SMALL",
+      "asin": "B0FMYND9P9",
+      "title": "Wooden Cremation Urns Box",
+      "cat": "URN",
+      "qty": 32,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "Yes",
+      "vartype": "Linked",
+      "parent": "B0DS21QRV8",
+      "theme": "size",
+      "attrval": "Small",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
