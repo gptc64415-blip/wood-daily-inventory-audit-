@@ -2321,6 +2321,24 @@
       "notes": "",
       "owner": "",
       "action": ""
+    },
+    {
+      "sku": "DOLPHIN_07_RED",
+      "asin": "B0DBTV5NGY",
+      "title": "Wooden Crochet Hooks (Antique Red)",
+      "cat": "Wooden Crochet Hooks",
+      "qty": 0,
+      "reorder": 0,
+      "listing": "Active",
+      "img": "Yes",
+      "bb": "No",
+      "vartype": "Linked",
+      "parent": "B0DKBVSXS6",
+      "theme": "colour",
+      "attrval": "(Antique Red)",
+      "notes": "",
+      "owner": "",
+      "action": ""
     }
   ],
   "parents": [
