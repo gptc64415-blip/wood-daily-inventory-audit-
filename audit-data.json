@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "RING_WLNT_3\"\\ 50",
-      "asin": "B0CLKCNXSC",
-      "title": "Black wooden curtain rod ring (50, 2.7 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0CG4DPB7B",
-      "theme": "Item package quantity",
-      "attrval": "(50, 2.7 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "RING _ WLNT _ 3.5''\\24",
       "asin": "B0CLKCCK8Z",
       "title": "wooden curtain rod ring (24, 2.7 INCH Inner Dia)",
@@ -3124,32 +3106,6 @@
       "notes": "Parent SKU:\nGOLDEN RINGS CLIPS"
     }
   ],
-  "restockLog": [],
-  "activityLog": [
-    {
-      "id": "id_nt47j1vxmrt3r1yw",
-      "date": "2026-07-20T10:49:13.400Z",
-      "action": "SKU deleted",
-      "details": "URN_JAR_SMALL (B0DGDDHKYF)"
-    },
-    {
-      "id": "id_241gjevqmrt3o8dd",
-      "date": "2026-07-20T10:47:01.729Z",
-      "action": "SKU added",
-      "details": "URN_JAR_SMALL (B0DGDDHKYF)"
-    }
-  ],
-  "settings": {
-    "leadTime": 15,
-    "safetyStock": 7,
-    "lowStockDays": 7,
-    "overstockDays": 60,
-    "slowMovingDays": 90
-  },
-  "meta": {
-    "currentMonth": "2026-07",
-    "lastSynced": "2026-07-20T10:46:16.081Z"
-  },
   "logs": [
     {
       "date": "29 May 2026",
