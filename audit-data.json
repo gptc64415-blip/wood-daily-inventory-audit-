@@ -3124,6 +3124,19 @@
       "notes": "Parent SKU:\nGOLDEN RINGS CLIPS"
     }
   ],
+  "restockLog": [],
+  "activityLog": [],
+  "settings": {
+    "leadTime": 15,
+    "safetyStock": 7,
+    "lowStockDays": 7,
+    "overstockDays": 60,
+    "slowMovingDays": 90
+  },
+  "meta": {
+    "currentMonth": "2026-07",
+    "lastSynced": null
+  },
   "logs": [
     {
       "date": "29 May 2026",
