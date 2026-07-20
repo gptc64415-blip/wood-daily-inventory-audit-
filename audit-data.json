@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "RING _ WLNT _ 3.5''\\24",
-      "asin": "B0CLKCCK8Z",
-      "title": "wooden curtain rod ring (24, 2.7 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0CG4DPB7B",
-      "theme": "Item package quantity",
-      "attrval": "(24, 2.7 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "RING_ WLNT_ 3.5 \\12",
-      "asin": "B0CLKB6YNM",
-      "title": "wooden curtain rod ring (12, 2.7 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0CG4DPB7B",
-      "theme": "Item package quantity",
-      "attrval": "(12, 2.7 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "RING_WLNT 3\" 100",
       "asin": "B0CLK9GRJB",
       "title": "wooden curtain rod ring (100, 2.2 INCH Inner Dia)",
