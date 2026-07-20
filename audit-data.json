@@ -2987,33 +2987,6 @@
       "notes": "",
       "owner": "",
       "action": ""
-    },
-    {
-      "id": "id_c8s5r2g2mrt3o8dd",
-      "sku": "URN_JAR_SMALL",
-      "asin": "B0DGDDHKYF",
-      "title": "urn",
-      "category": "",
-      "owner": "",
-      "qty": 1000,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-20T10:47:01.729Z",
-      "updatedAt": "2026-07-20T10:47:01.729Z"
     }
   ],
   "parents": [
@@ -3153,6 +3126,12 @@
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_nt47j1vxmrt3r1yw",
+      "date": "2026-07-20T10:49:13.400Z",
+      "action": "SKU deleted",
+      "details": "URN_JAR_SMALL (B0DGDDHKYF)"
+    },
     {
       "id": "id_241gjevqmrt3o8dd",
       "date": "2026-07-20T10:47:01.729Z",
