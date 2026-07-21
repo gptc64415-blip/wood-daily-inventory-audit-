@@ -4203,6 +4203,35 @@
       "issues": [],
       "createdAt": "2026-07-21T07:51:18.463Z",
       "updatedAt": "2026-07-21T07:51:18.463Z"
+    },
+    {
+      "id": "id_ex2o1d9bmrufqq49",
+      "sku": "RING_(2.5Inch)_WLNT_24pcs sf",
+      "asin": "B0CG4D4DZV",
+      "title": "Handmade Wooden Drapery Rod Rings, Curtain Rod Rings, for 1-1.5 inch Curtain Rod Pole - Beech Wood (24, 1.75 INCH Inner Dia)",
+      "category": "wooden curtain rings",
+      "owner": "",
+      "qty": 0,
+      "reorderPoint": 5,
+      "listingStatus": "Active",
+      "actionStatus": "None",
+      "mainImage": "yes",
+      "buyBox": "yes",
+      "todaySales": 0,
+      "monthlySales": 0,
+      "sellingPrice": 27.99,
+      "costPrice": 0,
+      "unitsReturned": 0,
+      "variationRole": "Child — linked to parent",
+      "parentAsin": "B0CG4DPB7B",
+      "variationTheme": "Size/Quantity",
+      "attributeValue": "(24, 1.75 INCH Inner Dia)",
+      "notes": "",
+      "issues": [
+        "A+ Missing"
+      ],
+      "createdAt": "2026-07-21T09:12:39.609Z",
+      "updatedAt": "2026-07-21T09:12:39.609Z"
     }
   ],
   "parents": [
@@ -4217,6 +4246,12 @@
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_j0tkxqlgmrufqq49",
+      "date": "2026-07-21T09:12:39.609Z",
+      "action": "SKU added",
+      "details": "RING_(2.5Inch)_WLNT_24pcs sf (B0CG4D4DZV)"
+    },
     {
       "id": "id_g9yaexygmrufmcb6",
       "date": "2026-07-21T09:09:15.090Z",
@@ -4271,7 +4306,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-21T09:08:52.876Z",
+    "lastSynced": "2026-07-21T09:09:17.725Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
