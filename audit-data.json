@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "chess foldable",
-      "asin": "B0FHKXQ4RT",
-      "title": "MARSEXPORTS Magnetic Wooden Chess Set with Folding Stand & Storage Drawer",
-      "cat": "Magnetic Wooden Chess Set",
-      "qty": 3,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "50 white 3.5",
-      "asin": "B0DWKHFY34",
-      "title": "White Wooden Curtain Rod Ring, Wood Curtains Rings, Hooks, and Hangers",
-      "cat": "Wooden Curtain Rod Ring",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "white 3 (50) 100",
       "asin": "B0DW9D3FC6",
       "title": "White Wooden Curtain Rod Ring, Wood Curtains Rings, Hooks, and Hangers",
