@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "RING_SHM_2.5_12p",
-      "asin": "B0CLM3CLFF",
-      "title": "Rosewood curtain rod ring (12, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 32,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CGRC1MYM",
-      "theme": "Item package quantity",
-      "attrval": "(12, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "RING_(2.5Inch)_TEAK_100pcs",
-      "asin": "B0CGR4NFSS",
-      "title": "Rosewood curtain rod ring (100, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0CGRC1MYM",
-      "theme": "Item package quantity",
-      "attrval": "100, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "RING_(2.5Inch)_TEAK_50pcs",
       "asin": "B0CGR3M1TZ",
       "title": "Rosewood curtain rod ring (50, 1.75 INCH Inner Dia)",
