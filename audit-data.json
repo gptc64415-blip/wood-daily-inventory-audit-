@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "6*6_YARN_BOWL_SQUARE",
-      "asin": "B0DBHWB773",
-      "title": "Wooden Yarn Bowl (6x6x6)",
-      "cat": "Wooden Yarn Bowl",
-      "qty": 8,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DBHX67RL",
-      "theme": "size",
-      "attrval": "(6x6x6)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "12*6 yarn bowl sqare",
       "asin": "B0DB61JL41",
       "title": "Wooden Yarn Bowl (12\"x 6\"x 6\")",
