@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "TREE_SMALL",
-      "asin": "B0FMYND9P9",
-      "title": "Wooden Cremation Urns Box",
-      "cat": "URN",
-      "qty": 32,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DS21QRV8",
-      "theme": "size",
-      "attrval": "Small",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "TREE_XLARGE_250LBS",
-      "asin": "B0DS14QQDC",
-      "title": "Wooden Cremation Urns Box",
-      "cat": "URN",
-      "qty": 1,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DS21QRV8",
-      "theme": "size",
-      "attrval": "X-Large",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "TREE_LARGE_180LBS",
       "asin": "B0DS146PB8",
       "title": "Wooden Cremation Urns Box",
