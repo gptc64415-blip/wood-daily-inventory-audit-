@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "JOINTBOWL02_(6x3)",
-      "asin": "B0DFTVTF76",
-      "title": "Wooden Yarn Bowl (Multicolor 2)",
-      "cat": "Wooden Yarn Bowl",
-      "qty": 7,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DFTX8CSB",
-      "theme": "colour",
-      "attrval": "(Multicolor 2)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "JOINTBOWL01_(6x3)",
-      "asin": "B0DFTRTLBP",
-      "title": "Wooden Yarn Bowl (Multicolor 1)",
-      "cat": "Wooden Yarn Bowl",
-      "qty": 97,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DFTX8CSB",
-      "theme": "colour",
-      "attrval": "(Multicolor 1)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "NEW SHMCLIPS_03INCH_12PIECES (FBA)",
       "asin": "B0DFHC35RK",
       "title": "Rosewood wooden curtain ring (12, 2.2 INCH Inner Dia)",
