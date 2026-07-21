@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "GOLDRINGS_2.5\"_100pieces",
-      "asin": "B0CZL4QKGL",
-      "title": "golden wooden curtain ring (100, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 1,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CZLG6S1M",
-      "theme": "Item package quantity",
-      "attrval": "(100, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "GOLDRINGS_2.5\"_50pieces",
-      "asin": "B0CZL5K1XQ",
-      "title": "golden wooden curtain ring (50, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 2,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CZLG6S1M",
-      "theme": "Item package quantity",
-      "attrval": "(50, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "GOLDRINGS_2.5\"_24pieces",
       "asin": "B0CZKZJSHV",
       "title": "golden wooden curtain ring (24, 1.75 INCH Inner Dia)",
