@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "CROCHET04_SO7_GREEN",
-      "asin": "B0DD76W3V6",
-      "title": "Wooden Crochet Hooks  (Antique Green)",
-      "cat": "Wooden Crochet Hooks",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0DD785XVQ",
-      "theme": "colour",
-      "attrval": "(Antique Green)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "TABLE_TOP_RW_NEW_FBA",
-      "asin": "B0DBVLSZSS",
-      "title": "Wooden Yarn Winder (Swift Rosewood)",
-      "cat": "Wooden Yarn Winder",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0DC58KK96",
-      "theme": "material",
-      "attrval": "(Swift Rosewood)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "TABLE_TOP_RW_NEW_FBA1",
       "asin": "B0DBVLSZSS",
       "title": "Wooden Yarn Winder (Swift Rosewood)",
