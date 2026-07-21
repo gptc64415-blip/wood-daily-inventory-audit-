@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "RING_SHEESHAM_3\\24",
-      "asin": "B0CLP35M24",
-      "title": "Rosewood curtain rod ring (24, 2.2 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 32,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CGRC1MYM",
-      "theme": "Item package quantity",
-      "attrval": "(24, 2.2 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "RING_3_SHEESHAM_12",
       "asin": "B0CLP186PF",
       "title": "Rosewood curtain rod ring (12, 2.2 INCH Inner Dia)",
@@ -2144,13 +2126,6 @@
     }
   ],
   "parents": [
-    {
-      "asin": "B0CG8RHSVV",
-      "name": "Natural wood curtain rod ring",
-      "theme": "item package quantity",
-      "cat": "wooden curtain rings",
-      "notes": ""
-    },
     {
       "asin": "B0CG4DPB7B",
       "name": "Black Curtain Rod Rings",
