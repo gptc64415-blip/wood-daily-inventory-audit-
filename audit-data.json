@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "2 inch24pcs sb clips",
-      "asin": "B0DBDX3MZL",
-      "title": "Beechwood curtain ring with clip (24, 1.25 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 1,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DBFNGSSF",
-      "theme": "Item package quantity",
-      "attrval": "(24, 1.25 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "2 inch 12 sb clips",
-      "asin": "B0DBDVXDYG",
-      "title": "Beechwood curtain ring with clip (12, 1.25 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 18,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DBFNGSSF",
-      "theme": "Item package quantity",
-      "attrval": "(12, 1.25 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "white 2 (100)",
       "asin": "B0DS6BP57V",
       "title": "white curtain ring with clip (100, 1.25 INCH Inner Dia)",
