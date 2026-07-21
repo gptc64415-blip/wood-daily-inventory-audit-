@@ -2965,11 +2965,10 @@
       "attributeValue": "(24, 2.7 INCH Inner Dia)",
       "notes": "",
       "issues": [
-        "A+ Missing",
-        "Parent Missing"
+        "A+ Missing"
       ],
       "createdAt": "2026-07-21T07:51:18.462Z",
-      "updatedAt": "2026-07-21T09:08:49.698Z"
+      "updatedAt": "2026-07-21T09:09:15.090Z"
     },
     {
       "id": "id_89z9kbflmrucu3su",
@@ -4219,6 +4218,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_g9yaexygmrufmcb6",
+      "date": "2026-07-21T09:09:15.090Z",
+      "action": "SKU updated",
+      "details": "RING _ WLNT _ 3.5''\\24 (B0CLKCCK8Z)"
+    },
+    {
       "id": "id_6wf6gok2mruflspu",
       "date": "2026-07-21T09:08:49.698Z",
       "action": "SKU updated",
@@ -4266,7 +4271,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-21T09:05:38.118Z",
+    "lastSynced": "2026-07-21T09:08:52.876Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
