@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "Glass Salad Bowl Large",
-      "asin": "B0H2SCMH19",
-      "title": "Mars Exports Large Glass Salad Bowl Set with Wooden Servers & Base",
-      "cat": "Glass Salad Bowl Set",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "ACR 2.5-(24)",
-      "asin": "B0H14W1Y5W",
-      "title": "Clear Acrylic Curtain Rings with Hooks",
-      "cat": "Curtain Rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "Doom2Mapping",
       "asin": "B0FDG777HT",
       "title": "Mf Doom Mask, Medieval Gladiator Knight Cosplay Armor Mask Adults",
