@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "BOWL_MANGO_CARVING(6x4)",
-      "asin": "B0DJ566HHJ",
-      "title": "Wooden Yarn Bowl (6X4)",
-      "cat": "",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "GOLDEN 2.5 50 CLIPS FBA",
-      "asin": "B0DBG91NKR",
-      "title": "golden curtain ring with clip (50, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "(50, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "GOLDEN 2.5 24 CLIPS",
       "asin": "B0DBF6DFV1",
       "title": "golden curtain ring with clip (24, 1.75 INCH Inner Dia)",
