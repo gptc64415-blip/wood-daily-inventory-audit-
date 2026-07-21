@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "Deer 250 lbs X-LARGE",
-      "asin": "B0DRYWHQJF",
-      "title": "Wooden Cremation Urns Box",
-      "cat": "URN",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0DRZQJ71W",
-      "theme": "size",
-      "attrval": "X_Large",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "Tree Of Life  (11.25)*(6.25)*(6.25)",
-      "asin": "B0DLV53WLZ",
-      "title": "Wooden Cremation Urns Box",
-      "cat": "URN",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "BOWL_MANGO_CARVING(6x4)",
       "asin": "B0DJ566HHJ",
       "title": "Wooden Yarn Bowl (6X4)",
