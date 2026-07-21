@@ -3395,10 +3395,10 @@
       "sku": "RING_ WLNT_ 3.5 \\12",
       "asin": "B0CLKB6YNM",
       "title": "Handmade Wooden Drapery Rod Rings",
-      "category": "",
+      "category": "curtain rings",
       "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
+      "qty": 5,
+      "reorderPoint": 5,
       "listingStatus": "Active",
       "actionStatus": "None",
       "mainImage": "yes",
@@ -3409,14 +3409,16 @@
       "sellingPrice": 6,
       "costPrice": 0,
       "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
+      "variationRole": "Child — linked to parent",
+      "parentAsin": "B0CG4DPB7B",
+      "variationTheme": "Size/Quantity",
+      "attributeValue": "(12, 2.7 INCH Inner Dia)",
       "notes": "",
-      "issues": [],
+      "issues": [
+        "A+ Missing"
+      ],
       "createdAt": "2026-07-21T07:51:18.463Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
+      "updatedAt": "2026-07-21T08:15:05.003Z"
     },
     {
       "id": "id_a23p8nhymrucu3sv",
@@ -4206,6 +4208,12 @@
   "parents": [],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_3zwvdo0ymrudooiz",
+      "date": "2026-07-21T08:15:05.003Z",
+      "action": "SKU updated",
+      "details": "RING_ WLNT_ 3.5 \\12 (B0CLKB6YNM)"
+    },
     {
       "id": "id_y4bd654ymrudimv9",
       "date": "2026-07-21T08:10:22.917Z",
