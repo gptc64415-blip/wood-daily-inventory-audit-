@@ -2127,20 +2127,6 @@
   ],
   "parents": [
     {
-      "asin": "B0DFTX8CSB",
-      "name": "Wooden yarn bowl",
-      "theme": "colour",
-      "cat": "Wooden yarn bowl",
-      "notes": "Parent SKU: YARN_BOWL_JOINT(6x3)"
-    },
-    {
-      "asin": "B0DFHHGVWW",
-      "name": "Rosewood curtain ring  with clip",
-      "theme": "Item package quantity",
-      "cat": "wooden curtain rings",
-      "notes": "Parent SKU: SHEESHAM_CLIPS_RINGS_NEW"
-    },
-    {
       "asin": "B0DD785XVQ",
       "name": "Wooden Crochet Hooks",
       "theme": "colour",
