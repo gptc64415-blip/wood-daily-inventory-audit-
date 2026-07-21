@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "12*6 yarn bowl sqare",
-      "asin": "B0DB61JL41",
-      "title": "Wooden Yarn Bowl (12\"x 6\"x 6\")",
-      "cat": "Wooden Yarn Bowl",
-      "qty": 19,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DBHX67RL",
-      "theme": "size",
-      "attrval": "(12\"x 6\"x 6\")",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "KS-UZG7-PZ4Z",
-      "asin": "B0GNMYCT53",
-      "title": "Beechwood curtain ring with clip (12, 1.25 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0DBFNGSSF",
-      "theme": "Item package quantity",
-      "attrval": "(12, 1.25 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "DI-ELWB-7XI5",
       "asin": "B0GNMPWTL9",
       "title": "Beechwood curtain ring with clip (12, 1.75 INCH Inner Dia)",
