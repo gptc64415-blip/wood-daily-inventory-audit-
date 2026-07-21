@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "RING_2.5_INCH (CLEAR) 12 PCS",
-      "asin": "B0CC2LMYD4",
-      "title": "Natural wood curtain rod ring (12, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 14,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CG8RHSVV",
-      "theme": "item package quantity",
-      "attrval": "(12, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "RING_3INCH_SHEESHAM_100",
-      "asin": "B0CLS1F92F",
-      "title": "Rosewood curtain rod ring  (100, 2.2 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 4,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CGRC1MYM",
-      "theme": "Item package quantity",
-      "attrval": "(100, 2.2 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "RING_3INCH_SHSHM_50fba",
       "asin": "B0CLP59Y4M",
       "title": "Rosewood curtain rod ring (50, 2.2 INCH Inner Dia)",
