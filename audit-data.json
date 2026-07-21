@@ -1,34 +1,6 @@
 {
   "skus": [
     {
-      "id": "id_i6g7yi7ymrucu3ss",
-      "sku": "amzn.gr.SHMCLIPS_2INCH_24PIECE-Hn9TVN-VG",
-      "asin": "B0DFH48T44",
-      "title": "Mars Exports Handmade Rosewood Drapery Rod Rings (1.25 INCH Inner Dia) | Wooden Curtain Rings | for Timeless Elegance",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 14,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.460Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_fi098bigmrucu3ss",
       "sku": "amzn.gr.RING_(2Inch)_CLEAR_24p-i922se-LN",
       "asin": "B0CC2PJCPF",
@@ -4232,6 +4204,12 @@
   "parents": [],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_uyc4sgn0mrud7e46",
+      "date": "2026-07-21T08:01:38.358Z",
+      "action": "SKU deleted",
+      "details": "amzn.gr.SHMCLIPS_2INCH_24PIECE-Hn9TVN-VG (B0DFH48T44)"
+    },
     {
       "id": "id_r9l3bwm5mrucu3sv",
       "date": "2026-07-21T07:51:18.463Z",
