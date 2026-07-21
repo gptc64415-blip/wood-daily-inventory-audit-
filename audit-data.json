@@ -2127,20 +2127,6 @@
   ],
   "parents": [
     {
-      "asin": "B0DBHX67RL",
-      "name": "Wooden Yarn Bowl",
-      "theme": "size",
-      "cat": "Wooden Yarn Bowl",
-      "notes": "Parent SKU: SQUARE_YARN_BOWLS"
-    },
-    {
-      "asin": "B0DBFNGSSF",
-      "name": "STEAM Beach Clips",
-      "theme": "Item package quantity",
-      "cat": "wooden curtain rings",
-      "notes": "Parent SKU: B7-U5IG-W9AU"
-    },
-    {
       "asin": "B0DS2RDDF4",
       "name": "Wooden Cremation Urns Box",
       "theme": "size",
