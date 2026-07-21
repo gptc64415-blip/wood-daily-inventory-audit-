@@ -1,24 +1,5 @@
 {
-  "skus": [
-    {
-      "sku": "WWC-RW-2Slot",
-      "asin": "B0F846TV7F",
-      "title": "Mars Exports Wooden Watch Organizer Case with Glass Lid | 2",
-      "cat": "Wooden Watch Organizer Case",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    }
-  ],
+  "skus": [],
   "parents": [],
   "logs": [
     {
