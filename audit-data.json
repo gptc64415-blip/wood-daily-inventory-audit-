@@ -2959,16 +2959,17 @@
       "sellingPrice": 30.49,
       "costPrice": 0,
       "unitsReturned": 0,
-      "variationRole": "Child — linked to parent",
+      "variationRole": "Child — error / orphaned",
       "parentAsin": "B0CG4DPB7B",
       "variationTheme": "size/quantity",
       "attributeValue": "(24, 2.7 INCH Inner Dia)",
       "notes": "",
       "issues": [
-        "A+ Missing"
+        "A+ Missing",
+        "Parent Missing"
       ],
       "createdAt": "2026-07-21T07:51:18.462Z",
-      "updatedAt": "2026-07-21T08:10:22.916Z"
+      "updatedAt": "2026-07-21T09:08:49.698Z"
     },
     {
       "id": "id_89z9kbflmrucu3su",
@@ -4218,6 +4219,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_6wf6gok2mruflspu",
+      "date": "2026-07-21T09:08:49.698Z",
+      "action": "SKU updated",
+      "details": "RING _ WLNT _ 3.5''\\24 (B0CLKCCK8Z)"
+    },
+    {
       "id": "id_lftzdxvzmrufhmdm",
       "date": "2026-07-21T09:05:34.858Z",
       "action": "Parent ASIN added",
@@ -4259,7 +4266,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": null,
+    "lastSynced": "2026-07-21T09:05:38.118Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
