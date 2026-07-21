@@ -4205,9 +4205,24 @@
       "updatedAt": "2026-07-21T07:51:18.463Z"
     }
   ],
-  "parents": [],
+  "parents": [
+    {
+      "id": "id_1mkh4t80mrufhmdm",
+      "asin": "B0CG4DPB7B",
+      "family": "5J-ZJQH-M9MS",
+      "theme": "Size/Quantity",
+      "category": "wooden curtain rings",
+      "notes": ""
+    }
+  ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_lftzdxvzmrufhmdm",
+      "date": "2026-07-21T09:05:34.858Z",
+      "action": "Parent ASIN added",
+      "details": "B0CG4DPB7B — 5J-ZJQH-M9MS"
+    },
     {
       "id": "id_3zwvdo0ymrudooiz",
       "date": "2026-07-21T08:15:05.003Z",
