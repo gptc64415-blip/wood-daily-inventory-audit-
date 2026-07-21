@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "GOLDEN 2.5 24 CLIPS",
-      "asin": "B0DBF6DFV1",
-      "title": "golden curtain ring with clip (24, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DBHH3R87",
-      "theme": "size",
-      "attrval": "(24, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "GOLDEN 2.5 12 CLIPS",
-      "asin": "B0DBF2WSLW",
-      "title": "golden curtain ring with clip (12, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 6,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0DBHH3R87",
-      "theme": "size",
-      "attrval": "(12, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "Winder + Swift Beechwood",
       "asin": "B0FHQQHVWS",
       "title": "Wooden Yarn Winder with Swift",
