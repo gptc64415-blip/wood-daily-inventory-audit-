@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "BIRDS_LARGE_180LBS",
-      "asin": "B0DS28M354",
-      "title": "Wooden Cremation Urns Box",
-      "cat": "URN",
-      "qty": 45,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0DS2RDDF4",
-      "theme": "size",
-      "attrval": "Large",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "BIRDS_MEDIUM_115 lb",
-      "asin": "B0DS27S2PQ",
-      "title": "Wooden Cremation Urns Box",
-      "cat": "URN",
-      "qty": 16,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DS2RDDF4",
-      "theme": "size",
-      "attrval": "Medium",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "TREE_SMALL",
       "asin": "B0FMYND9P9",
       "title": "Wooden Cremation Urns Box",
