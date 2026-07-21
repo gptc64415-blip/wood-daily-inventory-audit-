@@ -2126,6 +2126,23 @@
     }
   ],
   "parents": [],
+  "restockLog": [],
+  "activityLog": [],
+  "processedOrderIds": {},
+  "processedReturnIds": {},
+  "settings": {
+    "leadTime": 15,
+    "safetyStock": 7,
+    "lowStockDays": 7,
+    "overstockDays": 60,
+    "slowMovingDays": 90
+  },
+  "meta": {
+    "currentMonth": "2026-07",
+    "lastSynced": null,
+    "lastOrdersImport": null,
+    "lastReturnsImport": null
+  },
   "logs": [
     {
       "date": "29 May 2026",
