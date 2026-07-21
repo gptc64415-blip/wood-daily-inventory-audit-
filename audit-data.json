@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "RING_3INCH_CLEAR_12",
-      "asin": "B0CKXPY57G",
-      "title": "Natural wood curtain rod ring (12, 2.2 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 1,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CG8RHSVV",
-      "theme": "item package quantity",
-      "attrval": "(12, 2.2 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "RING_(2Inch)_CLEAR_12pieces",
       "asin": "B0CG8SF6T1",
       "title": "Natural wood curtain rod ring (12, 1.25 INCH Inner Dia)",
@@ -32,24 +14,6 @@
       "parent": "B0CG8RHSVV",
       "theme": "item package quantity",
       "attrval": "(12, 1.25 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "RING_2.5_INCH (CLEAR) 100 PCS",
-      "asin": "B0CFR1988L",
-      "title": "Natural wood curtain rod ring (100, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 7,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CG8RHSVV",
-      "theme": "item package quantity",
-      "attrval": "(100, 1.75 INCH Inner Dia)",
       "notes": "",
       "owner": "",
       "action": ""
