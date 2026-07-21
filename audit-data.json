@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "GOLDRINGS_2.5\"_24pieces",
-      "asin": "B0CZKZJSHV",
-      "title": "golden wooden curtain ring (24, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 27,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CZLG6S1M",
-      "theme": "Item package quantity",
-      "attrval": "(24, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "GOLDRINGS_2.5\"_12pieces",
-      "asin": "B0CZKVVGFJ",
-      "title": "golden wooden curtain ring (12, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 18,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CZLG6S1M",
-      "theme": "Item package quantity",
-      "attrval": "(12, 1.75 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "URN_JAR_EXTRA_LARGE",
       "asin": "B0FPR821MW",
       "title": "Decorative Wooden urn (Extra Large)",
