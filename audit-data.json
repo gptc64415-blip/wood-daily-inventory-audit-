@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "12_PIECES_RINGS_3_(SHEESHAM CLIPS)",
-      "asin": "B0D4TSM4YK",
-      "title": "Rosewood curtain ring with clip(12, 2.2 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 9,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0D8KWXTB1",
-      "theme": "Item package quantity",
-      "attrval": "(12, 2.2 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "50_PIECES_RINGS_2_(SHEESHAM CLIPS)",
-      "asin": "B0D4K1D7X8",
-      "title": "Rosewood curtain ring with clip (50, 1.25 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0D8KWXTB1",
-      "theme": "Item package quantity",
-      "attrval": "(50, 1.25 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "24_PIECES_RINGS_2_(SHEESHAM CLIPS)",
       "asin": "B0D4JZF3DM",
       "title": "Rosewood curtain ring with clip (24, 1.25 INCH Inner Dia)",
