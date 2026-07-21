@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "URN_JAR_MEDIUM",
-      "asin": "B0DGDJMG3Q",
-      "title": "Decorative Wooden urn (Medium)",
-      "cat": "URN",
-      "qty": 36,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DGDPXJ66",
-      "theme": "size",
-      "attrval": "(Medium)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "URN_JAR_SMALL",
-      "asin": "B0DGDDHKYF",
-      "title": "Decorative Wooden urn (Small)",
-      "cat": "URN",
-      "qty": 309,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0DGDPXJ66",
-      "theme": "size",
-      "attrval": "(Small)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "JOINTBOWL02_(6x3)",
       "asin": "B0DFTVTF76",
       "title": "Wooden Yarn Bowl (Multicolor 2)",
