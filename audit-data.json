@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "Large Pet Urn 55 Cubic",
-      "asin": "B0H2V8LDDN",
-      "title": "Wooden Pet Cremation Urn for Ashes, 55 Cubic Inches",
-      "cat": "urn",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "Small Pet Urn",
-      "asin": "B0H2VFXSNK",
-      "title": "Wooden Pet Cremation Urn for Ashes, 10 Cubic Inches",
-      "cat": "urn",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "ONLY Winder beechwood",
       "asin": "B0FHQQDV9H",
       "title": "Wooden Yarn Winder with Swift – Manual Yarn Ball Winding Tool for Knitting and Crocheting",
