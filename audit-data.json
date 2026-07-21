@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "RING_3.5_SHEESHAM_24",
-      "asin": "B0CLP4F3RT",
-      "title": "Rosewood curtain rod ring (24, 2.7 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 6,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Linked",
-      "parent": "B0CGRC1MYM",
-      "theme": "Item package quantity",
-      "attrval": "(24, 2.7 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "RING_3.5_SHEESHAM_12",
       "asin": "B0CLP4T3BH",
       "title": "Rosewood curtain rod ring (12, 2.7 INCH Inner Dia)",
@@ -1364,24 +1346,6 @@
       "parent": "B0DBFNGSSF",
       "theme": "Item package quantity",
       "attrval": "(12, 1.25 INCH Inner Dia)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "White clips 2.5 (24)",
-      "asin": "B0DSTBFJVX",
-      "title": "white curtain ring with clip (24, 1.75 INCH Inner Dia)",
-      "cat": "wooden curtain rings",
-      "qty": 23,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
       "notes": "",
       "owner": "",
       "action": ""
