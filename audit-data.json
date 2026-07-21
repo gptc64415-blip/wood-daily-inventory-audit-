@@ -1,24 +1,6 @@
 {
   "skus": [
     {
-      "sku": "TABLE_TOP_RW_NEW_FBA1",
-      "asin": "B0DBVLSZSS",
-      "title": "Wooden Yarn Winder (Swift Rosewood)",
-      "cat": "Wooden Yarn Winder",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Linked",
-      "parent": "B0DC58KK96",
-      "theme": "material",
-      "attrval": "(Swift Rosewood)",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "ONLY_WINDER_ROSEWWOD",
       "asin": "B0DC3V8SW4",
       "title": "Wooden Yarn Winder (Winder Rosewood)",
