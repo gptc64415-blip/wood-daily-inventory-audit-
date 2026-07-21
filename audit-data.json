@@ -2125,15 +2125,7 @@
       "action": ""
     }
   ],
-  "parents": [
-    {
-      "asin": "B0DBHH3R87",
-      "name": "golden curtain ring with clip",
-      "theme": "size",
-      "cat": "wooden curtain rings",
-      "notes": "Parent SKU:\nGOLDEN RINGS CLIPS"
-    }
-  ],
+  "parents": [],
   "logs": [
     {
       "date": "29 May 2026",
