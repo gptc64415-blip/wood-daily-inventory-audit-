@@ -1,42 +1,6 @@
 {
   "skus": [
     {
-      "sku": "WWC-RW-4Slot",
-      "asin": "B0F848V949",
-      "title": "Mars Exports Wooden Watch Organizer Case with Glass Lid | 4 Slot",
-      "cat": "Wooden Watch Organizer Case",
-      "qty": 1,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "Yes",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
-      "sku": "WWC-RW-1Slot",
-      "asin": "B0F84BB7BC",
-      "title": "Mars Exports Wooden Watch Organizer Case with Glass Lid | 1",
-      "cat": "Wooden Watch Organizer Case",
-      "qty": 0,
-      "reorder": 0,
-      "listing": "Active",
-      "img": "Yes",
-      "bb": "No",
-      "vartype": "Standalone",
-      "parent": "",
-      "theme": "",
-      "attrval": "",
-      "notes": "",
-      "owner": "",
-      "action": ""
-    },
-    {
       "sku": "WWC-RW-2Slot",
       "asin": "B0F846TV7F",
       "title": "Mars Exports Wooden Watch Organizer Case with Glass Lid | 2",
