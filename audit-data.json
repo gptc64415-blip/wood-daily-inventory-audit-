@@ -4338,10 +4338,24 @@
       "theme": "color",
       "category": "Unique Horn Mug",
       "notes": ""
+    },
+    {
+      "id": "id_huvq85x7mrvpyu8y",
+      "asin": "B0DS2RDDF4",
+      "family": "BIRDS",
+      "theme": "size",
+      "category": "Wooden Cremation Urns Box",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_k485r9sgmrvpyu8y",
+      "date": "2026-07-22T06:46:40.546Z",
+      "action": "Parent ASIN added",
+      "details": "B0DS2RDDF4 — BIRDS"
+    },
     {
       "id": "id_0vtohxj3mrvprg1w",
       "date": "2026-07-22T06:40:55.556Z",
@@ -4474,7 +4488,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:38:14.309Z",
+    "lastSynced": "2026-07-22T06:40:58.912Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
