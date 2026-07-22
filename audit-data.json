@@ -4482,10 +4482,24 @@
       "theme": "quantity",
       "category": "Wooden Curtain Rod Bracket",
       "notes": ""
+    },
+    {
+      "id": "id_1t3zcuw0mrvqs7qr",
+      "asin": "B0CW6GMWGH",
+      "family": "WHISTLEs",
+      "theme": "set name",
+      "category": "Boatswain Whistle",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_deac5gqxmrvqs7qr",
+      "date": "2026-07-22T07:09:31.059Z",
+      "action": "Parent ASIN added",
+      "details": "B0CW6GMWGH — WHISTLEs"
+    },
     {
       "id": "id_gy3xmevnmrvqqjh9",
       "date": "2026-07-22T07:08:12.957Z",
@@ -4726,7 +4740,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:07:16.435Z",
+    "lastSynced": "2026-07-22T07:08:16.652Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
