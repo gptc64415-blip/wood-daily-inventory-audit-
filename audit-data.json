@@ -4514,10 +4514,24 @@
       "theme": "size/quantity",
       "category": "Drapery Curtain Rod Rings",
       "notes": ""
+    },
+    {
+      "id": "id_14tjgry0mrvqystu",
+      "asin": "B0CG8RHSVV",
+      "family": "M0-C71V-8KTC",
+      "theme": "size/quantity",
+      "category": "Wooden Drapery Curtain Rod Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_d9d245zfmrvqystu",
+      "date": "2026-07-22T07:14:38.322Z",
+      "action": "Parent ASIN added",
+      "details": "B0CG8RHSVV — M0-C71V-8KTC"
+    },
     {
       "id": "id_hd3k6ox5mrvqxthm",
       "date": "2026-07-22T07:13:52.522Z",
@@ -4782,7 +4796,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:12:42.898Z",
+    "lastSynced": "2026-07-22T07:13:59.171Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
