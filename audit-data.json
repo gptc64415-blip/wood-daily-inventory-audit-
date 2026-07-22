@@ -4410,10 +4410,24 @@
       "theme": "color",
       "category": "Wooden Crochet Hooks",
       "notes": ""
+    },
+    {
+      "id": "id_7cv2hbwbmrvqgcs6",
+      "asin": "B0DBHX67RL",
+      "family": "SQUARE_YARN_BOWLS",
+      "theme": "size",
+      "category": "Wooden Yarn Bowl",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_rp8wj2jimrvqgcs6",
+      "date": "2026-07-22T07:00:17.718Z",
+      "action": "Parent ASIN added",
+      "details": "B0DBHX67RL — SQUARE_YARN_BOWLS"
+    },
     {
       "id": "id_r8izj159mrvqbv8n",
       "date": "2026-07-22T06:56:48.359Z",
@@ -4600,7 +4614,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:56:09.479Z",
+    "lastSynced": "2026-07-22T06:56:51.852Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
