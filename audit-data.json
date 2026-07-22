@@ -4450,10 +4450,24 @@
       "theme": "size",
       "category": "Wood Furniture Legs",
       "notes": ""
+    },
+    {
+      "id": "id_osxtv1r1mrvqn790",
+      "asin": "B0D8KWXTB1",
+      "family": "SHEESHAM_RINGS_WITHCLIPS",
+      "theme": "size/quantity",
+      "category": "Wooden Curtain Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_znjdgvzamrvqn790",
+      "date": "2026-07-22T07:05:37.140Z",
+      "action": "Parent ASIN added",
+      "details": "B0D8KWXTB1 — SHEESHAM_RINGS_WITHCLIPS"
+    },
     {
       "id": "id_pnm7vhk0mrvqlx2d",
       "date": "2026-07-22T07:04:37.285Z",
@@ -4670,7 +4684,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:03:17.889Z",
+    "lastSynced": "2026-07-22T07:04:39.864Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
