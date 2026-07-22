@@ -4426,10 +4426,24 @@
       "theme": "quantity",
       "category": "Wooden  Curtain Rings",
       "notes": ""
+    },
+    {
+      "id": "id_jihwbgylmrvqj9ol",
+      "asin": "B0DBFNGSSF",
+      "family": "B7-U5IG-W9AU",
+      "theme": "size",
+      "category": "Beachwood, Curtain Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_8e9qw9rmmrvqj9ol",
+      "date": "2026-07-22T07:02:33.669Z",
+      "action": "Parent ASIN added",
+      "details": "B0DBFNGSSF — B7-U5IG-W9AU"
+    },
     {
       "id": "id_lkluyj7emrvqi48e",
       "date": "2026-07-22T07:01:39.950Z",
@@ -4628,7 +4642,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:00:22.821Z",
+    "lastSynced": "2026-07-22T07:01:44.732Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
