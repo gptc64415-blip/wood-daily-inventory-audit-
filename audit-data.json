@@ -4362,10 +4362,24 @@
       "theme": "size",
       "category": "Wooden Cremation Urns Box",
       "notes": ""
+    },
+    {
+      "id": "id_nsvl09lamrvq288p",
+      "asin": "B0DPHVG6Y6",
+      "family": "SN-UD2R-W5NT",
+      "theme": "set name",
+      "category": "Wooden Yarn Winder",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_f71eg9y4mrvq288p",
+      "date": "2026-07-22T06:49:18.649Z",
+      "action": "Parent ASIN added",
+      "details": "B0DPHVG6Y6 — SN-UD2R-W5NT"
+    },
     {
       "id": "id_tpkcbgm2mrvq0kn6",
       "date": "2026-07-22T06:48:01.410Z",
@@ -4516,7 +4530,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:47:23.746Z",
+    "lastSynced": "2026-07-22T06:48:04.154Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
