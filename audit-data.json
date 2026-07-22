@@ -4322,10 +4322,24 @@
       "theme": "color",
       "category": "multicolor Wooden Curtains Rod Rings",
       "notes": ""
+    },
+    {
+      "id": "id_3z9h6wymmrvpnx8d",
+      "asin": "B0DXBK7VT8",
+      "family": "MUGS_AC_BASE",
+      "theme": "color",
+      "category": "Drinking Horn Mug",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_kiko05thmrvpnx8d",
+      "date": "2026-07-22T06:38:11.197Z",
+      "action": "Parent ASIN added",
+      "details": "B0DXBK7VT8 — MUGS_AC_BASE"
+    },
     {
       "id": "id_t675gh0vmrvpmmj9",
       "date": "2026-07-22T06:37:10.677Z",
@@ -4446,7 +4460,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:35:32.733Z",
+    "lastSynced": "2026-07-22T06:37:13.502Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
