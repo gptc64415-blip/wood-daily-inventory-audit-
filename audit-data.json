@@ -4498,10 +4498,24 @@
       "theme": "color",
       "category": "Wooden Solitaire Board",
       "notes": ""
+    },
+    {
+      "id": "id_i6zd6cvfmrvqw7ru",
+      "asin": "B0CSGPP91R",
+      "family": "YX-NX5R-BZ7W",
+      "theme": "color",
+      "category": "Rosewood Stitching",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_qj0hbynkmrvqw7ru",
+      "date": "2026-07-22T07:12:37.722Z",
+      "action": "Parent ASIN added",
+      "details": "B0CSGPP91R — YX-NX5R-BZ7W"
+    },
     {
       "id": "id_2mdrp3snmrvque6r",
       "date": "2026-07-22T07:11:12.723Z",
@@ -4754,7 +4768,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:09:34.372Z",
+    "lastSynced": "2026-07-22T07:11:16.422Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
