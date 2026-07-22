@@ -4258,10 +4258,24 @@
       "theme": "size",
       "category": "wooden urn",
       "notes": ""
+    },
+    {
+      "id": "id_a8t8u1mwmrvp31ne",
+      "asin": "B0H8NY6XC2",
+      "family": "BIRDS_115 lb_SF",
+      "theme": "size",
+      "category": "wooden box urn",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_4uw44fcjmrvp31ne",
+      "date": "2026-07-22T06:21:57.146Z",
+      "action": "Parent ASIN added",
+      "details": "B0H8NY6XC2 — BIRDS_115 lb_SF"
+    },
     {
       "id": "id_iplu21ssmrvp1f9u",
       "date": "2026-07-22T06:20:41.490Z",
@@ -4334,7 +4348,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:19:46.083Z",
+    "lastSynced": "2026-07-22T06:20:44.217Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
