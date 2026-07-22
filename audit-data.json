@@ -4418,10 +4418,24 @@
       "theme": "size",
       "category": "Wooden Yarn Bowl",
       "notes": ""
+    },
+    {
+      "id": "id_hrre9nu0mrvqi48e",
+      "asin": "B0DBHH3R87",
+      "family": "GOLDEN RINGS CLIPS",
+      "theme": "quantity",
+      "category": "Wooden  Curtain Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_lkluyj7emrvqi48e",
+      "date": "2026-07-22T07:01:39.950Z",
+      "action": "Parent ASIN added",
+      "details": "B0DBHH3R87 — GOLDEN RINGS CLIPS"
+    },
     {
       "id": "id_rp8wj2jimrvqgcs6",
       "date": "2026-07-22T07:00:17.718Z",
@@ -4614,7 +4628,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:56:51.852Z",
+    "lastSynced": "2026-07-22T07:00:22.821Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
