@@ -4474,10 +4474,24 @@
       "theme": "quantity",
       "category": "Golden Wooden Curtain Rings",
       "notes": ""
+    },
+    {
+      "id": "id_6z34o3jcmrvqqjh9",
+      "asin": "B0CYCNLJ19",
+      "family": "SUPPORT_RW",
+      "theme": "quantity",
+      "category": "Wooden Curtain Rod Bracket",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_gy3xmevnmrvqqjh9",
+      "date": "2026-07-22T07:08:12.957Z",
+      "action": "Parent ASIN added",
+      "details": "B0CYCNLJ19 — SUPPORT_RW"
+    },
     {
       "id": "id_bxunwkigmrvqp93w",
       "date": "2026-07-22T07:07:12.860Z",
@@ -4712,7 +4726,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:06:38.789Z",
+    "lastSynced": "2026-07-22T07:07:16.435Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
