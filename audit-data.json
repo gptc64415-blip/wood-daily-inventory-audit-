@@ -4242,10 +4242,24 @@
       "theme": "Size/Quantity",
       "category": "wooden curtain rings",
       "notes": ""
+    },
+    {
+      "id": "id_ghj5tsxbmrvp066i",
+      "asin": "B0H9RRGX31",
+      "family": "Metal_keepsakeurn-parent",
+      "theme": "set name",
+      "category": "metal urn",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_0jthtersmrvp066i",
+      "date": "2026-07-22T06:19:43.050Z",
+      "action": "Parent ASIN added",
+      "details": "B0H9RRGX31 — Metal_keepsakeurn-parent"
+    },
     {
       "id": "id_j0tkxqlgmrufqq49",
       "date": "2026-07-21T09:12:39.609Z",
