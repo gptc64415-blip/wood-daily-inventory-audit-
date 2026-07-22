@@ -4306,10 +4306,24 @@
       "theme": "color",
       "category": "Viking Horn with Stand",
       "notes": ""
+    },
+    {
+      "id": "id_osxuen9lmrvpkggt",
+      "asin": "B0F8BV6P4Y",
+      "family": "VR-WWC-RW",
+      "theme": "size",
+      "category": "Wooden Watch Organizer Case",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_xhd51aq7mrvpkggt",
+      "date": "2026-07-22T06:35:29.501Z",
+      "action": "Parent ASIN added",
+      "details": "B0F8BV6P4Y — VR-WWC-RW"
+    },
     {
       "id": "id_1pf8jufcmrvpjgzy",
       "date": "2026-07-22T06:34:43.534Z",
@@ -4418,7 +4432,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:33:24.624Z",
+    "lastSynced": "2026-07-22T06:34:46.313Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
