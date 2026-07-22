@@ -4266,10 +4266,24 @@
       "theme": "size",
       "category": "wooden box urn",
       "notes": ""
+    },
+    {
+      "id": "id_70va0fdlmrvp7mc8",
+      "asin": "B0H7BH6RB2",
+      "family": "KP-FT6X-JFKY",
+      "theme": "color",
+      "category": "Wooden Yarn Winder",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_jm76rhmzmrvp7mc8",
+      "date": "2026-07-22T06:25:30.584Z",
+      "action": "Parent ASIN added",
+      "details": "B0H7BH6RB2 — KP-FT6X-JFKY"
+    },
     {
       "id": "id_4uw44fcjmrvp31ne",
       "date": "2026-07-22T06:21:57.146Z",
@@ -4348,7 +4362,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:20:44.217Z",
+    "lastSynced": "2026-07-22T06:21:59.648Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
