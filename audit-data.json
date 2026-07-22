@@ -4458,10 +4458,24 @@
       "theme": "size/quantity",
       "category": "Wooden Curtain Rings",
       "notes": ""
+    },
+    {
+      "id": "id_xioxgrpkmrvqog8s",
+      "asin": "B0CZSWT621",
+      "family": "RING_WALNUT_CLIPS",
+      "theme": "quantity",
+      "category": "Wooden Curtain Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_ecxeamc0mrvqog8s",
+      "date": "2026-07-22T07:06:35.452Z",
+      "action": "Parent ASIN added",
+      "details": "B0CZSWT621 — RING_WALNUT_CLIPS"
+    },
     {
       "id": "id_znjdgvzamrvqn790",
       "date": "2026-07-22T07:05:37.140Z",
@@ -4684,7 +4698,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:04:39.864Z",
+    "lastSynced": "2026-07-22T07:05:40.129Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
