@@ -4402,10 +4402,24 @@
       "theme": "size/quantity",
       "category": "Wooden Drapery Curtain Rod Rings",
       "notes": ""
+    },
+    {
+      "id": "id_i2xje6l0mrvqbv8n",
+      "asin": "B0DD785XVQ",
+      "family": "CROCHET04_SO7_ANTIQUE",
+      "theme": "color",
+      "category": "Wooden Crochet Hooks",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_r8izj159mrvqbv8n",
+      "date": "2026-07-22T06:56:48.359Z",
+      "action": "Parent ASIN added",
+      "details": "B0DD785XVQ — CROCHET04_SO7_ANTIQUE"
+    },
     {
       "id": "id_lhrhntulmrvqayt3",
       "date": "2026-07-22T06:56:06.327Z",
@@ -4586,7 +4600,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:53:55.111Z",
+    "lastSynced": "2026-07-22T06:56:09.479Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
