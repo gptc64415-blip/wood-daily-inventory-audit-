@@ -4466,10 +4466,24 @@
       "theme": "quantity",
       "category": "Wooden Curtain Rings",
       "notes": ""
+    },
+    {
+      "id": "id_amelbe9hmrvqp93w",
+      "asin": "B0CZLG6S1M",
+      "family": "ON-YQSU-DOMW",
+      "theme": "quantity",
+      "category": "Golden Wooden Curtain Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_bxunwkigmrvqp93w",
+      "date": "2026-07-22T07:07:12.860Z",
+      "action": "Parent ASIN added",
+      "details": "B0CZLG6S1M — ON-YQSU-DOMW"
+    },
     {
       "id": "id_ecxeamc0mrvqog8s",
       "date": "2026-07-22T07:06:35.452Z",
@@ -4698,7 +4712,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:05:40.129Z",
+    "lastSynced": "2026-07-22T07:06:38.789Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
