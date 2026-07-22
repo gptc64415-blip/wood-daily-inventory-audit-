@@ -4370,10 +4370,24 @@
       "theme": "set name",
       "category": "Wooden Yarn Winder",
       "notes": ""
+    },
+    {
+      "id": "id_6dnmox97mrvq4369",
+      "asin": "B0DKBVSXS6",
+      "family": "DOLPHIN_07_ANTIQUE",
+      "theme": "color",
+      "category": "Wooden Crochet Hooks",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_uamiq3qvmrvq4369",
+      "date": "2026-07-22T06:50:45.393Z",
+      "action": "Parent ASIN added",
+      "details": "B0DKBVSXS6 — DOLPHIN_07_ANTIQUE"
+    },
     {
       "id": "id_f71eg9y4mrvq288p",
       "date": "2026-07-22T06:49:18.649Z",
@@ -4530,7 +4544,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:48:04.154Z",
+    "lastSynced": "2026-07-22T06:49:21.370Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
