@@ -4250,10 +4250,24 @@
       "theme": "set name",
       "category": "metal urn",
       "notes": ""
+    },
+    {
+      "id": "id_auu4a9r5mrvp1f9u",
+      "asin": "B0H8PP7ZWZ",
+      "family": "URN_BOX",
+      "theme": "size",
+      "category": "wooden urn",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_iplu21ssmrvp1f9u",
+      "date": "2026-07-22T06:20:41.490Z",
+      "action": "Parent ASIN added",
+      "details": "B0H8PP7ZWZ — URN_BOX"
+    },
     {
       "id": "id_0jthtersmrvp066i",
       "date": "2026-07-22T06:19:43.050Z",
@@ -4320,7 +4334,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-21T09:09:17.725Z",
+    "lastSynced": "2026-07-22T06:19:46.083Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
