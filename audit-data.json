@@ -4490,10 +4490,24 @@
       "theme": "set name",
       "category": "Boatswain Whistle",
       "notes": ""
+    },
+    {
+      "id": "id_e7adyuxtmrvque6r",
+      "asin": "B0CVVYVSPY",
+      "family": "WOODEN_SOLITAIRE_GAME",
+      "theme": "color",
+      "category": "Wooden Solitaire Board",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_2mdrp3snmrvque6r",
+      "date": "2026-07-22T07:11:12.723Z",
+      "action": "Parent ASIN added",
+      "details": "B0CVVYVSPY — WOODEN_SOLITAIRE_GAME"
+    },
     {
       "id": "id_deac5gqxmrvqs7qr",
       "date": "2026-07-22T07:09:31.059Z",
@@ -4740,7 +4754,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:08:16.652Z",
+    "lastSynced": "2026-07-22T07:09:34.372Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
