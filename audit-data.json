@@ -4394,10 +4394,24 @@
       "theme": "size",
       "category": "Wooden Serving Bowl Set",
       "notes": ""
+    },
+    {
+      "id": "id_g4cv0m9cmrvqayt3",
+      "asin": "B0DFHHGVWW",
+      "family": "SHEESHAM_CLIPS_RINGS_NEW",
+      "theme": "size/quantity",
+      "category": "Wooden Drapery Curtain Rod Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_lhrhntulmrvqayt3",
+      "date": "2026-07-22T06:56:06.327Z",
+      "action": "Parent ASIN added",
+      "details": "B0DFHHGVWW — SHEESHAM_CLIPS_RINGS_NEW"
+    },
     {
       "id": "id_bn53krf6mrvq83bc",
       "date": "2026-07-22T06:53:52.200Z",
@@ -4572,7 +4586,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:51:55.130Z",
+    "lastSynced": "2026-07-22T06:53:55.111Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
