@@ -4522,10 +4522,24 @@
       "theme": "size/quantity",
       "category": "Wooden Drapery Curtain Rod Rings",
       "notes": ""
+    },
+    {
+      "id": "id_4na817q8mrvqzsox",
+      "asin": "B0CG4DPB7B",
+      "family": "5J-ZJQH-M9MS",
+      "theme": "size/quantity",
+      "category": "Wooden Drapery Rod Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_bacfvsramrvqzsox",
+      "date": "2026-07-22T07:15:24.801Z",
+      "action": "Parent ASIN added",
+      "details": "B0CG4DPB7B — 5J-ZJQH-M9MS"
+    },
     {
       "id": "id_d9d245zfmrvqystu",
       "date": "2026-07-22T07:14:38.322Z",
@@ -4796,7 +4810,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:13:59.171Z",
+    "lastSynced": "2026-07-22T07:14:42.161Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
