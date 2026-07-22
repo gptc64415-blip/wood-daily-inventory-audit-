@@ -4386,10 +4386,24 @@
       "theme": "color",
       "category": "Wooden Yarn Bowl,",
       "notes": ""
+    },
+    {
+      "id": "id_p8ueqwr1mrvq83bc",
+      "asin": "B0DFTX257G",
+      "family": "SALAD_BOWLS",
+      "theme": "size",
+      "category": "Wooden Serving Bowl Set",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_bn53krf6mrvq83bc",
+      "date": "2026-07-22T06:53:52.200Z",
+      "action": "Parent ASIN added",
+      "details": "B0DFTX257G — SALAD_BOWLS"
+    },
     {
       "id": "id_sciqfxf3mrvq5irk",
       "date": "2026-07-22T06:51:52.256Z",
@@ -4558,7 +4572,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:50:51.128Z",
+    "lastSynced": "2026-07-22T06:51:55.130Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
