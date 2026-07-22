@@ -4290,10 +4290,24 @@
       "theme": "material type",
       "category": "Wooden Yarn Winder",
       "notes": ""
+    },
+    {
+      "id": "id_osfxu4q2mrvphp6m",
+      "asin": "B0FF4X85PP",
+      "family": "VR-WD-WHITE-RING",
+      "theme": "size",
+      "category": "White Wooden Curtain Rod Ring",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_hg7ls32pmrvphp6m",
+      "date": "2026-07-22T06:33:20.830Z",
+      "action": "Parent ASIN added",
+      "details": "B0FF4X85PP — VR-WD-WHITE-RING"
+    },
     {
       "id": "id_fcevwrylmrvpgedi",
       "date": "2026-07-22T06:32:20.166Z",
@@ -4390,7 +4404,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:26:20.658Z",
+    "lastSynced": "2026-07-22T06:32:23.446Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
