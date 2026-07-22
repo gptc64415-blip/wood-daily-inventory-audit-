@@ -4282,10 +4282,24 @@
       "theme": "size",
       "category": "Wooden Pet Cremation Urn",
       "notes": ""
+    },
+    {
+      "id": "id_7p9e5v17mrvpgedi",
+      "asin": "B0FLDH6JP9",
+      "family": "ME-Yarn Winder-1",
+      "theme": "material type",
+      "category": "Wooden Yarn Winder",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_fcevwrylmrvpgedi",
+      "date": "2026-07-22T06:32:20.166Z",
+      "action": "Parent ASIN added",
+      "details": "B0FLDH6JP9 — ME-Yarn Winder-1"
+    },
     {
       "id": "id_hc6nizblmrvp8mm0",
       "date": "2026-07-22T06:26:17.592Z",
@@ -4376,7 +4390,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:25:33.632Z",
+    "lastSynced": "2026-07-22T06:26:20.658Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
