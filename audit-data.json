@@ -4314,10 +4314,24 @@
       "theme": "size",
       "category": "Wooden Watch Organizer Case",
       "notes": ""
+    },
+    {
+      "id": "id_5h9omz1cmrvpmmj9",
+      "asin": "B0F7WY81N3",
+      "family": "VR-CurtainRings-2.5 (24)",
+      "theme": "color",
+      "category": "multicolor Wooden Curtains Rod Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_t675gh0vmrvpmmj9",
+      "date": "2026-07-22T06:37:10.677Z",
+      "action": "Parent ASIN added",
+      "details": "B0F7WY81N3 — VR-CurtainRings-2.5 (24)"
+    },
     {
       "id": "id_xhd51aq7mrvpkggt",
       "date": "2026-07-22T06:35:29.501Z",
@@ -4432,7 +4446,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:34:46.313Z",
+    "lastSynced": "2026-07-22T06:35:32.733Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
