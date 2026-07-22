@@ -4346,10 +4346,24 @@
       "theme": "size",
       "category": "Wooden Cremation Urns Box",
       "notes": ""
+    },
+    {
+      "id": "id_inuxdldxmrvpzpgq",
+      "asin": "B0DS21QRV8",
+      "family": "1R-CHHH-WN9G",
+      "theme": "size",
+      "category": "Wooden Cremation Urns Box",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_mm8100cjmrvpzpgq",
+      "date": "2026-07-22T06:47:21.002Z",
+      "action": "Parent ASIN added",
+      "details": "B0DS21QRV8 — 1R-CHHH-WN9G"
+    },
     {
       "id": "id_k485r9sgmrvpyu8y",
       "date": "2026-07-22T06:46:40.546Z",
@@ -4488,7 +4502,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:40:58.912Z",
+    "lastSynced": "2026-07-22T06:46:43.847Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
