@@ -4274,10 +4274,24 @@
       "theme": "color",
       "category": "Wooden Yarn Winder",
       "notes": ""
+    },
+    {
+      "id": "id_f72ztevimrvp8mm0",
+      "asin": "B0H3P3J8S8",
+      "family": "PET_URN_BOX",
+      "theme": "size",
+      "category": "Wooden Pet Cremation Urn",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_hc6nizblmrvp8mm0",
+      "date": "2026-07-22T06:26:17.592Z",
+      "action": "Parent ASIN added",
+      "details": "B0H3P3J8S8 — PET_URN_BOX"
+    },
     {
       "id": "id_jm76rhmzmrvp7mc8",
       "date": "2026-07-22T06:25:30.584Z",
@@ -4362,7 +4376,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:21:59.648Z",
+    "lastSynced": "2026-07-22T06:25:33.632Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
