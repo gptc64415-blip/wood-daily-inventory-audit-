@@ -4378,10 +4378,24 @@
       "theme": "color",
       "category": "Wooden Crochet Hooks",
       "notes": ""
+    },
+    {
+      "id": "id_qu178gbwmrvq5irk",
+      "asin": "B0DFTX8CSB",
+      "family": "YARN_BOWL_JOINT(6x3)",
+      "theme": "color",
+      "category": "Wooden Yarn Bowl,",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_sciqfxf3mrvq5irk",
+      "date": "2026-07-22T06:51:52.256Z",
+      "action": "Parent ASIN added",
+      "details": "B0DFTX8CSB — YARN_BOWL_JOINT(6x3)"
+    },
     {
       "id": "id_uamiq3qvmrvq4369",
       "date": "2026-07-22T06:50:45.393Z",
@@ -4544,7 +4558,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T06:49:21.370Z",
+    "lastSynced": "2026-07-22T06:50:51.128Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
