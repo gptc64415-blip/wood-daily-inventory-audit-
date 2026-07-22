@@ -4434,10 +4434,24 @@
       "theme": "size",
       "category": "Beachwood, Curtain Rings",
       "notes": ""
+    },
+    {
+      "id": "id_wmccn0zbmrvqk4hh",
+      "asin": "B0D9DW7TPP",
+      "family": "SILVER_RINGS_2.5\"",
+      "theme": "quantity",
+      "category": "Silver Wooden Curtain Rings",
+      "notes": ""
     }
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_fwteby9hmrvqk4hh",
+      "date": "2026-07-22T07:03:13.589Z",
+      "action": "Parent ASIN added",
+      "details": "B0D9DW7TPP — SILVER_RINGS_2.5\""
+    },
     {
       "id": "id_8e9qw9rmmrvqj9ol",
       "date": "2026-07-22T07:02:33.669Z",
@@ -4642,7 +4656,7 @@
   },
   "meta": {
     "currentMonth": "2026-07",
-    "lastSynced": "2026-07-22T07:01:44.732Z",
+    "lastSynced": "2026-07-22T07:02:36.929Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
