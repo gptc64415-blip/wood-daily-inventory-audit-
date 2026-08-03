@@ -29,34 +29,6 @@
       "updatedAt": "2026-07-21T07:51:18.460Z"
     },
     {
-      "id": "id_ff85pbzkmrucu3ss",
-      "sku": "RING_3.5INCH_CLEAR_24",
-      "asin": "B0CKXV3XKR",
-      "title": "Mars Exports 24 Pieces 3.5 Inch Wooden Drapery Curtain Rod Rings for 2.25 Inches Rod Pole - Beech Wood (24",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.460Z",
-      "updatedAt": "2026-07-21T07:51:18.460Z"
-    },
-    {
       "id": "id_a53p53i2mrucu3ss",
       "sku": "amzn.gr.Rosewood_clips_2.5_(24--p-2Qo-VG",
       "asin": "B0DSTFKJZT",
@@ -4368,6 +4340,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_c34pe3xzmsd51gew",
+      "date": "2026-08-03T11:20:41.816Z",
+      "action": "SKU deleted",
+      "details": "RING_3.5INCH_CLEAR_24 (B0CKXV3XKR)"
+    },
+    {
       "id": "id_d1to1fffmsd51cug",
       "date": "2026-08-03T11:20:37.192Z",
       "action": "SKU deleted",
@@ -4685,7 +4663,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-03T11:20:36.464Z",
+    "lastSynced": "2026-08-03T11:20:39.979Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null,
     "monthlyHistory": [
