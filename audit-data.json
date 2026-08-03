@@ -1,34 +1,6 @@
 {
   "skus": [
     {
-      "id": "id_9pgdwphemrucu3ss",
-      "sku": "24_PIECES_RINGS_2.5_(SHEESHAM CLIPS)",
-      "asin": "B0CYTB2HWZ",
-      "title": "24 Pieces Curtain Rings with Clips Wooden for 2.5 inch Rod",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.460Z",
-      "updatedAt": "2026-07-21T07:51:18.461Z"
-    },
-    {
       "id": "id_ebihamkkmrucu3ss",
       "sku": "RING_3.5INCH_CLEAR_100",
       "asin": "B0CKXTJGKV",
@@ -4451,6 +4423,12 @@
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_a3yqh0oqmsd519lz",
+      "date": "2026-08-03T11:20:32.999Z",
+      "action": "SKU deleted",
+      "details": "24_PIECES_RINGS_2.5_(SHEESHAM CLIPS) (B0CYTB2HWZ)"
+    },
     {
       "id": "id_gqlxqleomsd50zlc",
       "date": "2026-08-03T11:20:20.016Z",
