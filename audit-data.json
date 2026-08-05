@@ -113,34 +113,6 @@
       "updatedAt": "2026-07-21T07:51:18.461Z"
     },
     {
-      "id": "id_oq8892g1mrucu3st",
-      "sku": "URN_JAR_MEDIUM",
-      "asin": "B0DGDJMG3Q",
-      "title": "Handcrafted Wooden Urn for Human Ashes Adult Male - Small Decorative Urn for Ashes for Women & Men - Funeral & Burial Urn - (Medium 100 cu/in)",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 69.99,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_uo8bbt50mrucu3st",
       "sku": "BIRDS_MEDIUM_115 lb",
       "asin": "B0DS27S2PQ",
@@ -3303,6 +3275,12 @@
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_ifroakg7msfqu2w3",
+      "date": "2026-08-05T07:06:21.603Z",
+      "action": "SKU deleted",
+      "details": "URN_JAR_MEDIUM (B0DGDJMG3Q)"
+    },
     {
       "id": "id_z30x49ozmsfqtux7",
       "date": "2026-08-05T07:06:11.275Z",
