@@ -1,34 +1,6 @@
 {
   "skus": [
     {
-      "id": "id_fmt1x4bymrucu3ss",
-      "sku": "amzn.gr.RING_(2.5Inch)_WLNT_50-KObTau-LN",
-      "asin": "B0CG4CQYGS",
-      "title": "Handmade Wooden Drapery Rod Rings",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.460Z",
-      "updatedAt": "2026-07-21T07:51:18.461Z"
-    },
-    {
       "id": "id_t7ympuiymrucu3st",
       "sku": "RING_(2Inch)_WLNT_24pcs",
       "asin": "B0CFYCK7T2",
@@ -223,34 +195,6 @@
       "issues": [],
       "createdAt": "2026-07-21T07:51:18.461Z",
       "updatedAt": "2026-07-21T07:51:18.461Z"
-    },
-    {
-      "id": "id_3gp446x7mrucu3st",
-      "sku": "amzn.gr.SHMCLIPS_03INCH_50PIEC-ifFHup-VG",
-      "asin": "B0DFHJFNCN",
-      "title": "50 Pieces Large Wooden Drapery Curtain Rod Rings with Clips for 1.75 inch to 2 inch Rod Pole",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 8,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.462Z"
     },
     {
       "id": "id_ajy93tajmrucu3st",
@@ -4116,6 +4060,18 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_dqqivp9vmsfq9xnl",
+      "date": "2026-08-05T06:50:41.697Z",
+      "action": "SKU deleted",
+      "details": "amzn.gr.SHMCLIPS_03INCH_50PIEC-ifFHup-VG (B0DFHJFNCN)"
+    },
+    {
+      "id": "id_fgm3k6lfmsfq9v75",
+      "date": "2026-08-05T06:50:38.513Z",
+      "action": "SKU deleted",
+      "details": "amzn.gr.RING_(2.5Inch)_WLNT_50-KObTau-LN (B0CG4CQYGS)"
+    },
+    {
       "id": "id_f2ib9usjmsfq9tqx",
       "date": "2026-08-05T06:50:36.633Z",
       "action": "SKU deleted",
@@ -4487,7 +4443,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-05T06:50:35.047Z",
+    "lastSynced": "2026-08-05T06:50:39.251Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null,
     "monthlyHistory": [
