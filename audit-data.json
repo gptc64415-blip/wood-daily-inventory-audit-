@@ -1,62 +1,6 @@
 {
   "skus": [
     {
-      "id": "id_qwih7345mrucu3st",
-      "sku": "white Ring 3 (24)",
-      "asin": "B0DS6D5JVS",
-      "title": "White Wooden Curtain Rod Ring",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 4,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.461Z"
-    },
-    {
-      "id": "id_2oiyoar9mrucu3st",
-      "sku": "amzn.gr.RING_2.5_INCH_(CLEAR)_-tm0Hjp-LN",
-      "asin": "B0CFR2MKFP",
-      "title": "Mars Exports 24 Pieces 2.5 Inch Wooden Drapery Curtain Rod Rings for 1.5 inch Rod Pole",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 87,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_o3yo1fx0mrucu3st",
       "sku": "amzn.gr.SHMCLIPS_3.5INCH_50PIE-9yBxD3-LN",
       "asin": "B0DFHF4FM3",
@@ -2912,6 +2856,18 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_gpe235fkmsfqxzr7",
+      "date": "2026-08-05T07:09:24.163Z",
+      "action": "SKU deleted",
+      "details": "amzn.gr.RING_2.5_INCH_(CLEAR)_-tm0Hjp-LN (B0CFR2MKFP)"
+    },
+    {
+      "id": "id_8jxd4k3imsfqxy8b",
+      "date": "2026-08-05T07:09:22.187Z",
+      "action": "SKU deleted",
+      "details": "white Ring 3 (24) (B0DS6D5JVS)"
+    },
+    {
       "id": "id_m22ca0rgmsfqxwjv",
       "date": "2026-08-05T07:09:20.011Z",
       "action": "SKU deleted",
@@ -3031,7 +2987,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-05T07:07:24.027Z",
+    "lastSynced": "2026-08-05T07:09:23.454Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
