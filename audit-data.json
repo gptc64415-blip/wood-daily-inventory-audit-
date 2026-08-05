@@ -57,34 +57,6 @@
       "updatedAt": "2026-07-21T07:51:18.461Z"
     },
     {
-      "id": "id_xn3jzbs3mrucu3st",
-      "sku": "amzn.gr.RING_(2.5Inch)_WLNT_24-yv_K7t-LN",
-      "asin": "B0CG4D4DZV",
-      "title": "Handmade Wooden Drapery Rod Rings",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_ajy93tajmrucu3st",
       "sku": "3.5 inch White",
       "asin": "B0DVBYWK77",
@@ -3948,6 +3920,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_453veyoomsfqa63d",
+      "date": "2026-08-05T06:50:52.633Z",
+      "action": "SKU deleted",
+      "details": "amzn.gr.RING_(2.5Inch)_WLNT_24-yv_K7t-LN (B0CG4D4DZV)"
+    },
+    {
       "id": "id_tic9wx0jmsfqa37t",
       "date": "2026-08-05T06:50:48.905Z",
       "action": "SKU deleted",
@@ -4355,7 +4333,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-05T06:50:48.277Z",
+    "lastSynced": "2026-08-05T06:50:52.460Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null,
     "monthlyHistory": [
