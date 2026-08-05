@@ -1,34 +1,6 @@
 {
   "skus": [
     {
-      "id": "id_o3yo1fx0mrucu3st",
-      "sku": "amzn.gr.SHMCLIPS_3.5INCH_50PIE-9yBxD3-LN",
-      "asin": "B0DFHF4FM3",
-      "title": "50 Pieces Large Wooden Drapery Curtain Rod Rings with Clips for 2 inch to 2.5 inch Rod Pole",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_670mv4y1mrucu3st",
       "sku": "ACR 2.5-(24)",
       "asin": "B0H14W1Y5W",
@@ -2856,6 +2828,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_bu7tj1g0msfqy3u3",
+      "date": "2026-08-05T07:09:29.451Z",
+      "action": "SKU deleted",
+      "details": "amzn.gr.SHMCLIPS_3.5INCH_50PIE-9yBxD3-LN (B0DFHF4FM3)"
+    },
+    {
       "id": "id_gpe235fkmsfqxzr7",
       "date": "2026-08-05T07:09:24.163Z",
       "action": "SKU deleted",
@@ -2987,7 +2965,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-05T07:09:23.454Z",
+    "lastSynced": "2026-08-05T07:09:27.012Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
