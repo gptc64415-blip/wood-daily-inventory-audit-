@@ -113,34 +113,6 @@
       "updatedAt": "2026-07-21T07:51:18.463Z"
     },
     {
-      "id": "id_pa40vseimrucu3st",
-      "sku": "amzn.gr.RING_(2.5Inch)_WLNT_12-pzGrVq-LN",
-      "asin": "B0CG4B9TKJ",
-      "title": "Handmade Wooden Drapery Rod Rings",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_ocozk3k2mrucu3st",
       "sku": "RING_3INCH_SHEESHAM_100",
       "asin": "B0CLS1F92F",
@@ -3920,6 +3892,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_2y0k5fegmsfqa9mx",
+      "date": "2026-08-05T06:50:57.225Z",
+      "action": "SKU deleted",
+      "details": "amzn.gr.RING_(2.5Inch)_WLNT_12-pzGrVq-LN (B0CG4B9TKJ)"
+    },
+    {
       "id": "id_453veyoomsfqa63d",
       "date": "2026-08-05T06:50:52.633Z",
       "action": "SKU deleted",
@@ -4333,7 +4311,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-05T06:50:52.460Z",
+    "lastSynced": "2026-08-05T06:50:56.886Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null,
     "monthlyHistory": [
