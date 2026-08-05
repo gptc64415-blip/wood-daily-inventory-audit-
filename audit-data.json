@@ -1,34 +1,6 @@
 {
   "skus": [
     {
-      "id": "id_m0bqgl5zmrucu3st",
-      "sku": "Black Horn",
-      "asin": "B0DTGFDKXH",
-      "title": "Viking Horn with Stand & Leather Holster",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.461Z"
-    },
-    {
       "id": "id_b7hj77x3mrucu3st",
       "sku": "amzn.gr.BIRDS_SMALL-MqrIbVVbipyhlgi5R-LN",
       "asin": "B0FMYMHXKN",
@@ -3189,6 +3161,30 @@
       "notes": ""
     }
   ],
+  "restockLog": [],
+  "activityLog": [
+    {
+      "id": "id_2jyyoplsmsfqsd4b",
+      "date": "2026-08-05T07:05:01.547Z",
+      "action": "SKU deleted",
+      "details": "Black Horn (B0DTGFDKXH)"
+    }
+  ],
+  "processedOrderIds": {},
+  "processedReturnIds": {},
+  "settings": {
+    "leadTime": 15,
+    "safetyStock": 7,
+    "lowStockDays": 7,
+    "overstockDays": 60,
+    "slowMovingDays": 90
+  },
+  "meta": {
+    "currentMonth": "2026-08",
+    "lastSynced": null,
+    "lastOrdersImport": null,
+    "lastReturnsImport": null
+  },
   "logs": [
     {
       "date": "29 May 2026",
