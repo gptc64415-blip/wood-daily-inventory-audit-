@@ -57,34 +57,6 @@
       "updatedAt": "2026-07-21T07:51:18.463Z"
     },
     {
-      "id": "id_ullffacwmrucu3st",
-      "sku": "GOLDEN 2.5 24 CLIPS",
-      "asin": "B0DBF6DFV1",
-      "title": "24 Pieces Golden Wooden Curtain Rings with Clips | 1.75 Inch Inner Diameter | Fits 1 to 1.5 Inch Rods | Eyelet Drapery Hooks for Window & Shower Curtains",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 24.99,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.461Z"
-    },
-    {
       "id": "id_i5yyzsx9mrucu3st",
       "sku": "50_PIECES_RINGS_2.5_(SHEESHAM CLIPS)",
       "asin": "B0CYTWQ1Q4",
@@ -3276,6 +3248,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_xw04ucilmsfqunwr",
+      "date": "2026-08-05T07:06:48.843Z",
+      "action": "SKU deleted",
+      "details": "GOLDEN 2.5 24 CLIPS (B0DBF6DFV1)"
+    },
+    {
       "id": "id_ifroakg7msfqu2w3",
       "date": "2026-08-05T07:06:21.603Z",
       "action": "SKU deleted",
@@ -3317,7 +3295,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-05T07:06:09.682Z",
+    "lastSynced": "2026-08-05T07:06:27.267Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
