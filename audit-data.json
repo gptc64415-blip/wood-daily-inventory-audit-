@@ -113,34 +113,6 @@
       "updatedAt": "2026-07-21T07:51:18.462Z"
     },
     {
-      "id": "id_80s0kfvimrucu3st",
-      "sku": "RING_2.5_INCH (CLEAR) 12 PCS",
-      "asin": "B0CC2LMYD4",
-      "title": "Mars Exports 12 Pieces 2.5 Inch Wooden Drapery Curtain Rod Rings for 1.5 inches Rod Pole",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 18,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_egk7v92dmrucu3st",
       "sku": "12_PIECES_RINGS_3_(SHEESHAM CLIPS)",
       "asin": "B0D4TSM4YK",
@@ -3136,6 +3108,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_kg3wamysmsfquz03",
+      "date": "2026-08-05T07:07:03.219Z",
+      "action": "SKU deleted",
+      "details": "RING_2.5_INCH (CLEAR) 12 PCS (B0CC2LMYD4)"
+    },
+    {
       "id": "id_279qlng8msfquxc3",
       "date": "2026-08-05T07:07:01.059Z",
       "action": "SKU deleted",
@@ -3207,7 +3185,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-05T07:07:01.319Z",
+    "lastSynced": "2026-08-05T07:07:03.772Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
