@@ -1,34 +1,6 @@
 {
   "skus": [
     {
-      "id": "id_vijmfaglmrucu3st",
-      "sku": "2.5 inch 12 sb clips",
-      "asin": "B0DBDXS3FW",
-      "title": "12pcs",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_v5fy73tamrucu3st",
       "sku": "amzn.gr.RING_(2Inch)_TEAK_24pc-RMxAK_-LN",
       "asin": "B0CGR37L72",
@@ -3107,6 +3079,12 @@
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_plre8d61msfqv8mj",
+      "date": "2026-08-05T07:07:15.691Z",
+      "action": "SKU deleted",
+      "details": "2.5 inch 12 sb clips (B0DBDXS3FW)"
+    },
     {
       "id": "id_kg3wamysmsfquz03",
       "date": "2026-08-05T07:07:03.219Z",
