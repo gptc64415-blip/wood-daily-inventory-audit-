@@ -841,34 +841,6 @@
       "updatedAt": "2026-07-21T07:51:18.463Z"
     },
     {
-      "id": "id_uv7oqct8mrucu3su",
-      "sku": "amzn.gr.RING_SHM_2.5_12p-iPNtUc4DCkL_-VG",
-      "asin": "B0CLM3CLFF",
-      "title": "12 Pieces Natural Rosewood Wooden Curtain Rod Rings | 2.5 Inch Outer",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.462Z",
-      "updatedAt": "2026-07-21T07:51:18.463Z"
-    },
-    {
       "id": "id_wg24zdvgmrucu3su",
       "sku": "amzn.gr.NEW_SHMCLIPS_03INCH_12-bjsN8U-LN",
       "asin": "B0DFHC35RK",
@@ -3413,6 +3385,30 @@
       "notes": ""
     }
   ],
+  "restockLog": [],
+  "activityLog": [
+    {
+      "id": "id_3w7i2wj3msfqtr7v",
+      "date": "2026-08-05T07:06:06.475Z",
+      "action": "SKU deleted",
+      "details": "amzn.gr.RING_SHM_2.5_12p-iPNtUc4DCkL_-VG (B0CLM3CLFF)"
+    }
+  ],
+  "processedOrderIds": {},
+  "processedReturnIds": {},
+  "settings": {
+    "leadTime": 15,
+    "safetyStock": 7,
+    "lowStockDays": 7,
+    "overstockDays": 60,
+    "slowMovingDays": 90
+  },
+  "meta": {
+    "currentMonth": "2026-08",
+    "lastSynced": null,
+    "lastOrdersImport": null,
+    "lastReturnsImport": null
+  },
   "logs": [
     {
       "date": "29 May 2026",
