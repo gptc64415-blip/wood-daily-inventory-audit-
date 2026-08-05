@@ -7129,6 +7129,36 @@
       "issues": [],
       "createdAt": "2026-08-05T09:19:11.895Z",
       "updatedAt": "2026-08-05T09:19:11.895Z"
+    },
+    {
+      "id": "id_fjuc0eu8msfvmmim",
+      "sku": "Rosewood curtain rings",
+      "asin": "B0HCV242YM",
+      "title": "gffgfg",
+      "category": "",
+      "owner": "",
+      "qty": 0,
+      "reorderPoint": 0,
+      "fulfillmentChannel": "FBA",
+      "fbaStock": 0,
+      "fbmStock": 0,
+      "listingStatus": "Active",
+      "actionStatus": "None",
+      "mainImage": "yes",
+      "buyBox": "yes",
+      "todaySales": 0,
+      "monthlySales": 0,
+      "sellingPrice": 0,
+      "costPrice": 0,
+      "unitsReturned": 0,
+      "variationRole": "Standalone — no parent",
+      "parentAsin": "",
+      "variationTheme": "",
+      "attributeValue": "",
+      "notes": "",
+      "issues": [],
+      "createdAt": "2026-08-05T09:20:31.870Z",
+      "updatedAt": "2026-08-05T09:20:31.870Z"
     }
   ],
   "parents": [
@@ -7432,6 +7462,12 @@
   "restockLog": [],
   "activityLog": [
     {
+      "id": "id_y6cap2c1msfvmmim",
+      "date": "2026-08-05T09:20:31.870Z",
+      "action": "SKU added",
+      "details": "Rosewood curtain rings (B0HCV242YM)"
+    },
+    {
       "id": "id_55i4ljucmsfvkwt3",
       "date": "2026-08-05T09:19:11.895Z",
       "action": "SKUs bulk imported",
@@ -7461,7 +7497,7 @@
   },
   "meta": {
     "currentMonth": "2026-08",
-    "lastSynced": "2026-08-05T07:18:20.298Z",
+    "lastSynced": "2026-08-05T09:19:16.294Z",
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
