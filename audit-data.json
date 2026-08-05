@@ -365,34 +365,6 @@
       "updatedAt": "2026-07-21T07:51:18.461Z"
     },
     {
-      "id": "id_g56k770kmrucu3st",
-      "sku": "white 2 (100)",
-      "asin": "B0DS6BP57V",
-      "title": "Mars Exports White Wooden Curtain Rod Rings with Hooks | 2 Inch Outer | 1.25 Inch Inner Diameter | Fits 1 Inch Curtain Rods | Decorative Wood Drapery Hangers for Shower Curtains | Set of 100",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 49.99,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.462Z"
-    },
-    {
       "id": "id_eb8bsfsnmrucu3su",
       "sku": "amzn.gr.SHMCLIPS_2.5INCH_12PIE-rZpQbq-LN",
       "asin": "B0DFH5BG9P",
@@ -2967,6 +2939,12 @@
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_yitexfdtmsfqvnuz",
+      "date": "2026-08-05T07:07:35.435Z",
+      "action": "SKU deleted",
+      "details": "white 2 (100) (B0DS6BP57V)"
+    },
     {
       "id": "id_k7pldck8msfqvet7",
       "date": "2026-08-05T07:07:23.707Z",
