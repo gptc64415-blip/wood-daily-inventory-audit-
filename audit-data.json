@@ -1,34 +1,6 @@
 {
   "skus": [
     {
-      "id": "id_egk7v92dmrucu3st",
-      "sku": "12_PIECES_RINGS_3_(SHEESHAM CLIPS)",
-      "asin": "B0D4TSM4YK",
-      "title": "12 Pieces Curtain Rings with Clips Wooden for 2 inch Rod",
-      "category": "",
-      "owner": "",
-      "qty": 0,
-      "reorderPoint": 0,
-      "listingStatus": "Active",
-      "actionStatus": "None",
-      "mainImage": "yes",
-      "buyBox": "yes",
-      "todaySales": 0,
-      "monthlySales": 0,
-      "lastMonthSales": 0,
-      "sellingPrice": 0,
-      "costPrice": 0,
-      "unitsReturned": 0,
-      "variationRole": "Standalone — no parent",
-      "parentAsin": "",
-      "variationTheme": "",
-      "attributeValue": "",
-      "notes": "",
-      "issues": [],
-      "createdAt": "2026-07-21T07:51:18.461Z",
-      "updatedAt": "2026-07-21T07:51:18.461Z"
-    },
-    {
       "id": "id_qwih7345mrucu3st",
       "sku": "white Ring 3 (24)",
       "asin": "B0DS6D5JVS",
@@ -2939,6 +2911,12 @@
   ],
   "restockLog": [],
   "activityLog": [
+    {
+      "id": "id_m22ca0rgmsfqxwjv",
+      "date": "2026-08-05T07:09:20.011Z",
+      "action": "SKU deleted",
+      "details": "12_PIECES_RINGS_3_(SHEESHAM CLIPS) (B0D4TSM4YK)"
+    },
     {
       "id": "id_yitexfdtmsfqvnuz",
       "date": "2026-08-05T07:07:35.435Z",
