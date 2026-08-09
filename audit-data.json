@@ -7462,8 +7462,6 @@
       "details": "RING_(2.5Inch)_WLNT_24pcs sf (B0CG4D4DZV)"
     }
   ],
-  "processedOrderIds": {},
-  "processedReturnIds": {},
   "settings": {
     "leadTime": 15,
     "safetyStock": 7,
@@ -7477,6 +7475,8 @@
     "lastOrdersImport": null,
     "lastReturnsImport": null
   },
+  "processedOrderIds": {},
+  "processedReturnIds": {},
   "logs": [
     {
       "date": "29 May 2026",
